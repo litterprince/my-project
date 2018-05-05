@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/edit.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editTY.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editZS.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/imageRecognition.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/licensemanage/query/dashboard-full-screenSC.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/licensemanage/query" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/licensemanage/query/information.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/licensemanage/query" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/sysmanage/caParaConfig/editNew.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/sysmanage/caParaConfig" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typelist/information.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typelist" />
+        <entry key="file://$PROJECT_DIR$/Inspur.Dzzw.WebParallel/WebRoot/WEB-INF/pages/parallel/sysmanagement/printmodel/office/addNtkoModel.html" value="file://$PROJECT_DIR$/Inspur.Dzzw.WebParallel/WebRoot/WEB-INF/pages/parallel/sysmanagement/printmodel/office" />
+      </map>
+    </option>
+  </component>
+</project>

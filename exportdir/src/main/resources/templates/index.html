@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="exportDir">导出目录</button>
+    生成路径：<span id="result"></span>
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#exportDir").bind("click", function(){
+                $("#result").text("");
+                $.ajax({
+                    url:'/exportDir',
+                    type:'post',
+                    data:{},
+                    success:function(data){
+                        if(data.retCode == 200){
+                            $("#result").text(data.data);
+                        }
+                    },
+                    error:function(data){
+                      console.log(data)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

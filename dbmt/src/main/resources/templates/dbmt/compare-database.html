@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div th:include="common/head :: head"  th:remove="tag"></div>
+
+<body>
+<div class="container">
+
+    <div class="panel panel-success" style="width: 48%;float:left;">
+        <div class="panel-heading">基准数据源</div>
+        <div class="panel-body">
+            <form class="form-horizontal" id="sourceForm">
+                <div class="form-group">
+                    <label for="fdbType" class="col-sm-2 control-label">类型</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="fdbType" name="dbType">
+                            <option selected="selected">MySql</option>
+                            <option>Oracle</option>
+                            <option>SqlServer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="faddress" class="col-sm-2 control-label">地址</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="faddress" name="address" placeholder="数据库服务器地址，含端口号"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fdbName" class="col-sm-2 control-label">名称 </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fdbName" name="dbName" placeholder="数据库名称"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fuserName" class="col-sm-2 control-label">用户 </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fuserName" name="userName" placeholder="数据库登陆用户名"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fpassword" class="col-sm-2 control-label">密码 </label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="fpassword" name="password" placeholder="数据库登陆密码"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="panel panel-success pull-right" style="width: 48%;float:left;">
+        <div class="panel-heading">目标数据源</div>
+        <div class="panel-body">
+
+            <form class="form-horizontal" id="targetForm">
+                <div class="form-group">
+                    <label for="tdbType" class="col-sm-2 control-label">类型</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="tdbType" readonly="readonly" name="dbType" placeholder="数据库类型"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="taddress" class="col-sm-2 control-label">地址</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="taddress" name="address" placeholder="数据库服务器地址，含端口号"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tdbName" class="col-sm-2 control-label">名称 </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="tdbName" name="dbName" placeholder="数据库名称"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tuserName" class="col-sm-2 control-label">用户 </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="tuserName" name="userName" placeholder="数据库登陆用户名"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tpassword" class="col-sm-2 control-label">密码 </label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="tpassword" name="password" placeholder="数据库登陆密码"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <a id="openProject" class="btn btn-success" type="button">
+                <form id="projectFileUpload" action="/file/uploadProjFile" enctype="multipart/form-data" method="post">
+                    <input type="file" class="file" accept=".proj" id="file" name="file"/>
+                </form>
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                加载配置
+            </a>
+            <button type="button" id="save" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>保存配置</button>
+            <button type="button" id="compare" class="btn btn-success"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>比对数据源</button>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+
+    <div id="resultView" style="display: none;height: 350px;" th:include="dbmt/sqlview :: content"></div>
+
+    <a id="Adownload" style="display: none" href="#" ><span id="download">下载</span></a>
+</div>
+
+<div th:include="common/foot :: foot" th:remove="tag"></div>
+
+<script>
+     $(function(){
+         $("#compare").on("click", compare);
+         $("#save").on("click", saveProject);
+         $("#file").on("change", loadProject);
+         $("#fdbType").on("change", function () {
+             $("#tdbType").val($(this).val());
+         });
+     });
+
+     function compare(){
+         var sData = atom.getForm("sourceForm");
+         var tData = atom.getForm(("targetForm"));
+         var command = new atom.Command("/dbmt/compare");
+         command.addParameter("sData", sData);
+         command.addParameter("tData", tData);
+         command.execute(function(data){
+                showSqlview(data);
+         });
+     }
+
+     function saveProject(){
+         var sData = atom.getForm("sourceForm");
+         var tData = atom.getForm(("targetForm"));
+         var command = new atom.Command("/dbmt/saveProject");
+         command.addParameter("sData", sData);
+         command.addParameter("tData", tData);
+         command.execute(function(rtnData){
+             if(rtnData.retCode != 200){
+                 atom.msg(rtnData.message);
+                 return false;
+             }
+             var fileName = rtnData.data;
+             $("#Adownload").attr("href", "/file/download/"+fileName);
+             $("#download").click();
+         });
+     }
+
+     function loadProject(e){
+         var that = this;
+         $('#projectFileUpload').ajaxSubmit(function (result) {
+             if(result.retCode == 200){
+                 result = JSON.parse(result.data);
+                 atom.setForm("sourceForm", result.sourceDbLink, "fsource.");
+                 atom.setForm("targetForm", result.targetDbLink, "tsource.");
+                 that.value = "";
+             }else{
+                 auto.msg(result.message);
+             }
+         });
+     }
+</script>
+</body>
+</html>

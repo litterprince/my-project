@@ -1,0 +1,20 @@
+{
+	"dealPrimaryKey":false,
+	"targetDbLink":{
+		"dbName":"XE",
+		"address":"localhost:1521",
+		"userName":"license",
+		"dbType":"MYSQL",
+		"password":"license"
+	},
+	"deleteTables":false,
+	"sourceDbLink":{
+		"dbName":"hap",
+		"address":"10.110.1.59:1521",
+		"userName":"license",
+		"dbType":"ORACLE",
+		"password":"license"
+	},
+	"deleteColumns":false,
+	"projectName":""
+}

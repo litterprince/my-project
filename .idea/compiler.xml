@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dbmt" />
+        <module name="demo" />
+        <module name="exportdir" />
+        <module name="home" />
+        <module name="springboot" />
+        <module name="springbootmybatis" />
+        <module name="springtemplate" />
+        <module name="submitdemo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dbmt" target="1.7" />
+      <module name="demo" target="1.8" />
+      <module name="example2" target="1.8" />
+      <module name="exportdir" target="1.8" />
+      <module name="graphql-java-server-demo" target="1.8" />
+      <module name="home" target="1.7" />
+      <module name="springboot" target="1.8" />
+      <module name="springbootmybatis" target="1.8" />
+      <module name="springtemplate" target="1.7" />
+      <module name="submitdemo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

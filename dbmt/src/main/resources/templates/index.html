@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <!--[if IE]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <section>
+        <h1>功能说明</h1>
+        <div id="github-icons"></div>
+        <p>1、不支持修改基准表的主键后同步到目标表</p>
+        <p>2、考虑目前产品情况，不支持视图、存储过程、函数同步</p>
+        <p>3、为了数据安全，不直接对列和表进行删除操作，仅做多余表、列的提示</p>
+        <p>4、列长度不一致时，目标列长度小于基准列则修改，目标列的长度大于基准列长度，则不做修改（避免已有数据截断）</p>
+        <p>5、不支持自增列同步</p>
+        <p>6、不支持除主键以外的索引同步，请根据数据量情况，自行优化索引</p>
+        <p>7、有任何问题请联系：wangzhe@inspur.com</p>
+    </section>
+</div>
+<script src="/js/jquery-2.1.1.min.js"></script>
+</body>
+</html>

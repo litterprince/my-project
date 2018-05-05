@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.UserXmlMapper" >
+    <sql id="Base_Column_List" >
+        id, user_name, password, real_name, sex, create_time
+    </sql>
+
+    <select id="getUsersByParam" resultType="com.example.springboot.po.UserBean" parameterType="com.example.springboot.po.UserBean" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM users_1
+        <where>  1=1
+            <if test="id != null"> and id=#{id} </if>
+            <if test="userName != null"> and user_name=#{userName} </if>
+            <if test="password != null"> and password=#{password} </if>
+            <if test="realName != null"> and real_name=#{realName} </if>
+            <if test="sex != null"> and sex=#{sex} </if>
+            <if test="createTime != null"> and create_time=#{createTime} </if>
+        </where>
+    </select>
+
+    <insert id="batchInsertUsers" parameterType="java.util.List" >
+        INSERT INTO users_1 (id, user_name, password, real_name, sex, create_time)
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id},#{item.userName},#{item.password},#{item.realName},#{item.sex},#{item.createTime})
+        </foreach>
+    </insert>
+
+    <delete id="batchDeleteUsers" parameterType="java.util.List" >
+        DELETE FROM users_1 WHERE id IN
+        <foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>

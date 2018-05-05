@@ -1,0 +1,81 @@
+<!-- sqlview -->
+<div th:fragment="content" xmlns:th="http://www.w3.org/1999/xhtml">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#sqlView" aria-controls="sqlView" role="tab" data-toggle="tab">
+            升级语句<span id="sqlCount" class="btn-danger badge"></span></a></li>
+        <li role="presentation"><a href="#removeTableView" aria-controls="removeTableView" role="tab" data-toggle="tab">
+            多余的表<span id="tableCount" class="btn-danger badge"></span></a></li>
+        <li role="presentation"><a href="#removeColumnView" aria-controls="removeColumnView" role="tab" data-toggle="tab">
+            多余的列<span id="columnCount" class="btn-danger badge"></span></a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="sqlView">
+            <pre style="height: 300px;"><code id="sqlCodeContent"></code></pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="removeTableView">
+            <pre style="height: 300px;"><code id="removeTableContent"></code></pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="removeColumnView">
+            <pre style="height: 300px;"><code id="removeColumnContent"></code></pre>
+        </div>
+    </div>
+    <script>
+        function showSqlview(rtnData){
+            if(rtnData.retCode != 200){
+                atom.msg(rtnData.message);
+                return;
+            }
+            var sqlList = rtnData.data.sqlList;
+            var removeTableList = rtnData.data.needRemoveTables;
+            var removeColumnList = rtnData.data.neddRemoveColumns;
+            var dataLenth = sqlList.length + removeTableList.length + removeColumnList.length;
+            if (dataLenth == 0) {
+                atom.msg("两个数据库完全一致");
+                return false;
+            }
+
+            //number
+            $("#sqlCount").text(sqlList.length);
+            $("#tableCount").text(removeTableList.length);
+            $("#columnCount").text(removeColumnList.length);
+            //content
+            var sqlCodeContent = $("#sqlCodeContent");
+            sqlCodeContent.empty();
+            for (var i = 0; i < sqlList.length; i++) {
+                sqlCodeContent.append(sqlList[i]).append("\r\n");
+            }
+            var removeTableContent = $("#removeTableContent");
+            removeTableContent.empty();
+            for (var y = 0; y < removeTableList.length; y++) {
+                removeTableContent.append(removeTableList[y]).append("\r\n");
+            }
+            var removeColumnContent = $("#removeColumnContent");
+            removeColumnContent.empty();
+            for (var z = 0; z < removeColumnList.length; z++) {
+                removeColumnContent.append(removeColumnList[z]).append("\r\n");
+            }
+
+            atom.show("同步脚本预览", $("#resultView"), false, {
+                button: [
+                    {
+                        value: '同步数据库',
+                        callback: function () {
+                            var command = new atom.Command("/dbmt/runSql");
+                            command.execute(function (result) {
+                                if (result.retCode == 200) {
+                                    atom.msg("同步成功");
+                                } else {
+                                    atom.msg(result.message);
+                                    return false;
+                                }
+                            });
+                        }
+                    }
+                ]
+            });
+        }
+    </script>
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/test1" method="get">
+    <input type="text" name="param" value="test">
+    <button type="submit">提交</button>
+</form>
+<button type="button" onclick="test.ajax()">ajax</button>
+<a href="/test1?param=中国+">超链接</a>
+<script src="/js/jquery-2.1.1.min.js"></script>
+<script>
+    var test = {
+        ajax: function(){
+            $.ajax({
+                url: '/test',
+                data: 'param=中国%2B&param1='+encodeURIComponent(encodeURIComponent("测试")),
+                type: 'post',
+                success: function(data){
+
+                },
+                error: function (error) {
+
+                }
+            })
+        }
+    };
+</script>
+</body>
+</html>

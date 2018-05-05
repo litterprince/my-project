@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" id="btn" value="制证"/>
+
+<script src="/static/js/jquery-2.0.0.js"></script>
+<script>
+    $(function () {
+         $("#btn").on("click", zhizheng);
+    });
+
+    /* 制证 */
+    function zhizheng() {
+        var w=window.screen.width-5;
+        var h=window.screen.height-100;
+        var url="/test";
+        var winOpen=window.open(url,"newwindow","width="+w+",height="+h+",top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no");
+    }
+</script>
+</body>
+</html>

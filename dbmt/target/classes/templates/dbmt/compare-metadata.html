@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div th:include="common/head :: head"  th:remove="tag"></div>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">元数据对比</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" id="sourceForm">
+                        <div class="form-group">
+                            <label for="fdbType" class="col-sm-2 control-label">类型</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="fdbType" name="dbType">
+                                    <option selected="selected">MySql</option>
+                                    <option>Oracle</option>
+                                    <option>SqlServer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="faddress" class="col-sm-2 control-label">地址</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="faddress" name="address" placeholder="数据库服务器地址，含端口号"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fdbName" class="col-sm-2 control-label">名称 </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="fdbName" name="dbName" placeholder="数据库名称"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fuserName" class="col-sm-2 control-label">用户 </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="fuserName" name="userName" placeholder="数据库登陆用户名"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fpassword" class="col-sm-2 control-label">密码 </label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="fpassword" name="password" placeholder="数据库登陆密码"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <a id="openProject" class="btn btn-success" type="button">
+                <form id="projectFileUpload" action="/file/uploadProjFile" enctype="multipart/form-data" method="post">
+                    <input type="file" class="file" accept=".proj" id="loadfile" name="file"/>
+                </form>
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                加载配置
+            </a>
+            <button type="button" id="save" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>保存配置</button>
+            <a id="compareMetadata" class="btn btn-success" type="button">
+                <form id="compareFileUpload" action="/file/uploadMetadataFile" enctype="multipart/form-data" method="post">
+                    <input type="file" class="file" accept=".dbmd" id="comparefile" name="file"/>
+                </form>
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                与元数据对比
+            </a>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+
+    <div id="resultView" style="display: none;height: 350px;" th:include="dbmt/sqlview :: content"></div>
+
+    <a id="Adownload" style="display: none" href="#" ><span id="download">下载</span></a>
+</div>
+
+<div th:include="common/foot :: foot" th:remove="tag"></div>
+
+<script>
+    $(function(){
+        $("#comparefile").on("change", compareMetadata);
+        $("#save").on("click", saveProject);
+        $("#loadfile").on("change", loadProject);
+    });
+
+    function compareMetadata(){
+        var that = this;
+        $('#compareFileUpload').ajaxSubmit(function (result) {
+            if(result.retCode == 200){
+                compare(result.data);
+                that.value = "";
+            }else{
+                auto.msg(result.message);
+            }
+        });
+    }
+    function compare(fileName){
+        var sData = atom.getForm("sourceForm");
+        var command = new atom.Command("/dbmt/compareMetadata");
+        command.addParameter("sData", sData);
+        command.addParameter("fileName", fileName);
+        command.execute(function(rtnData){
+            showSqlview(rtnData);
+        });
+    }
+
+    function saveProject(){
+        var sData = atom.getForm("sourceForm");
+        var command = new atom.Command("/dbmt/saveProject");
+        command.addParameter("sData", sData);
+        command.execute(function(rtnData){
+            if(rtnData.retCode != 200){
+                atom.msg(rtnData.message);
+                return false;
+            }
+            var fileName = rtnData.data;
+            $("#Adownload").attr("href", "/file/download/"+fileName);
+            $("#download").click();
+        });
+    }
+
+    function loadProject(e){
+        var that = this;
+        $('#projectFileUpload').ajaxSubmit(function (result) {
+            if(result.retCode == 200){
+                result = JSON.parse(result.data);
+                atom.setForm("sourceForm", result.sourceDbLink, "fsource.");
+                that.value = "";
+            }else{
+                auto.msg(result.message);
+            }
+        });
+    }
+</script>
+</body>
+</html>

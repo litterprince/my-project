@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dbmt/dbmt.iml" filepath="$PROJECT_DIR$/dbmt/dbmt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exportdir/exportdir.iml" filepath="$PROJECT_DIR$/exportdir/exportdir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/home/home.iml" filepath="$PROJECT_DIR$/home/home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot.iml" filepath="$PROJECT_DIR$/springboot/springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springbootmybatis/springbootmybatis.iml" filepath="$PROJECT_DIR$/springbootmybatis/springbootmybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/springmvc/springmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springtemplate/springtemplate.iml" filepath="$PROJECT_DIR$/springtemplate/springtemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/submitdemo/submitdemo.iml" filepath="$PROJECT_DIR$/submitdemo/submitdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+    </modules>
+  </component>
+</project>
