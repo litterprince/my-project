@@ -25,7 +25,7 @@ public abstract class SqlGenerator {
             }
         }
 
-        List<TableInfo> difference1 = DbComparer.getDifference(targetMetadata);
+        /*List<TableInfo> difference1 = DbComparer.getDifference(targetMetadata);
         for (TableInfo tableInfo : difference1)
         {
             if (tableInfo.getOperate() == Operate.REMOVE) {
@@ -34,7 +34,7 @@ public abstract class SqlGenerator {
             else if (tableInfo.getOperate() == Operate.ALERT) {
                 generatorRemoveColumnSql(tableInfo, sqlList);
             }
-        }
+        }*/
         return sqlList;
     }
 

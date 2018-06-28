@@ -1,7 +1,0 @@
-com\example\springtemplate\db\mapping\Column.class
-com\example\springtemplate\db\SqlHolder.class
-com\example\springtemplate\db\SqlBuilder.class
-com\example\springtemplate\db\mapping\DbBeanProcessor.class
-com\example\springtemplate\Application.class
-com\example\springtemplate\db\BaseDao.class
-com\example\springtemplate\db\mapping\Table.class

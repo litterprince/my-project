@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/Inspur.Dzzw.WebParallel/WebRoot/assets/js/highcharts/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/web.xml" />
     <file type="web" url="file://$PROJECT_DIR$/Inspur.Dzzw.WebParallel/WebRoot/assets/js/highcharts/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/web.xml" />
     <file type="web" url="file://$PROJECT_DIR$/JdbcTemplate-master" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -22,6 +23,7 @@
         <option value="$PROJECT_DIR$/example2/pom.xml" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

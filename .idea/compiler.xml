@@ -12,19 +12,19 @@
         <module name="home" />
         <module name="springboot" />
         <module name="springbootmybatis" />
+        <module name="springmvc" />
         <module name="springtemplate" />
         <module name="submitdemo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="dbmt" target="1.7" />
-      <module name="demo" target="1.8" />
-      <module name="example2" target="1.8" />
       <module name="exportdir" target="1.8" />
-      <module name="graphql-java-server-demo" target="1.8" />
       <module name="home" target="1.7" />
+      <module name="shiro" target="1.5" />
       <module name="springboot" target="1.8" />
       <module name="springbootmybatis" target="1.8" />
+      <module name="springmvc" target="1.8" />
       <module name="springtemplate" target="1.7" />
       <module name="submitdemo" target="1.8" />
     </bytecodeTargetLevel>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 启用spring mvc 注解, 默认的注解映射的支持 -->
+    <mvc:annotation-driven/>
+
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
+    <context:component-scan base-package="com.spring"/>
+
+    <!-- 视图配置 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="cache" value="false" />
+        <property name="prefix" value="" />
+        <property name="suffix" value=".html" />
+        <property name="contentType" value="text/html;charset=UTF-8" />
+        <!-- 设置requestContext变量的名称 -->
+        <property name="requestContextAttribute" value="request" />
+        <!-- 配置是否在生成模板内容之前把HTTPsession中的数据放入model中 -->
+        <property name="exposeSessionAttributes" value="true" />
+        <!-- 配置是否在生成模板内容之前把HTTPrequest中的数据放入model中 -->
+        <property name="exposeRequestAttributes" value="true" />
+        <!-- 使用spring lib时 是否暴露 RequestContext 变量 默认为true -->
+        <property name="exposeSpringMacroHelpers" value="true" />
+    </bean>
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/pages/" />
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">0</prop>
+                <prop key="default_encoding">utf-8</prop>
+                <prop key="number_format">0.##########</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="classic_compatible">true</prop>
+                <prop key="template_exception_handler">ignore</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- Bean解析器,级别高于默认解析器,寻找bean对象进行二次处理 -->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
+
+    <!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
+    <mvc:default-servlet-handler />
+    <!-- 静态资源映射 -->
+    <mvc:resources mapping="/static/**" location="/assets/" cache-period="31536000"/>
+
+    <!-- 异常处理 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="defaultErrorView" value="error/404"></property>
+        <property name="defaultStatusCode" value="404"></property>
+        <property name="exceptionAttribute" value="exception"/>
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Exception">error/expected</prop>
+                <prop key="java.lang.Throwable">error/unexpected</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 国际化支持 -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="zh_CN" />
+    </bean>
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+    </mvc:interceptors>
+
+    <!-- 配置springMVC处理上传文件的信息 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8" />
+        <property name="maxUploadSize" value="10485760000" />
+        <property name="maxInMemorySize" value="40960" />
+    </bean>
+
+    <!-- 支持返回json(避免IE在ajax请求时，返回json出现下载文件 ) -->
+    <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+                <value>text/json;charset=UTF-8</value>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+</beans>
