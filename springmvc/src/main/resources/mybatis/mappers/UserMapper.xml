@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.dao.UserDao" >
+    <sql id="Base_Column_List" >
+        id, user_name, password, create_time
+    </sql>
+
+    <insert id="insertOne" parameterType="com.spring.po.UserBean">
+        INSERT INTO users(<include refid="Base_Column_List" />)
+        VALUES (#{id}, #{userName}, #{password}, #{createTime})
+    </insert>
+    
+    <select id="findByParam" resultType="com.spring.po.UserBean" parameterType="com.spring.po.UserBean" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM users
+        <where>  1=1
+            <if test="id != null"> and id=#{id} </if>
+            <if test="userName != null"> and user_name=#{userName} </if>
+            <if test="password != null"> and password=#{password} </if>
+            <if test="createTime != null"> and create_time=#{createTime} </if>
+        </where>
+    </select>
+
+    <insert id="batchInsertUsers" parameterType="java.util.List" >
+        INSERT INTO users (<include refid="Base_Column_List" />)
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id},#{item.userName},#{item.password},#{item.createTime})
+        </foreach>
+    </insert>
+
+    <delete id="batchDeleteUsers" parameterType="java.util.List" >
+        DELETE FROM users WHERE id IN
+        <foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>

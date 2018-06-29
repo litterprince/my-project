@@ -2,9 +2,12 @@ package com.example.springboot.mapper;
 
 import com.example.springboot.po.UserBean;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Repository("userMapper")
 public interface UserMapper {
 
     @Select("SELECT * FROM users_1 ORDER BY create_time desc")
