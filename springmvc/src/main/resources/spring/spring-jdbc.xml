@@ -10,12 +10,12 @@
 
     <!-- dataSource 配置数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <!-- 基本属性 url、user、password -->
-        <property name="url" value="${multi.jdbc.url}" />
-        <property name="username" value="${multi.jdbc.username}" />
-        <property name="password" value="${multi.jdbc.password}" />
-        <property name="driverClassName" value="${multi.jdbc.driverClassName}" />
-        <property name="validationQuery" value="${multi.jdbc.validationQuery}" />
+        <!-- 基本属性 url、user、username -->
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="driverClassName" value="${jdbc.driverClassName}" />
+        <property name="validationQuery" value="${jdbc.validationQuery}" />
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="1" />
         <property name="minIdle" value="1" />
@@ -46,11 +46,6 @@
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:mybatis/mybatis.xml"/>
         <property name="mapperLocations" value="classpath:mybatis/mappers/**/*.xml"/>
-        <property name="plugins">
-            <array>
-                <bean class="com.spring.config.DynamicPlugin" />
-            </array>
-        </property>
     </bean>
 
     <!-- 配置SqlSessionTemplate -->

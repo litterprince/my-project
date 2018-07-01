@@ -2,12 +2,12 @@
 <!DOCTYPE mapper	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.dao.UserDao" >
     <sql id="Base_Column_List" >
-        id, user_name, password, create_time
+        id, user_name, username, create_time
     </sql>
 
     <insert id="insertOne" parameterType="com.spring.po.UserBean">
         INSERT INTO users(<include refid="Base_Column_List" />)
-        VALUES (#{id}, #{userName}, #{password}, #{createTime})
+        VALUES (#{id}, #{usercode}, #{username}, #{createtime})
     </insert>
     
     <select id="findByParam" resultType="com.spring.po.UserBean" parameterType="com.spring.po.UserBean" >
@@ -16,16 +16,16 @@
         FROM users
         <where>  1=1
             <if test="id != null"> and id=#{id} </if>
-            <if test="userName != null"> and user_name=#{userName} </if>
-            <if test="password != null"> and password=#{password} </if>
-            <if test="createTime != null"> and create_time=#{createTime} </if>
+            <if test="usercode != null"> and user_name=#{usercode} </if>
+            <if test="username != null"> and username=#{username} </if>
+            <if test="createtime != null"> and create_time=#{createtime} </if>
         </where>
     </select>
 
     <insert id="batchInsertUsers" parameterType="java.util.List" >
         INSERT INTO users (<include refid="Base_Column_List" />)
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.id},#{item.userName},#{item.password},#{item.createTime})
+            (#{item.id},#{item.usercode},#{item.username},#{item.createtime})
         </foreach>
     </insert>
 

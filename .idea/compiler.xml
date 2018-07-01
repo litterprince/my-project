@@ -10,6 +10,8 @@
         <module name="demo" />
         <module name="exportdir" />
         <module name="home" />
+        <module name="mongodb" />
+        <module name="shiro" />
         <module name="springboot" />
         <module name="springbootmybatis" />
         <module name="springmvc" />
@@ -21,7 +23,8 @@
       <module name="dbmt" target="1.7" />
       <module name="exportdir" target="1.8" />
       <module name="home" target="1.7" />
-      <module name="shiro" target="1.5" />
+      <module name="mongodb" target="1.8" />
+      <module name="shiro" target="1.8" />
       <module name="springboot" target="1.8" />
       <module name="springbootmybatis" target="1.8" />
       <module name="springmvc" target="1.8" />

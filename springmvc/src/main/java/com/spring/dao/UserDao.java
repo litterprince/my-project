@@ -10,9 +10,9 @@ public interface UserDao {
 
     List<UserBean> findByParam(UserBean user);
 
+    int insert(UserBean userBean);
+
     void batchInsertUsers(List<UserBean> users);
 
     void batchDeleteUsers(List<String> ids);
-
-    int insert(UserBean userBean);
 }
