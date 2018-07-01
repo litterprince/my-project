@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dbmt" />
         <module name="demo" />
-        <module name="exportdir" />
         <module name="home" />
         <module name="mongodb" />
         <module name="shiro" />
