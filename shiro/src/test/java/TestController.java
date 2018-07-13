@@ -1,6 +1,6 @@
 import com.spring.dao.UserDao;
 import com.spring.po.SysUserBean;
-import org.apache.shiro.mgt.DefaultSecurityManager;
+import com.spring.util.PwdEncrypt;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,6 @@ import java.util.UUID;
 public class TestController {
     @Autowired
     UserDao userDao;
-    @Autowired
-    private DefaultSecurityManager securityManager;
 
     @Test
     public void insertOne(){
@@ -32,9 +30,9 @@ public class TestController {
         user.setUserName("admin");
         user.setUserCode("admin");
         user.setPassword("123456");
-        user.setSalt("salt");
         user.setLocked("0");
         user.setCreateTime(new Date());
+        PwdEncrypt.encrypt(user);
         userDao.insertOne(user);
     }
 

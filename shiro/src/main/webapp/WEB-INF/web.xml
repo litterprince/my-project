@@ -20,6 +20,7 @@
     <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
   </listener>
 
+    <!-- Spring MVC 核心控制器 DispatcherServlet 配置 -->
   <servlet>
     <servlet-name>shiro</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

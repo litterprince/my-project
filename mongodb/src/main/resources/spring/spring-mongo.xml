@@ -7,8 +7,8 @@
     <!-- 加载mongodb的属性配置文件 -->
     <context:property-placeholder location="classpath:mongodb.properties" ignore-unresolvable="true"/>
 
-    <!-- 定义mongo对象，对应的是mongodb官方jar包中的Mongo，replica-set设置集群副本的ip地址和端口 -->
-    <mongo:mongo-client id="mongoClient" host="${mongo.host}" port="${mongo.port}">
+    <!-- 定义mongo对象，对应的是mongodb官方jar包中的Mongo，replica-set设置集群副本的ip地址和端口 host="${mongo.host}" port="${mongo.port}" -->
+    <mongo:mongo-client id="mongoClient" replica-set="${mongo.host}" credentials="${mongo.user}:${mongo.pwd}@${mongo.defaultDbName}">
         <mongo:client-options
                 connections-per-host="${mongo.connectionsPerHost}"
                 min-connections-per-host="${mongo.minConnectionsPerHost}"
@@ -24,7 +24,7 @@
                 heartbeat-connect-timeout="${mongo.heartbeatConnectTimeout}"
                 min-heartbeat-frequency="${mongo.minHeartbeatFrequency}"
                 heartbeat-frequency="${mongo.heartbeatFrequency}"
-
+                read-preference="SECONDARY_PREFERRED"
         />
     </mongo:mongo-client>
 

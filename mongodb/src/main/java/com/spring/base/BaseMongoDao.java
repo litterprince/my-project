@@ -2,7 +2,7 @@ package com.spring.base;
 
 import java.util.List;
 
-public interface BaseDao<T> {
+public interface BaseMongoDao<T> {
     /**
      * 查询所有数据
      *

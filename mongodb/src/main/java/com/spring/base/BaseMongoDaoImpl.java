@@ -1,7 +1,5 @@
 package com.spring.base;
 
-import com.spring.base.BaseDao;
-import com.spring.po.UserBean;
 import com.spring.util.SqlBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +17,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Repository
-public class BaseDaoImpl<T> implements BaseDao<T> {
+public class BaseMongoDaoImpl<T> implements BaseMongoDao<T> {
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -86,7 +84,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
                 update.set(entry.getKey(), entry.getKey());
             }
         }
-        this.mongoTemplate.updateFirst(query.addCriteria(Criteria.where("_id").is(id)), update, UserBean.class);
+        this.mongoTemplate.updateFirst(query.addCriteria(Criteria.where("_id").is(id)), update, getTClass());
     }
 
     @Override
@@ -96,7 +94,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         }
         for (String id : ids) {
             Query query = new Query(Criteria.where("_id").is(id));
-            this.mongoTemplate.remove(query, UserBean.class);
+            this.mongoTemplate.remove(query, getTClass());
         }
     }
 }

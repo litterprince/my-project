@@ -1,7 +1,8 @@
-import com.spring.dao.impl.FileDao;
-import com.spring.dao.impl.UserDao;
+import com.spring.dao.FileMongoDao;
+import com.spring.dao.UserMongoDao;
 import com.spring.po.FileBean;
 import com.spring.po.UserBean;
+import org.bson.types.Binary;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.io.*;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -18,9 +20,9 @@ import java.util.List;
 @WebAppConfiguration
 public class TestController {
     @Autowired
-    UserDao userDao;
+    UserMongoDao userDao;
     @Autowired
-    FileDao fileDao;
+    FileMongoDao fileDao;
 
     @Test
     public void user(){
@@ -29,8 +31,68 @@ public class TestController {
     }
 
     @Test
+    public void insertUser(){
+        UserBean user = new UserBean();
+        user.setUserName("admin");
+        user.setPassword("123456");
+        userDao.store(user);
+    }
+
+    @Test
     public void file(){
         List<FileBean> fileList = fileDao.findList(0, 2);
-        Assert.assertEquals(2, fileList.size());
+        FileBean file = fileList.get(0);
+        byte[] b = file.getImagecontent().getData();
+        writeFile(b);
+    }
+
+    @Test
+    public void insertFile(){
+        FileBean file = new FileBean();
+        byte[] b = readFile("D:/1.pdf");
+        file.setImagecontent(new Binary(b));
+        fileDao.store(file);
+    }
+
+    private byte[] readFile(String fileName) {
+        File file = new File(fileName);
+        Long filelength = file.length();
+        byte[] filecontent = new byte[filelength.intValue()];
+        try {
+            FileInputStream in = new FileInputStream(file);
+            in.read(filecontent);
+            in.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            return filecontent;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private void writeFile(byte[] contentInBytes){
+
+        File file = new File("D:/2.pdf");
+
+        try (FileOutputStream fop = new FileOutputStream(file)) {
+
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            fop.write(contentInBytes);
+            fop.flush();
+            fop.close();
+
+            System.out.println("Done");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -10,6 +10,7 @@
         <module name="demo" />
         <module name="home" />
         <module name="mongodb" />
+        <module name="redis" />
         <module name="shiro" />
         <module name="springboot" />
         <module name="springbootmybatis" />
@@ -23,6 +24,7 @@
       <module name="exportdir" target="1.8" />
       <module name="home" target="1.7" />
       <module name="mongodb" target="1.8" />
+      <module name="redis" target="1.8" />
       <module name="shiro" target="1.8" />
       <module name="springboot" target="1.8" />
       <module name="springbootmybatis" target="1.8" />
