@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SubjectThree:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SubjectThree_jar</output-path>
+    <root id="archive" name="FileRead.jar">
+      <element id="module-output" name="SubjectThree" />
+    </root>
+  </artifact>
+</component>

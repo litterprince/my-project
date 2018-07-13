@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SubjectFive:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SubjectFive_jar</output-path>
+    <root id="archive" name="ThreadPool.jar">
+      <element id="module-output" name="SubjectFive" />
+    </root>
+  </artifact>
+</component>
