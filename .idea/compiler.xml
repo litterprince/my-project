@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dbmt" />
         <module name="demo" />
+        <module name="dubbo" />
         <module name="home" />
         <module name="mongodb" />
         <module name="redis" />
@@ -21,6 +22,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="dbmt" target="1.7" />
+      <module name="dubbo" target="1.5" />
       <module name="exportdir" target="1.8" />
       <module name="home" target="1.7" />
       <module name="mongodb" target="1.8" />
