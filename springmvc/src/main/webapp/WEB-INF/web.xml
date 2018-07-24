@@ -11,6 +11,16 @@
         <param-value>classpath:spring/spring-*.xml</param-value>
      </context-param>
 
+    <!-- log4j 系统日志-->
+    <context-param>
+        <param-name>log4jContextName</param-name>
+        <param-value>star</param-value>
+    </context-param>
+    <context-param>
+        <param-name>log4jConfiguration</param-name>
+        <param-value>classpath:log4j/log4j.xml</param-value>
+    </context-param>
+
     <!-- 配置Spring上下文监听器 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
