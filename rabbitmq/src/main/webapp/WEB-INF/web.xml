@@ -4,20 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-
   <!-- 配置Spring配置文件路-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring/spring-*.xml</param-value>
   </context-param>
+
   <!-- 配置Spring上下文监听器 -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-
-  <!-- Introspector缓存清除监听器 -->
-  <listener>
-    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
   <!-- request监听器 -->
   <listener>
@@ -26,7 +21,7 @@
 
   <!-- Spring MVC 核心控制器 DispatcherServlet 配置 -->
   <servlet>
-    <servlet-name>MongoDB</servlet-name>
+    <servlet-name>RabbitMQ</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
@@ -35,36 +30,7 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>MongoDB</servlet-name>
+    <servlet-name>RabbitMQ</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
-  <!-- 配置Spring字符编码过滤器 -->
-  <filter>
-    <filter-name>encodingFilter</filter-name>
-    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-    <init-param>
-      <param-name>encoding</param-name>
-      <param-value>UTF-8</param-value>
-    </init-param>
-    <init-param>
-      <param-name>forceEncoding</param-name>
-      <param-value>true</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>encodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-
-  <!-- 激活Tomcat的defaultServlet来处理静态文件 -->
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>/static/*</url-pattern>
-  </servlet-mapping>
-
-  <!-- session 时间 -->
-  <session-config>
-    <session-timeout>30</session-timeout>
-  </session-config>
 </web-app>
