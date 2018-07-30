@@ -30,24 +30,24 @@ public class ConcurrentTaskExecutor {
         for (FutureTask<String> futureTask : futureTaskList) {
             execService.execute(futureTask);
         }
+        //new Thread(new InterruptRunnable(this, beginLatch)).start();
 
-        new Thread(new InterruptRunnable(this, beginLatch)).start();
-
-        beginLatch.countDown();
+        beginLatch.countDown();//beginLatch值减一，被阻塞的线程可以继续执行
 
         Integer totalResult = Integer.valueOf(0);
         for (int i = 0; i < personCount; i++) {
-            Integer partialResult = exchanger.exchange(Integer.valueOf(0));
+            Integer partialResult = exchanger.exchange(Integer.valueOf(0));//等待exchanger交换后，往下执行
             if(partialResult != 0){
                 totalResult = totalResult + partialResult;
                 System.out.println(String.format("Progress: %s/%s", totalResult, personCount));
             }
         }
 
-        endLatch.await();
+        endLatch.await();//阻塞主线程，等待endLatch值为0再继续执行
+
         System.out.println("--------------");
         for (FutureTask<String> futureTask : futureTaskList) {
-            System.out.println(futureTask.get());
+            System.out.println(futureTask.get());//主线程会阻塞，来等待线程返回数据
         }
         execService.shutdown();
     }

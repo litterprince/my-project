@@ -23,7 +23,7 @@ public class ExecuteCallable implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        //beginLatch.await();
+        beginLatch.await();
         if(concurrentTaskExecutor.isCanceled()){
             endLatch.countDown();
             exchanger.exchange(0);
