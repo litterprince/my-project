@@ -35,9 +35,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.5" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.41" />
         </element>
-        <element id="directory" name="pages">
-          <element id="dir-copy" path="$PROJECT_DIR$/mongodb/src/main/webapp/WEB-INF/pages" />
-        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/mongodb/target/mongodb/META-INF/MANIFEST.MF" />
