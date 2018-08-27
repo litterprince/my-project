@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="quartz:war exploded" />
+      <artifact name="springmvc:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05736dd7-059a-4935-b564-840007f7ebcb" name="Default" comment="&#10;DZZZ-3006" />
+    <list default="true" id="05736dd7-059a-4935-b564-840007f7ebcb" name="Default" comment="&#10;DZZZ-3006">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_oracle_ojdbc6_11_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_oracle_ojdbc6_11_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo/dubbo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo.iml" afterDir="false" />
+    </list>
     <list id="bfc61c51-77ee-41ee-8da0-55b804b13f7a" name="ignored changelist" comment="ignored changelist" />
     <ignored path="$PROJECT_DIR$/demo/target/" />
     <ignored path="$PROJECT_DIR$/dbmt/target/" />
@@ -33,6 +42,7 @@
     <ignored path="$PROJECT_DIR$/dubbo/target/" />
     <ignored path="$PROJECT_DIR$/quartz/target/" />
     <ignored path="$PROJECT_DIR$/rabbitmq/target/" />
+    <ignored path="$PROJECT_DIR$/thrift/target/" />
     <manually-removed-from-ignored>
       <directory path="./" />
       <directory path=".idea/artifacts/" />
@@ -66,39 +76,80 @@
     <session id="1854581169">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="xml" value="1" />
+          <entry key="class" value="28" />
+          <entry key="iml" value="3" />
+          <entry key="java" value="39" />
+          <entry key="pom" value="5" />
+          <entry key="properties" value="1" />
+          <entry key="thrift" value="4" />
+          <entry key="txt" value="1" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="XML" value="1" />
+          <entry key="CLASS" value="28" />
+          <entry key="IDEA_MODULE" value="3" />
+          <entry key="JAVA" value="39" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="11" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="4" />
+          <entry key="java" value="536" />
+          <entry key="properties" value="2" />
+          <entry key="thrift" value="55" />
+          <entry key="xml" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="536" />
+          <entry key="PLAIN_TEXT" value="59" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
     </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="inspur" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/springmvc/pom.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java/src/test/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+            <state relative-caret-position="75">
+              <caret line="5" column="62" lean-forward="true" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java/src/test/WeightRandom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
               <folding>
-                <element signature="n#dependency#11;n#dependencies#0;n#project#0;n#!!top" />
-                <element signature="n#dependency#12;n#dependencies#0;n#project#0;n#!!top" />
-                <element signature="n#dependency#13;n#dependencies#0;n#project#0;n#!!top" />
-                <element signature="n#build#0;n#project#0;n#!!top" />
+                <element signature="e#323#334#0" expanded="true" />
+                <element signature="e#1033#1056#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,11 +173,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SECON</find>
-      <find>mongodb</find>
-      <find>connectTimeout</find>
-      <find>Map</find>
-      <find>FileMongoBean</find>
       <find>mongo-client</find>
       <find>ContextLoaderListener</find>
       <find>documentation</find>
@@ -152,6 +198,11 @@
       <find>initLogging</find>
       <find>consumerService</find>
       <find>getMessage</find>
+      <find>lvie</find>
+      <find>process</find>
+      <find>TBase</find>
+      <find>writeMessageBegin</find>
+      <find>STANDARD_SCHEME_FACTORY</find>
     </findStrings>
     <replaceStrings>
       <replace>searchlicense_type_id(this);</replace>
@@ -204,11 +255,14 @@
     <setting file="file://$PROJECT_DIR$/home/src/main/resources/static/js/hm.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/redis/src/main/java/com/spring/config/RedisCacheConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/springboot/src/test/java/com/example/springboot/service/UserDaoTest.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/UserInfoServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/UserInfoService.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/springboot/src/main/java/com/example/springboot/config/MasterConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/springtemplate/src/main/java/com/example/springtemplate/db/SqlBuilder.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/shiro/src/test/java/TestController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/home/src/main/java/com/example/home/HomeApplication.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/springmvc/src/main/webapp/WEB-INF/web.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/hello/HelloServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/dbmt/src/main/java/com/example/dbmt/tool/ResponseUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/home/src/main/java/com/example/home/po/LicenseTypeBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/dbmt/src/main/java/com/example/dbmt/action/DbmtController.java" root0="SKIP_INSPECTION" />
@@ -218,6 +272,7 @@
     <setting file="file://$PROJECT_DIR$/home/src/main/java/com/example/home/dao/LicenseTypeDao.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/mongodb/src/main/webapp/WEB-INF/web.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/dbmt/src/main/java/com/example/dbmt/manager/MetadataManager.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/java/src/test/WeightRandom.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/springmvc/src/main/resources/spring/spring-context.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/dbmt/src/main/java/com/example/dbmt/generator/SqlExecutor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/mongodb/src/main/resources/spring/spring-mongo.xml" root0="FORCE_HIGHLIGHTING" />
@@ -237,27 +292,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/java/src/ant/minstack/AntMinStack.java" />
-        <option value="$PROJECT_DIR$/java/src/ant/minstack/TestStack.java" />
-        <option value="$PROJECT_DIR$/java/src/ant/calculator/ArithHelper.java" />
-        <option value="$PROJECT_DIR$/java/src/ant/calculator/Calculator.java" />
-        <option value="$PROJECT_DIR$/java/src/ant/calculator/TestMain.java" />
-        <option value="$PROJECT_DIR$/java/src/leetcode/longestPalindrome/Solution.java" />
-        <option value="$PROJECT_DIR$/java/src/leetcode/intReverse/Soultion.java" />
-        <option value="$PROJECT_DIR$/mongodb/src/main/resources/spring/spring-mongo.xml" />
-        <option value="$PROJECT_DIR$/java/src/leetcode/Test.java" />
-        <option value="$PROJECT_DIR$/springmvc/src/main/resources/log4j/log4j.xml" />
-        <option value="$PROJECT_DIR$/springmvc/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/springmvc/src/main/java/com/spring/action/UserController.java" />
-        <option value="$PROJECT_DIR$/springmvc/src/main/resources/mybatis/mappers/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/mongodb/src/main/resources/quartz/quartz.xml" />
-        <option value="$PROJECT_DIR$/quartz/src/main/java/com/quartz/CommJobBean.java" />
-        <option value="$PROJECT_DIR$/quartz/src/main/resources/quartz/quartz.xml" />
-        <option value="$PROJECT_DIR$/mongodb/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/quartz/src/main/java/com/quartz/CommJob.java" />
-        <option value="$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.23/tomcat-embed-core-8.5.23.jar!/org/apache/catalina/util/LifecycleBase.class" />
-        <option value="$PROJECT_DIR$/springboot/src/main/resources/application.properties" />
-        <option value="$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.23/tomcat-embed-core-8.5.23.jar!/org/apache/catalina/core/ContainerBase.class" />
         <option value="$PROJECT_DIR$/quartz/src/main/resources/spring/spring-quartz.xml" />
         <option value="$PROJECT_DIR$/quartz/src/main/resources/spring/spring-context.xml" />
         <option value="$PROJECT_DIR$/quartz/src/main/webapp/WEB-INF/web.xml" />
@@ -288,6 +322,27 @@
         <option value="$PROJECT_DIR$/springmvc/src/main/java/com/spring/service/UserService.java" />
         <option value="$PROJECT_DIR$/threadpool/src/threadpool/ExecuteCallable.java" />
         <option value="$PROJECT_DIR$/threadpool/src/threadpool/ConcurrentTaskExecutor.java" />
+        <option value="$PROJECT_DIR$/springmvc/src/main/resources/datasource.properties" />
+        <option value="$PROJECT_DIR$/java/src/test/ConfigNodeStatus.java" />
+        <option value="$PROJECT_DIR$/java/src/test/test.java" />
+        <option value="$PROJECT_DIR$/threadpool/src/thread/TicketRunnable.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com.test/service/Hello.thrift" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com.test/service/HelloServiceImpl.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/Hello.thrift" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/App.java" />
+        <option value="$PROJECT_DIR$/thrift/pom.xml" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/Hello.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/HelloServiceServer.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/HelloServiceClient.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/HelloServiceImpl.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/userinfo.thrift" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/UserInfoService.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/UserInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/server/UserInfoServer.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/client/UserInfoClient.java" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/userinfo.thrift" />
+        <option value="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/UserInfoService.java" />
+        <option value="$PROJECT_DIR$/java/src/test/WeightRandom.java" />
       </list>
     </option>
   </component>
@@ -331,10 +386,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="990" />
+    <option name="height" value="981" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -377,6 +433,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Problems">
           <expand>
@@ -440,24 +519,56 @@
           </expand>
           <select />
         </subPane>
-      </pane>
-      <pane id="AndroidView" />
-      <pane id="ProjectPane">
-        <subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springmvc" type="462c0819:PsiDirectoryNode" />
+              <item name="my-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="thrift" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="my-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="thrift" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="my-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="thrift" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="my-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="thrift" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="my-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="thrift" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com.test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="my-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="thrift" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com.test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="ChangesTree.GroupingKeys" value="directory&#10;module" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -468,42 +579,45 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="AnnotatedElementUtils&#9;PSI&#9;JAVA://org.springframework.core.annotation.AnnotatedElementUtils&#10;spring-mongo.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/resources/spring/spring-mongo.xml&#10;pom.&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;web&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/redis/src/main/webapp/WEB-INF/web.xml&#10;spring-mvc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-mvc.xml&#10;TestC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;datas&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/datasource.properties&#10;spring-jdbc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-jdbc.xml&#10;web.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/webapp/WEB-INF/web.xml&#10;spring-s&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-shiro.xml&#10;spring-con&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-context.xml&#10;Test&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;pom&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/pom.xml&#10;spring-c&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-context.xml&#10;po&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/pom.xml&#10;UserB&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/java/com/spring/po/UserBean.java&#10;mon&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;spring-j&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-jdbc.xml&#10;cglib&#9;PSI&#9;JAVA://org.springframework.aop.framework.CglibAopProxy&#10;openoffice&#9;PSI&#9;JAVA://com.inspur.license.utilities.OpenOfficePro&#10;typenobasic/infor&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseT*.js&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/resource/datasource.properties&#10;LicenceCont&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/servicectl/LicenceBaseController.java&#10;input&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;edit&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;editTY&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editTY.html&#10;LicenseContentS&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;LicenseContentSer&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;BaseContr&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenceBaseController&#10;Data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/abutinterface/DataUtil.java&#10;inputSer&#9;PSI&#9;JAVA://com.inspur.license.collection.service.InputService&#10;inputC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/collection/action/InputController.java&#10;imp&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysmanage/action/ImportController.java&#10;Import&#9;PSI&#9;JAVA://com.inspur.license.sysmanage.action.ImportController&#10;licenselibrary&#9;PSI&#9;JAVA://com.inspur.license.licenselibrary.action.LicenseLibraryController&#10;editNew&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;InputCo&#9;PSI&#9;JAVA://com.inspur.license.collection.action.InputController&#10;tongzhiweiye&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/thirdpart/signature/signtongzhiweiye/sign_tongzhiweiye.html&#10;licenseInput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;typenobasic/informa&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseinput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;Main&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/sso/MainController.java&#10;template&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;LicenseListInfo&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenseListInfo&#10;ZSShareAppService&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.ZSShareAppService&#10;LicenseShareService&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/service/LicenseShareService.java&#10;HotStatisService&#9;PSI&#9;JAVA://com.inspur.license.mainpage.service.HotStatisService&#10;InputService&#9;PSI&#9;JAVA://com.inspur.license.collection.service.InputService&#10;licenseTemplate&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js" />
+    <property name="SearchEverywhereHistoryKey" value="TBase&#9;FILE&#9;jar:///Users/jm/.m2/repository/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TBase.class&#10;AnnotatedElementUtils&#9;PSI&#9;JAVA://org.springframework.core.annotation.AnnotatedElementUtils&#10;spring-mongo.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/resources/spring/spring-mongo.xml&#10;pom.&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;web&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/redis/src/main/webapp/WEB-INF/web.xml&#10;spring-mvc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-mvc.xml&#10;TestC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;datas&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/datasource.properties&#10;spring-jdbc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-jdbc.xml&#10;web.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/webapp/WEB-INF/web.xml&#10;spring-s&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-shiro.xml&#10;spring-con&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-context.xml&#10;Test&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;pom&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/pom.xml&#10;spring-c&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-context.xml&#10;po&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/pom.xml&#10;UserB&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/java/com/spring/po/UserBean.java&#10;mon&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;spring-j&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-jdbc.xml&#10;cglib&#9;PSI&#9;JAVA://org.springframework.aop.framework.CglibAopProxy&#10;openoffice&#9;PSI&#9;JAVA://com.inspur.license.utilities.OpenOfficePro&#10;typenobasic/infor&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseT*.js&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/resource/datasource.properties&#10;LicenceCont&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/servicectl/LicenceBaseController.java&#10;input&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;edit&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;editTY&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editTY.html&#10;LicenseContentS&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;LicenseContentSer&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;BaseContr&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenceBaseController&#10;Data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/abutinterface/DataUtil.java&#10;inputSer&#9;PSI&#9;JAVA://com.inspur.license.collection.service.InputService&#10;inputC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/collection/action/InputController.java&#10;imp&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysmanage/action/ImportController.java&#10;Import&#9;PSI&#9;JAVA://com.inspur.license.sysmanage.action.ImportController&#10;licenselibrary&#9;PSI&#9;JAVA://com.inspur.license.licenselibrary.action.LicenseLibraryController&#10;editNew&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;InputCo&#9;PSI&#9;JAVA://com.inspur.license.collection.action.InputController&#10;tongzhiweiye&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/thirdpart/signature/signtongzhiweiye/sign_tongzhiweiye.html&#10;licenseInput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;typenobasic/informa&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseinput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;Main&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/sso/MainController.java&#10;template&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;LicenseListInfo&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenseListInfo&#10;ZSShareAppService&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.ZSShareAppService&#10;LicenseShareService&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/service/LicenseShareService.java&#10;HotStatisService&#9;PSI&#9;JAVA://com.inspur.license.mainpage.service.HotStatisService&#10;InputService&#9;PSI&#9;JAVA://com.inspur.license.collection.service.InputService" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534816090595" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535334794972" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="dynamic.classpath" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.12688553" />
     <property name="project.structure.side.proportion" value="0.25" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example1.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Codes\IdeaSpaces\my-project\quartz\src\main\resources\spring" />
-      <recent name="D:\Codes\IdeaSpaces\my-project\redis\src\main\webapp\WEB-INF" />
-      <recent name="D:\Codes\IdeaSpaces\my-project\springmvc\src\main\resources\spring" />
-      <recent name="D:\Codes\IdeaSpaces\my-project\shiro\src\main\resources\shiro" />
-      <recent name="D:\Codes\IdeaSpaces\inspur\home\src\main\resources\static\js" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift" />
+      <recent name="$PROJECT_DIR$/thrift/src/main/java/com/test/hello" />
+      <recent name="D:\Codes\IdeaSpaces\my-project\quartz\src\main\resources\spring" />
+      <recent name="D:\Codes\IdeaSpaces\my-project\redis\src\main\webapp\WEB-INF" />
+      <recent name="D:\Codes\IdeaSpaces\my-project\springmvc\src\main\resources\spring" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.test" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test" />
       <recent name="com.spring.service" />
       <recent name="com.spring.dao" />
       <recent name="com.spring.po" />
       <recent name="com.spring.base" />
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Codes\IdeaSpaces\my-project\rabbitmq\src\main\resources" />
@@ -530,7 +644,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.springmvc">
+  <component name="RunManager" selected="Application.WeightRandom">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -552,13 +666,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="threadpool.Main" />
-      <module name="threadpool" />
+    <configuration name="HelloServiceClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.HelloServiceClient" />
+      <module name="thrift" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="threadpool.*" />
+          <option name="PATTERN" value="com.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloServiceServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.HelloServiceServer" />
+      <module name="thrift" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nio.NIOClient" />
+      <module name="java" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nio.NIOServer" />
+      <module name="java" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -580,28 +736,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WeightRandom" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.WeightRandom" />
+      <module name="java" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rabbitmq" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestController" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestController.testQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rabbitmq" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestController" />
-      <option name="METHOD_NAME" value="testQueue" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1058,15 +1208,19 @@
       <item itemvalue="Tomcat Server.shiro" />
       <item itemvalue="Tomcat Server.mongodb" />
       <item itemvalue="Tomcat Server.quartz" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.TestController.testQueue" />
-      <item itemvalue="JUnit.TestController" />
+      <item itemvalue="Application.HelloServiceServer" />
+      <item itemvalue="Application.HelloServiceClient" />
+      <item itemvalue="Application.NIOServer" />
+      <item itemvalue="Application.NIOClient" />
+      <item itemvalue="Application.WeightRandom" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TestController.testQueue" />
-        <item itemvalue="JUnit.TestController" />
+        <item itemvalue="Application.WeightRandom" />
+        <item itemvalue="Application.NIOClient" />
+        <item itemvalue="Application.NIOServer" />
+        <item itemvalue="Application.HelloServiceClient" />
+        <item itemvalue="Application.HelloServiceServer" />
       </list>
     </recent_temporary>
   </component>
@@ -1262,7 +1416,10 @@
       <workItem from="1532651937563" duration="2681000" />
       <workItem from="1532918723084" duration="2513000" />
       <workItem from="1534760366258" duration="883000" />
-      <workItem from="1534814816536" duration="1072000" />
+      <workItem from="1534814816536" duration="3108000" />
+      <workItem from="1534836043467" duration="547000" />
+      <workItem from="1534901691138" duration="26257000" />
+      <workItem from="1535101578842" duration="2396000" />
     </task>
     <task id="LOCAL-00111" summary="DZZZ-2902">
       <created>1513836075825</created>
@@ -1643,7 +1800,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1421383000" />
+    <option name="totallyTimeSpent" value="1452619000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1655,9 +1812,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="990" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="981" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.42071196" visible="true" weight="0.29872206" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.42071196" visible="true" weight="0.30511183" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1669,16 +1826,16 @@
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32903227" />
       <window_info anchor="bottom" content_ui="combo" id="Run Dashboard" order="1" sideWeight="0.5266241" weight="0.6696329" />
       <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.6698873" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49924356" weight="0.6698873" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32845894" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49946752" weight="0.66816646" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49924356" weight="0.6692913" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" sideWeight="0.49394855" weight="0.3236715" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.47337595" side_tool="true" weight="0.6703786" />
+      <window_info anchor="bottom" id="TODO" order="8" sideWeight="0.49394855" weight="0.32283464" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005325" side_tool="true" weight="0.66816646" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.3236715" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49092284" weight="0.3236715" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32419354" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.5085197" weight="0.32283464" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.3239595" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32419354" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.3236715" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" weight="0.3236715" />
@@ -1734,6 +1891,8 @@
       <path value="$PROJECT_DIR$/graphql-springboot-sample" />
       <path value="$PROJECT_DIR$/simple-springboot-graphql-mongo-conftalk-demo" />
       <path value="$PROJECT_DIR$/graphql-demo-with-spring-boot" />
+      <path value="$PROJECT_DIR$/dbmt" />
+      <path value="$PROJECT_DIR$/springtemplate" />
     </ignored-roots>
     <MESSAGE value="DZZZ-2829" />
     <MESSAGE value="DZZZ-2902" />
@@ -1771,6 +1930,18 @@
           <properties />
           <option name="timeStamp" value="772" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/thrift/src/main/java/com/test/hello/HelloServiceClient.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="774" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/java/src/com/nio/NIOClient.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="779" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1786,232 +1957,791 @@
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>result.isSetSuccess()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>client.helloString(&quot;123&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/quartz/src/main/java/com/spring/quartz/CommJobBean.java">
+    <entry file="file://$PROJECT_DIR$/java/src/test/ConfigNodeStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="45">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding>
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quartz/src/main/resources/spring/spring-quartz.xml">
+    <entry file="file://$PROJECT_DIR$/threadpool/src/thread/TicketRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="18" column="52" lean-forward="true" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        <state relative-caret-position="75">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quartz/src/main/resources/spring/spring-context.xml">
+    <entry file="file://$PROJECT_DIR$/threadpool/src/thread/TicketThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quartz/pom.xml">
+    <entry file="file://$PROJECT_DIR$/thrift/src/data/message1.xml" />
+    <entry file="file://$PROJECT_DIR$/thrift/ReadMe.txt" />
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/MainApp.java" />
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/MyRouteBuilder.java" />
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com.test/service/Hello.thrift" />
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com.test/service/HelloServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/thrift/thrift.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="50" />
+        <state relative-caret-position="150">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/MsgSendReturnCallback.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-rabbit/1.3.5.RELEASE/spring-rabbit-1.3.5.RELEASE.jar!/org/springframework/amqp/rabbit/core/RabbitTemplate.class" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/MsgSendConfirmCallBack.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-rabbit/1.3.5.RELEASE/spring-rabbit-1.3.5.RELEASE.jar!/org/springframework/amqp/rabbit/config/spring-rabbit-1.3.xsd" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.7/log4j-api-2.7.jar!/org/apache/logging/log4j/LogManager.class" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/MQConsumerManual.java" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/impl/MQProducerImpl.java" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/ShijjConsumer.java" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/ChrisConsumer.java" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/consumer/MessageConsumer.java" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/resources/spring/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/resources/spring/spring-context.xml">
+    <entry file="file://$PROJECT_DIR$/thrift/src/test/java/com/test/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+        <state relative-caret-position="195">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/gen-java/service/demo/Hello.java" />
+    <entry file="file://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.9.3/libthrift-0.9.3.pom" />
+    <entry file="file://$PROJECT_DIR$/thrift/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        <state relative-caret-position="288">
+          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/builders/AnnotatedBuilder.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/builders/AllDefaultPossibilitiesBuilder.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/requests/ClassRequest.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE.jar!/org/springframework/util/Assert.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/SpringJUnit4ClassRunner.class" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/TestController.java" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/resources/log4j/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE.pom" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/test/java/JUnit4ClassRunner.java" />
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/resources/rabbitmq.properties">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="150">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/test/java/TestController.java">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/hello/Hello.thrift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/pom.xml">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/hello/Hello.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        <state relative-caret-position="120">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/resources/spring/spring-rabbitmq.xml">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/hello/HelloServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/resources/db/db.sql">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/hello/HelloServiceServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="1" lean-forward="true" selection-start-column="18" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/java/com/spring/action/UserController.java">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/hello/HelloServiceClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/webapp/WEB-INF/pages/index.html">
+    <entry file="file://$PROJECT_DIR$/springtemplate/src/main/java/com/example/springtemplate/db/mapping/Table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="90">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/UserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="270">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/Consumer.java">
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/userinfo.thrift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        <state relative-caret-position="255">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbitmq/src/main/java/com/spring/rabbitmq/Producer.java">
+    <entry file="file://$PROJECT_DIR$/java/src/com/nio/NIOServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="69" lean-forward="true" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+        <state relative-caret-position="484">
+          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/java/com/spring/po/UserBean.java">
+    <entry file="file://$PROJECT_DIR$/java/src/com/nio/NIOClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="454">
+          <caret line="59" column="55" lean-forward="true" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/java/com/spring/service/UserService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/transport/TTransportInputStream.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="90">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/resources/spring/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/resources/mybatis/mappers/UserMapper.xml">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/io/Closeable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        <state relative-caret-position="180">
+          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/resources/mybatis/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/resources/spring/spring-context.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/resources/spring/spring-jdbc.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/protocol/TProtocolFactory.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+        <state relative-caret-position="90">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/src/main/java/com/spring/dao/UserDao.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/io/OutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="328">
+          <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/concurrent/ExecutorService.java" />
-    <entry file="file://$PROJECT_DIR$/threadpool/src/threadpool/InterruptRunnable.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/transport/TIOStreamTransport.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state relative-caret-position="561">
+          <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/threadpool/src/threadpool/ConcurrentTaskExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/threadpool/src/threadpool/ExecuteCallable.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/transport/TTransport.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/transport/TByteBuffer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/protocol/TBinaryProtocol.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TProcessorFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/scheme/StandardScheme.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/UserInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/thrift/UserInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
+          <folding>
+            <element signature="e#174#246#0" />
+            <element signature="class#Iface#0;class#UserInfoService#0" />
+            <element signature="class#AsyncIface#0;class#UserInfoService#0" />
+            <element signature="class#Factory#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#getClient#1;class#Factory#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#Client#1;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#send_lg_userinfo_getUserInfoById#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#recv_lg_userinfo_getUserInfoById#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#recv_lg_userinfo_getUserNameById#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#send_lg_userinfo_getUserCount#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#recv_lg_userinfo_getUserCount#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#send_lg_userinfo_checkUserById#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="method#recv_lg_userinfo_checkUserById#0;class#Client#0;class#UserInfoService#0" />
+            <element signature="class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="class#Factory#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#Factory#0;class#Factory#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#getAsyncClient#0;class#Factory#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#AsyncClient#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById_call#0;class#lg_userinfo_getUserInfoById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#write_args#0;class#lg_userinfo_getUserInfoById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_getUserInfoById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById_call#0;class#lg_userinfo_getUserNameById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#write_args#0;class#lg_userinfo_getUserNameById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_getUserNameById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount_call#0;class#lg_userinfo_getUserCount_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#write_args#0;class#lg_userinfo_getUserCount_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_getUserCount_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById_call#0;class#lg_userinfo_checkUserById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#write_args#0;class#lg_userinfo_checkUserById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_checkUserById_call#0;class#AsyncClient#0;class#UserInfoService#0" />
+            <element signature="class#Processor#0;class#UserInfoService#0" />
+            <element signature="method#Processor#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="method#Processor#1;class#Processor#0;class#UserInfoService#0" />
+            <element signature="method#getProcessMap#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_getUserInfoById#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_getUserNameById#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_getUserCount#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="method#getResult#0;class#lg_userinfo_checkUserById#0;class#Processor#0;class#UserInfoService#0" />
+            <element signature="class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="method#AsyncProcessor#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="method#AsyncProcessor#1;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="method#getProcessMap#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="method#getResultHandler#0;class#lg_userinfo_getUserInfoById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#22164:24213" />
+            <element signature="method#onComplete#0;class#22164:24213" />
+            <element signature="method#onError#0;class#22164:24213" />
+            <element signature="method#start#0;class#lg_userinfo_getUserInfoById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="method#getResultHandler#0;class#lg_userinfo_getUserNameById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#25244:27309" />
+            <element signature="method#onComplete#0;class#25244:27309" />
+            <element signature="method#onError#0;class#25244:27309" />
+            <element signature="method#start#0;class#lg_userinfo_getUserNameById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="method#getResultHandler#0;class#lg_userinfo_getUserCount#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#28332:30429" />
+            <element signature="method#onComplete#0;class#28332:30429" />
+            <element signature="method#onError#0;class#28332:30429" />
+            <element signature="method#start#0;class#lg_userinfo_getUserCount#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="method#getResultHandler#0;class#lg_userinfo_checkUserById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="class#31441:33542" />
+            <element signature="method#onComplete#0;class#31441:33542" />
+            <element signature="method#onError#0;class#31441:33542" />
+            <element signature="method#start#0;class#lg_userinfo_checkUserById#0;class#AsyncProcessor#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById_args#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById_args#1;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_getUserInfoById_args#2;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById_args#2;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#clear#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#setUserid#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#unsetUserid#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSetUserid#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#isSetUserid#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#setUseridIsSet#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="e#42016#42044#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_argsStandardSchemeFactory#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserInfoById_argsStandardScheme#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserInfoById_argsStandardScheme#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_argsTupleSchemeFactory#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_argsTupleScheme#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_getUserInfoById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById_result#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById_result#1;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_getUserInfoById_result#2;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserInfoById_result#2;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccess#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSetSuccess#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccessIsSet#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="e#54808#54836#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_resultStandardSchemeFactory#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserInfoById_resultStandardSchemeFactory#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_resultStandardScheme#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserInfoById_resultStandardScheme#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserInfoById_resultStandardScheme#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_resultTupleSchemeFactory#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserInfoById_resultTupleSchemeFactory#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserInfoById_resultTupleScheme#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserInfoById_resultTupleScheme#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserInfoById_resultTupleScheme#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_getUserInfoById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById_args#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById_args#1;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_getUserNameById_args#2;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById_args#2;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#clear#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#setUserid#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#unsetUserid#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSetUserid#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#isSetUserid#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#setUseridIsSet#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="e#67649#67677#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_argsStandardSchemeFactory#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserNameById_argsStandardSchemeFactory#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_argsStandardScheme#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserNameById_argsStandardScheme#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserNameById_argsStandardScheme#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_argsTupleSchemeFactory#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserNameById_argsTupleSchemeFactory#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_argsTupleScheme#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserNameById_argsTupleScheme#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserNameById_argsTupleScheme#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_getUserNameById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById_result#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById_result#1;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_getUserNameById_result#2;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserNameById_result#2;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccess#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSetSuccess#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccessIsSet#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="e#80455#80483#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_resultStandardSchemeFactory#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserNameById_resultStandardSchemeFactory#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_resultStandardScheme#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserNameById_resultStandardScheme#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserNameById_resultStandardScheme#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_resultTupleSchemeFactory#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserNameById_resultTupleSchemeFactory#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserNameById_resultTupleScheme#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserNameById_resultTupleScheme#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserNameById_resultTupleScheme#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_getUserNameById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount_args#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_getUserCount_args#1;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount_args#1;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#clear#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="e#90375#90403#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_argsStandardSchemeFactory#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserCount_argsStandardSchemeFactory#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_argsStandardScheme#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserCount_argsStandardScheme#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserCount_argsStandardScheme#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_argsTupleSchemeFactory#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserCount_argsTupleSchemeFactory#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_argsTupleScheme#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserCount_argsTupleScheme#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserCount_argsTupleScheme#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_getUserCount_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount_result#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount_result#1;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_getUserCount_result#2;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_getUserCount_result#2;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#clear#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccess#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#unsetSuccess#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSetSuccess#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#isSetSuccess#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccessIsSet#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="e#102063#102091#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_resultStandardSchemeFactory#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserCount_resultStandardSchemeFactory#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_resultStandardScheme#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserCount_resultStandardScheme#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserCount_resultStandardScheme#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_resultTupleSchemeFactory#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_getUserCount_resultTupleSchemeFactory#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_getUserCount_resultTupleScheme#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_getUserCount_resultTupleScheme#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_getUserCount_resultTupleScheme#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_getUserCount_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById_args#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById_args#1;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_checkUserById_args#2;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById_args#2;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#clear#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#setUserid#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#unsetUserid#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSetUserid#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#isSetUserid#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#setUseridIsSet#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="e#114844#114872#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_argsStandardSchemeFactory#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_checkUserById_argsStandardSchemeFactory#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_argsStandardScheme#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_checkUserById_argsStandardScheme#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_checkUserById_argsStandardScheme#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_argsTupleSchemeFactory#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_checkUserById_argsTupleSchemeFactory#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_argsTupleScheme#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_checkUserById_argsTupleScheme#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_checkUserById_argsTupleScheme#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_checkUserById_args#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftId#0;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#findByThriftIdOrThrow#0;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#findByName#0;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#_Fields#0;class#_Fields#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="initializer##0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById_result#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById_result#1;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#lg_userinfo_checkUserById_result#2;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#lg_userinfo_checkUserById_result#2;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#clear#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccess#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#unsetSuccess#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSetSuccess#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#isSetSuccess#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#setSuccessIsSet#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#setFieldValue#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#getFieldValue#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="docComment;method#isSet#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#isSet#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#equals#1;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#hashCode#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#compareTo#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#toString#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#validate#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="e#127687#127715#0" />
+            <element signature="method#writeObject#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#readObject#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_resultStandardSchemeFactory#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_checkUserById_resultStandardSchemeFactory#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_resultStandardScheme#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_checkUserById_resultStandardScheme#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_checkUserById_resultStandardScheme#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_resultTupleSchemeFactory#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#getScheme#0;class#lg_userinfo_checkUserById_resultTupleSchemeFactory#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="class#lg_userinfo_checkUserById_resultTupleScheme#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#write#0;class#lg_userinfo_checkUserById_resultTupleScheme#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#read#0;class#lg_userinfo_checkUserById_resultTupleScheme#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+            <element signature="method#scheme#0;class#lg_userinfo_checkUserById_result#0;class#UserInfoService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TSerializable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/client/UserInfoClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thrift/src/main/java/com/test/userinfo/server/UserInfoServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/protocol/TProtocol.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TBaseProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/scheme/IScheme.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TServiceClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/threadpool/src/threadpool/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/springmvc/pom.xml">
+    <entry file="file://$PROJECT_DIR$/threadpool/src/threadpool/ExecuteCallable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+        <state relative-caret-position="105">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/threadpool/src/threadpool/ConcurrentTaskExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
           <folding>
-            <element signature="n#dependency#11;n#dependencies#0;n#project#0;n#!!top" />
-            <element signature="n#dependency#12;n#dependencies#0;n#project#0;n#!!top" />
-            <element signature="n#dependency#13;n#dependencies#0;n#project#0;n#!!top" />
-            <element signature="n#build#0;n#project#0;n#!!top" />
+            <element signature="e#584#593#0" expanded="true" />
+            <element signature="e#661#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="62" lean-forward="true" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/test/WeightRandom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding>
+            <element signature="e#323#334#0" expanded="true" />
+            <element signature="e#1033#1056#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2070,11 +2800,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>springmvc</last-edited>
+          <last-edited>thrift</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.25" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -2094,7 +2825,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -20,6 +20,7 @@
         <module name="springmvc" />
         <module name="springtemplate" />
         <module name="submitdemo" />
+        <module name="thrift" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -36,6 +37,7 @@
       <module name="springmvc" target="1.8" />
       <module name="springtemplate" target="1.7" />
       <module name="submitdemo" target="1.8" />
+      <module name="thrift" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/springtemplate/springtemplate.iml" filepath="$PROJECT_DIR$/springtemplate/springtemplate.iml" />
       <module fileurl="file://D:/Codes/IdeaSpaces/my-project/dubbo/submitdemo.iml" filepath="D:/Codes/IdeaSpaces/my-project/dubbo/submitdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/threadpool/threadpool.iml" filepath="$PROJECT_DIR$/threadpool/threadpool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thrift/thrift.iml" filepath="$PROJECT_DIR$/thrift/thrift.iml" />
     </modules>
   </component>
 </project>

@@ -35,6 +35,7 @@
         <option value="$PROJECT_DIR$/dubbo/pom.xml" />
         <option value="$PROJECT_DIR$/quartz/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/thrift/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
