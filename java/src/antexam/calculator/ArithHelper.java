@@ -1,4 +1,4 @@
-package ant.calculator;
+package antexam.calculator;
 
 public class ArithHelper {
     // 默认除法运算精度

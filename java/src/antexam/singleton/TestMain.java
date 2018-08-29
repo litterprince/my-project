@@ -1,4 +1,4 @@
-package ant.singleton;
+package antexam.singleton;
 
 import java.util.Scanner;
 

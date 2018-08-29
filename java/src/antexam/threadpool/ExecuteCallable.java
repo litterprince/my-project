@@ -1,4 +1,4 @@
-package ant.threadpool;
+package antexam.threadpool;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

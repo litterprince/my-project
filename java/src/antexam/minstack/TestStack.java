@@ -1,4 +1,4 @@
-package ant.minstack;
+package antexam.minstack;
 
 import java.util.Scanner;
 

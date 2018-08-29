@@ -1,4 +1,4 @@
-package ant.minstack;
+package antexam.minstack;
 
 public class AntMinStack {
     private int[] data = null;

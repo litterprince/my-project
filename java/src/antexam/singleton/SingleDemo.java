@@ -1,4 +1,4 @@
-package ant.singleton;
+package antexam.singleton;
 
 public class SingleDemo {
     private static SingleDemo s = null;
