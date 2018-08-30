@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05736dd7-059a-4935-b564-840007f7ebcb" name="Default" comment="&#10;DZZZ-3006">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java/java.iml" afterDir="false" />
-    </list>
+    <list default="true" id="05736dd7-059a-4935-b564-840007f7ebcb" name="Default" comment="&#10;DZZZ-3006" />
     <list id="bfc61c51-77ee-41ee-8da0-55b804b13f7a" name="ignored changelist" comment="ignored changelist" />
     <ignored path="$PROJECT_DIR$/demo/target/" />
     <ignored path="$PROJECT_DIR$/dbmt/target/" />
@@ -82,7 +79,7 @@
         <counts>
           <entry key="class" value="59" />
           <entry key="iml" value="3" />
-          <entry key="java" value="124" />
+          <entry key="java" value="125" />
           <entry key="pom" value="5" />
           <entry key="properties" value="1" />
           <entry key="thrift" value="4" />
@@ -94,7 +91,7 @@
         <counts>
           <entry key="CLASS" value="59" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="124" />
+          <entry key="JAVA" value="125" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="11" />
@@ -213,7 +210,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/java/src/com/bio/BIOServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -222,6 +219,15 @@
                 <element signature="imports" expanded="true" />
                 <element signature="method#handler#0;class#BIOServer#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java/src/com/reflect/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -537,6 +543,13 @@
             </path>
             <path>
               <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="reflect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="thrift" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -705,7 +718,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/jm/IdeaProjects/myProject/thrift/src/main/java/com/test/hello/HelloServiceServer.java&#10;TProt&#9;FILE&#9;jar:///Users/jm/.m2/repository/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/protocol/TProtocol.class&#10;TBase&#9;FILE&#9;jar:///Users/jm/.m2/repository/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TBase.class&#10;AnnotatedElementUtils&#9;PSI&#9;JAVA://org.springframework.core.annotation.AnnotatedElementUtils&#10;spring-mongo.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/resources/spring/spring-mongo.xml&#10;pom.&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;web&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/redis/src/main/webapp/WEB-INF/web.xml&#10;spring-mvc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-mvc.xml&#10;TestC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;datas&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/datasource.properties&#10;spring-jdbc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-jdbc.xml&#10;web.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/webapp/WEB-INF/web.xml&#10;spring-s&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-shiro.xml&#10;spring-con&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-context.xml&#10;Test&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;pom&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/pom.xml&#10;spring-c&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-context.xml&#10;po&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/pom.xml&#10;UserB&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/java/com/spring/po/UserBean.java&#10;mon&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;spring-j&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-jdbc.xml&#10;cglib&#9;PSI&#9;JAVA://org.springframework.aop.framework.CglibAopProxy&#10;openoffice&#9;PSI&#9;JAVA://com.inspur.license.utilities.OpenOfficePro&#10;typenobasic/infor&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseT*.js&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/resource/datasource.properties&#10;LicenceCont&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/servicectl/LicenceBaseController.java&#10;input&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;edit&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;editTY&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editTY.html&#10;LicenseContentS&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;LicenseContentSer&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;BaseContr&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenceBaseController&#10;Data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/abutinterface/DataUtil.java&#10;inputSer&#9;PSI&#9;JAVA://com.inspur.license.collection.service.InputService&#10;inputC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/collection/action/InputController.java&#10;imp&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysmanage/action/ImportController.java&#10;Import&#9;PSI&#9;JAVA://com.inspur.license.sysmanage.action.ImportController&#10;licenselibrary&#9;PSI&#9;JAVA://com.inspur.license.licenselibrary.action.LicenseLibraryController&#10;editNew&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;InputCo&#9;PSI&#9;JAVA://com.inspur.license.collection.action.InputController&#10;tongzhiweiye&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/thirdpart/signature/signtongzhiweiye/sign_tongzhiweiye.html&#10;licenseInput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;typenobasic/informa&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseinput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;Main&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/sso/MainController.java&#10;template&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;LicenseListInfo&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenseListInfo&#10;ZSShareAppService&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.ZSShareAppService&#10;LicenseShareService&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/service/LicenseShareService.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535620977089" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535622240921" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="dynamic.classpath" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
@@ -1542,7 +1555,7 @@
       <workItem from="1534814816536" duration="3108000" />
       <workItem from="1534836043467" duration="547000" />
       <workItem from="1534901691138" duration="26257000" />
-      <workItem from="1535101578842" duration="37779000" />
+      <workItem from="1535101578842" duration="38734000" />
     </task>
     <task id="LOCAL-00111" summary="DZZZ-2902">
       <created>1513836075825</created>
@@ -1923,7 +1936,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1488002000" />
+    <option name="totallyTimeSpent" value="1488957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1936,8 +1949,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="981" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.42071196" visible="true" weight="0.30511183" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42071196" visible="true" weight="0.30511183" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -2095,13 +2109,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/java/src/com/socket/thread/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/scheme/IScheme.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -3062,6 +3069,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#handler#0;class#BIOServer#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/reflect/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
