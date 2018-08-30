@@ -1,4 +1,4 @@
-package com.gc;
+package com.other;
 
 public class GCLogDemo {
     public static void main(String[] args) {

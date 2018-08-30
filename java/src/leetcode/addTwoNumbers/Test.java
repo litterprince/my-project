@@ -1,4 +1,4 @@
-package com.leetcode.addTwoNumbers;
+package leetcode.addTwoNumbers;
 
 public class Test {
     public static void main(String[] args) {
