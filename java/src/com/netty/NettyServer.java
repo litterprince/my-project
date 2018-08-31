@@ -28,7 +28,7 @@ public class NettyServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch) throws Exception {
+                        public void initChannel(SocketChannel ch) {
                             // 注册handler
                             ch.pipeline().addLast(new NettyServerHandler());
                         }
@@ -48,7 +48,7 @@ public class NettyServer {
 
     public class NettyServerHandler extends ChannelInboundHandlerAdapter {
         @Override
-        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        public void channelRead(ChannelHandlerContext ctx, Object msg) {
             System.out.println("NettyServerHandler.channelRead");
             ByteBuf result = (ByteBuf) msg;
             byte[] result1 = new byte[result.readableBytes()];
@@ -70,14 +70,14 @@ public class NettyServer {
         }
 
         @Override
-        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
             // 当出现异常就关闭连接
             cause.printStackTrace();
             ctx.close();
         }
 
         @Override
-        public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        public void channelReadComplete(ChannelHandlerContext ctx) {
             ctx.flush();
         }
     }
