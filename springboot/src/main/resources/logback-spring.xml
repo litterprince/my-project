@@ -26,7 +26,7 @@
         <appender-ref ref="file" />
     </root>
 
-    <!--<logger name="com.example.example1"/>
+    <!--<logger name="com.other.example1"/>
     <logger name="com.example1.action.LoginController" level="WARN" additivity="false">
         <appender-ref ref="console"/>
     </logger>-->

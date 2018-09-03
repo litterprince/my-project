@@ -47,7 +47,7 @@ $(function () {
         + '</div>'
         + '</div>'
         + '</div>'
-        + '<div id="scrollspy-example" style="height: 100px; overflow: auto;">'
+        + '<div id="scrollspy-other" style="height: 100px; overflow: auto;">'
         + '<div style="height: 200px;">'
         + '<h4 id="masthead">Overview</h4>'
         + '<p style="height: 200px">'
@@ -66,7 +66,7 @@ $(function () {
 
     var $scrollspy = $section
       .show()
-      .find('#scrollspy-example')
+      .find('#scrollspy-other')
       .bootstrapScrollspy({ target: '#ss-target' })
 
     $scrollspy.on('scroll.bs.scrollspy', function () {

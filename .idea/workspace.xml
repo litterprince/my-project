@@ -7,7 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05736dd7-059a-4935-b564-840007f7ebcb" name="Default" comment="&#10;DZZZ-3006">
-      <change beforePath="$PROJECT_DIR$/java/src/com/netty/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/com/netty/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/bootstrap/js/tests/unit/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/bootstrap/js/tests/unit/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/bootstrap/js/tests/unit/scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/bootstrap/js/tests/unit/scrollspy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/bootstrap/js/tests/vendor/qunit.js" beforeDir="false" afterPath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/bootstrap/js/tests/vendor/qunit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/jquery.form.js" beforeDir="false" afterPath="$PROJECT_DIR$/dbmt/src/main/resources/static/js/jquery.form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/src/main/resources/static/js/bootstrap/js/tests/unit/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/resources/static/js/bootstrap/js/tests/unit/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/src/main/resources/static/js/bootstrap/js/tests/unit/scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/resources/static/js/bootstrap/js/tests/unit/scrollspy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/src/main/resources/static/js/bootstrap/js/tests/vendor/qunit.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/resources/static/js/bootstrap/js/tests/vendor/qunit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/src/main/resources/static/js/jquery.form.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/resources/static/js/jquery.form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/com/io/nio/NIOClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/com/io/nio/NIOClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/com/io/nio/NIOServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/com/io/nio/NIOServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/springboot/config/MasterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/springboot/config/MasterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/static/jquery-3.2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/static/jquery-3.2.1.js" afterDir="false" />
     </list>
     <list id="bfc61c51-77ee-41ee-8da0-55b804b13f7a" name="ignored changelist" comment="ignored changelist" />
     <ignored path="$PROJECT_DIR$/demo/target/" />
@@ -69,19 +82,20 @@
     <session id="1854581169">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="63" />
+          <entry key="class" value="65" />
           <entry key="iml" value="3" />
-          <entry key="java" value="132" />
+          <entry key="java" value="141" />
           <entry key="pom" value="5" />
           <entry key="properties" value="1" />
           <entry key="thrift" value="4" />
@@ -91,9 +105,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="63" />
+          <entry key="CLASS" value="65" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="132" />
+          <entry key="JAVA" value="141" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="11" />
@@ -102,7 +116,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="java" value="1068" />
+          <entry key="java" value="1201" />
           <entry key="properties" value="2" />
           <entry key="thrift" value="55" />
           <entry key="xml" value="11" />
@@ -110,7 +124,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1068" />
+          <entry key="JAVA" value="1201" />
           <entry key="PLAIN_TEXT" value="73" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="11" />
@@ -125,34 +139,36 @@
     <favorites_list name="inspur" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyClient.java">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java/src/com/io/other/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+            <state relative-caret-position="150">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#636#881#0" expanded="true" />
-                <element signature="e#880#881#0" expanded="true" />
+                <element signature="method#ioExample#0;class#test#0" />
+                <element signature="method#mo#0;class#test#0" />
+                <element signature="method#channelDemo#0;class#test#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyServer.java">
+        <entry file="file://$PROJECT_DIR$/java/src/com/io/nio/NIOClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-              <folding>
-                <element signature="e#189#225#0" />
-                <element signature="e#933#1259#0" expanded="true" />
-                <element signature="e#1258#1259#0" expanded="true" />
-                <element signature="method#exceptionCaught#0;class#NettyServerHandler#0;class#NettyServer#0" />
-                <element signature="e#2891#2892#0" expanded="true" />
-                <element signature="e#2926#2927#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="632">
+              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java/src/com/io/nio/NIOServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="711">
+              <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -297,10 +313,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/threadpool/src/threadpool/ConcurrentTaskExecutor.java" />
-        <option value="$PROJECT_DIR$/springmvc/src/main/resources/datasource.properties" />
-        <option value="$PROJECT_DIR$/java/src/test/ConfigNodeStatus.java" />
-        <option value="$PROJECT_DIR$/java/src/test/test.java" />
         <option value="$PROJECT_DIR$/threadpool/src/thread/TicketRunnable.java" />
         <option value="$PROJECT_DIR$/thrift/src/main/java/com.test/service/Hello.thrift" />
         <option value="$PROJECT_DIR$/thrift/src/main/java/com.test/service/HelloServiceImpl.java" />
@@ -348,6 +360,10 @@
         <option value="$PROJECT_DIR$/java/src/com/bio/BIOServer.java" />
         <option value="$PROJECT_DIR$/java/src/com/netty/NettyClient.java" />
         <option value="$PROJECT_DIR$/java/src/com/netty/NettyServer.java" />
+        <option value="$PROJECT_DIR$/java/src/com/io/example/test.java" />
+        <option value="$PROJECT_DIR$/java/src/com/io/other/test.java" />
+        <option value="$PROJECT_DIR$/java/src/com/io/nio/NIOClient.java" />
+        <option value="$PROJECT_DIR$/java/src/com/io/nio/NIOServer.java" />
       </list>
     </option>
   </component>
@@ -451,48 +467,46 @@
             </path>
             <path>
               <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrift" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrift" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrift" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrift" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrift" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrift" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="nio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="socket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="socket" type="462c0819:PsiDirectoryNode" />
+              <item name="thread" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Problems">
           <expand>
@@ -601,7 +615,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -619,7 +632,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/jm/IdeaProjects/myProject/thrift/src/main/java/com/test/hello/HelloServiceServer.java&#10;TProt&#9;FILE&#9;jar:///Users/jm/.m2/repository/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/protocol/TProtocol.class&#10;TBase&#9;FILE&#9;jar:///Users/jm/.m2/repository/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TBase.class&#10;AnnotatedElementUtils&#9;PSI&#9;JAVA://org.springframework.core.annotation.AnnotatedElementUtils&#10;spring-mongo.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/resources/spring/spring-mongo.xml&#10;pom.&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;web&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/redis/src/main/webapp/WEB-INF/web.xml&#10;spring-mvc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-mvc.xml&#10;TestC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;datas&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/datasource.properties&#10;spring-jdbc&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-jdbc.xml&#10;web.xml&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/webapp/WEB-INF/web.xml&#10;spring-s&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-shiro.xml&#10;spring-con&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/main/resources/spring/spring-context.xml&#10;Test&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/src/test/java/TestController.java&#10;pom&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/shiro/pom.xml&#10;spring-c&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-context.xml&#10;po&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/pom.xml&#10;UserB&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/src/main/java/com/spring/po/UserBean.java&#10;mon&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/mongodb/pom.xml&#10;spring-j&#9;FILE&#9;file://D:/Codes/IdeaSpaces/my-project/springmvc/src/main/resources/spring/spring-jdbc.xml&#10;cglib&#9;PSI&#9;JAVA://org.springframework.aop.framework.CglibAopProxy&#10;openoffice&#9;PSI&#9;JAVA://com.inspur.license.utilities.OpenOfficePro&#10;typenobasic/infor&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseT*.js&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/resource/datasource.properties&#10;LicenceCont&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/servicectl/LicenceBaseController.java&#10;input&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;edit&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;editTY&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editTY.html&#10;LicenseContentS&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;LicenseContentSer&#9;PSI&#9;JAVA://com.inspur.license.mainpage.action.SearchPageController#licenseContentsService&#10;BaseContr&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenceBaseController&#10;Data&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/abutinterface/DataUtil.java&#10;inputSer&#9;PSI&#9;JAVA://com.inspur.license.collection.service.InputService&#10;inputC&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/collection/action/InputController.java&#10;imp&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysmanage/action/ImportController.java&#10;Import&#9;PSI&#9;JAVA://com.inspur.license.sysmanage.action.ImportController&#10;licenselibrary&#9;PSI&#9;JAVA://com.inspur.license.licenselibrary.action.LicenseLibraryController&#10;editNew&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/collection/input/editNew.html&#10;InputCo&#9;PSI&#9;JAVA://com.inspur.license.collection.action.InputController&#10;tongzhiweiye&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/thirdpart/signature/signtongzhiweiye/sign_tongzhiweiye.html&#10;licenseInput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;typenobasic/informa&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/WEB-INF/pages/license/templete/typeNoBasic/information.html&#10;licenseinput&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licenseinput/licenseInput.js&#10;Main&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/sso/MainController.java&#10;template&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/WebRoot/assets/js/licensetemplate/licenseTemplate.js&#10;LicenseListInfo&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.LicenseListInfo&#10;ZSShareAppService&#9;PSI&#9;JAVA://com.inspur.license.sysinterface.servicectl.ZSShareAppService&#10;LicenseShareService&#9;FILE&#9;file://D:/Codes/IdeaSpaces/inspur/Inspur.Dzzw.WebLicense/src/com/inspur/license/sysinterface/service/LicenseShareService.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535706206782" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535959713908" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="dynamic.classpath" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
@@ -681,7 +694,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NettyClient">
+  <component name="RunManager" selected="Application.NIOClient">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -689,12 +702,12 @@
       </method>
     </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.socket.demo.Client" />
+      <option name="MAIN_CLASS_NAME" value="com.socket.simple.Client" />
       <module name="java" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.socket.demo.*" />
+          <option name="PATTERN" value="com.socket.simple.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -710,6 +723,34 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.other.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.io.nio.NIOClient" />
+      <module name="java" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.io.nio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.io.nio.NIOServer" />
+      <module name="java" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.io.nio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -745,20 +786,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.socket.demo.Server" />
-      <module name="java" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.socket.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TicketRunnable" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.TicketRunnable" />
       <module name="threadpool" />
@@ -766,20 +793,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="thread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WeightRandom" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.other.WeightRandom" />
-      <module name="java" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.other.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1245,19 +1258,19 @@
       <item itemvalue="Tomcat Server.shiro" />
       <item itemvalue="Tomcat Server.mongodb" />
       <item itemvalue="Tomcat Server.quartz" />
-      <item itemvalue="Application.WeightRandom" />
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.NettyServer" />
       <item itemvalue="Application.NettyClient" />
+      <item itemvalue="Application.NIOServer" />
+      <item itemvalue="Application.NIOClient" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NIOClient" />
+        <item itemvalue="Application.NIOServer" />
         <item itemvalue="Application.NettyClient" />
         <item itemvalue="Application.NettyServer" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="Application.WeightRandom" />
       </list>
     </recent_temporary>
   </component>
@@ -1456,7 +1469,8 @@
       <workItem from="1534814816536" duration="3108000" />
       <workItem from="1534836043467" duration="547000" />
       <workItem from="1534901691138" duration="26257000" />
-      <workItem from="1535101578842" duration="44379000" />
+      <workItem from="1535101578842" duration="47416000" />
+      <workItem from="1535938957291" duration="6924000" />
     </task>
     <task id="LOCAL-00111" summary="DZZZ-2902">
       <created>1513836075825</created>
@@ -1837,7 +1851,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1494602000" />
+    <option name="totallyTimeSpent" value="1504563000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1850,8 +1864,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="981" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42071196" visible="true" weight="0.30511183" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42071196" visible="true" weight="0.30830672" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1861,7 +1876,7 @@
       <window_info id="Web" order="7" sideWeight="0.579288" side_tool="true" weight="0.2322239" />
       <window_info id="JavaEE:App" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32903227" />
-      <window_info active="true" anchor="bottom" content_ui="combo" id="Run Dashboard" order="1" sideWeight="0.5266241" visible="true" weight="0.6692913" />
+      <window_info anchor="bottom" content_ui="combo" id="Run Dashboard" order="1" sideWeight="0.5266241" weight="0.6692913" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32845894" />
       <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49946752" weight="0.66816646" />
@@ -1973,12 +1988,6 @@
           <properties />
           <option name="timeStamp" value="774" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/java/src/com/nio/NIOClient.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="779" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -2009,41 +2018,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TSerializable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/ProcessFunction.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TServiceClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0.jar!/org/apache/thrift/TBaseProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/thrift/libthrift/0.10.0/libthrift-0.10.0-sources.jar!/org/apache/thrift/TBaseProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -2072,23 +2046,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/socket/demo/Server.java">
+    <entry file="file://$PROJECT_DIR$/java/src/com/socket/simple/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/socket/demo/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2234,10 +2195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-          <folding>
-            <element signature="e#2983#2984#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2266,16 +2223,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="88" column="82" lean-forward="true" selection-start-line="88" selection-start-column="82" selection-end-line="88" selection-end-column="82" />
-          <folding>
-            <element signature="e#1366#1367#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/proxy/static/IUserDao.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/proxy/static/IUserDao.java" />
     <entry file="file://$PROJECT_DIR$/java/src/com/proxy/simple/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -2294,10 +2245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="e#117#118#0" expanded="true" />
-            <element signature="e#170#171#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2333,10 +2280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2354,31 +2297,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/nio/NIOClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/bio/BIOClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="41" column="76" lean-forward="true" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/nio/NIOServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/bio/BIOSimpleServer.java">
+    <entry file="file://$PROJECT_DIR$/java/src/com/io/bio/BIOSimpleServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
@@ -2390,7 +2309,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/bio/BIOServer.java">
+    <entry file="file://$PROJECT_DIR$/java/src/com/io/bio/BIOServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
@@ -2408,26 +2327,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyClientHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="34" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="40" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyClientHandler.java" />
+    <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyServerHandler.java" />
     <entry file="file://$PROJECT_DIR$/java/src/leetcode/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -2474,10 +2375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1289">
           <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
-          <folding>
-            <element signature="e#3021#3022#0" expanded="true" />
-            <element signature="e#3065#3066#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2487,21 +2384,6 @@
           <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding>
-            <element signature="e#189#225#0" />
-            <element signature="e#933#1259#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="method#exceptionCaught#0;class#NettyServerHandler#0;class#NettyServer#0" />
-            <element signature="e#2891#2892#0" expanded="true" />
-            <element signature="e#2926#2927#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2520,15 +2402,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/io/test.java" />
+    <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding>
+            <element signature="e#189#225#0" />
+            <element signature="e#933#1259#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="method#exceptionCaught#0;class#NettyServerHandler#0;class#NettyServer#0" />
+            <element signature="e#2891#2892#0" expanded="true" />
+            <element signature="e#2926#2927#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/java/src/com/netty/NettyClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="224">
+          <caret line="55" column="11" lean-forward="true" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#636#881#0" expanded="true" />
             <element signature="e#880#881#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/socket/simple/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/io/bio/BIOClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/rt.jar!/com/sun/xml/internal/ws/api/message/Packet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/java/lib/netty/netty-all-4.1.29.Final.jar!/io/netty/util/collection/ByteObjectHashMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#16810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+          <folding>
+            <element signature="e#2496#2497#0" expanded="true" />
+            <element signature="e#2561#2562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/io/other/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ioExample#0;class#test#0" />
+            <element signature="method#mo#0;class#test#0" />
+            <element signature="method#channelDemo#0;class#test#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/io/nio/NIOClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/com/io/nio/NIOServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
         </state>
       </provider>
     </entry>

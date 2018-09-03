@@ -1288,7 +1288,7 @@ QUnit.assert = Assert.prototype = {
 	 * Asserts rough true-ish result.
 	 * @name ok
 	 * @function
-	 * @example ok( "asdfasdf".length > 5, "There must be at least 5 chars" );
+	 * @other ok( "asdfasdf".length > 5, "There must be at least 5 chars" );
 	 */
 	ok: function( result, message ) {
 		message = message || ( result ? "okay" : "failed, expected argument to be truthy, was: " +
@@ -1301,7 +1301,7 @@ QUnit.assert = Assert.prototype = {
 	 * Prints out both actual and expected values.
 	 * @name equal
 	 * @function
-	 * @example equal( format( "{0} bytes.", 2), "2 bytes.", "replaces {0} with next argument" );
+	 * @other equal( format( "{0} bytes.", 2), "2 bytes.", "replaces {0} with next argument" );
 	 */
 	equal: function( actual, expected, message ) {
 		/*jshint eqeqeq:false */
