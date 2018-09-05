@@ -47,18 +47,19 @@ public class NIOClient {
         byteBuffer.put(info.getBytes("UTF-8"));
         byteBuffer.flip();
         clientChannel.write(byteBuffer);
-        //clientChannel.register(key.selector(),SelectionKey.OP_READ);
-        clientChannel.close();
+        clientChannel.register(key.selector(),SelectionKey.OP_READ);
+        //clientChannel.close();
     }
 
     public void doRead(SelectionKey key) throws IOException {
         SocketChannel clientChannel = (SocketChannel) key.channel();
+        byteBuffer.clear();
         clientChannel.read(byteBuffer);
         byte[] data = byteBuffer.array();
         String msg = new String(data).trim();
-        System.out.println("服务端发送消息："+msg);
-        clientChannel.close();
-        key.selector().close();
+        System.out.println("从服务端发送过来的消息是："+msg);
+        //clientChannel.close();
+        //key.selector().close();
     }
 
     public static void main(String[] args) throws IOException {

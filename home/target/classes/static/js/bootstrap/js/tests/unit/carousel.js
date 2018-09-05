@@ -49,11 +49,11 @@ $(function () {
 
   QUnit.test('should reset when slide is prevented', function (assert) {
     assert.expect(6)
-    var carouselHTML = '<div id="carousel-example-generic" class="carousel slide">'
+    var carouselHTML = '<div id="carousel-other-generic" class="carousel slide">'
         + '<ol class="carousel-indicators">'
-        + '<li data-target="#carousel-example-generic" data-slide-to="0" class="active"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="1"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="2"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="0" class="active"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="1"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="2"/>'
         + '</ol>'
         + '<div class="carousel-inner">'
         + '<div class="item active">'
@@ -66,8 +66,8 @@ $(function () {
         + '<div class="carousel-caption"/>'
         + '</div>'
         + '</div>'
-        + '<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"/>'
-        + '<a class="right carousel-control" href="#carousel-example-generic" data-slide="next"/>'
+        + '<a class="left carousel-control" href="#carousel-other-generic" data-slide="prev"/>'
+        + '<a class="right carousel-control" href="#carousel-other-generic" data-slide="next"/>'
         + '</div>'
     var $carousel = $(carouselHTML)
 
@@ -561,11 +561,11 @@ $(function () {
 
   QUnit.test('should wrap around from end to start when wrap option is true', function (assert) {
     assert.expect(3)
-    var carouselHTML = '<div id="carousel-example-generic" class="carousel slide" data-wrap="true">'
+    var carouselHTML = '<div id="carousel-other-generic" class="carousel slide" data-wrap="true">'
         + '<ol class="carousel-indicators">'
-        + '<li data-target="#carousel-example-generic" data-slide-to="0" class="active"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="1"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="2"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="0" class="active"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="1"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="2"/>'
         + '</ol>'
         + '<div class="carousel-inner">'
         + '<div class="item active" id="one">'
@@ -578,8 +578,8 @@ $(function () {
         + '<div class="carousel-caption"/>'
         + '</div>'
         + '</div>'
-        + '<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"/>'
-        + '<a class="right carousel-control" href="#carousel-example-generic" data-slide="next"/>'
+        + '<a class="left carousel-control" href="#carousel-other-generic" data-slide="prev"/>'
+        + '<a class="right carousel-control" href="#carousel-other-generic" data-slide="next"/>'
         + '</div>'
     var $carousel = $(carouselHTML)
     var getActiveId = function () { return $carousel.find('.item.active').attr('id') }
@@ -606,11 +606,11 @@ $(function () {
 
   QUnit.test('should wrap around from start to end when wrap option is true', function (assert) {
     assert.expect(1)
-    var carouselHTML = '<div id="carousel-example-generic" class="carousel slide" data-wrap="true">'
+    var carouselHTML = '<div id="carousel-other-generic" class="carousel slide" data-wrap="true">'
         + '<ol class="carousel-indicators">'
-        + '<li data-target="#carousel-example-generic" data-slide-to="0" class="active"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="1"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="2"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="0" class="active"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="1"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="2"/>'
         + '</ol>'
         + '<div class="carousel-inner">'
         + '<div class="item active" id="one">'
@@ -623,8 +623,8 @@ $(function () {
         + '<div class="carousel-caption"/>'
         + '</div>'
         + '</div>'
-        + '<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"/>'
-        + '<a class="right carousel-control" href="#carousel-example-generic" data-slide="next"/>'
+        + '<a class="left carousel-control" href="#carousel-other-generic" data-slide="prev"/>'
+        + '<a class="right carousel-control" href="#carousel-other-generic" data-slide="next"/>'
         + '</div>'
     var $carousel = $(carouselHTML)
 
@@ -640,11 +640,11 @@ $(function () {
 
   QUnit.test('should stay at the end when the next method is called and wrap is false', function (assert) {
     assert.expect(3)
-    var carouselHTML = '<div id="carousel-example-generic" class="carousel slide" data-wrap="false">'
+    var carouselHTML = '<div id="carousel-other-generic" class="carousel slide" data-wrap="false">'
         + '<ol class="carousel-indicators">'
-        + '<li data-target="#carousel-example-generic" data-slide-to="0" class="active"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="1"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="2"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="0" class="active"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="1"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="2"/>'
         + '</ol>'
         + '<div class="carousel-inner">'
         + '<div class="item active" id="one">'
@@ -657,8 +657,8 @@ $(function () {
         + '<div class="carousel-caption"/>'
         + '</div>'
         + '</div>'
-        + '<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"/>'
-        + '<a class="right carousel-control" href="#carousel-example-generic" data-slide="next"/>'
+        + '<a class="left carousel-control" href="#carousel-other-generic" data-slide="prev"/>'
+        + '<a class="right carousel-control" href="#carousel-other-generic" data-slide="next"/>'
         + '</div>'
     var $carousel = $(carouselHTML)
     var getActiveId = function () { return $carousel.find('.item.active').attr('id') }
@@ -686,11 +686,11 @@ $(function () {
 
   QUnit.test('should stay at the start when the prev method is called and wrap is false', function (assert) {
     assert.expect(1)
-    var carouselHTML = '<div id="carousel-example-generic" class="carousel slide" data-wrap="false">'
+    var carouselHTML = '<div id="carousel-other-generic" class="carousel slide" data-wrap="false">'
         + '<ol class="carousel-indicators">'
-        + '<li data-target="#carousel-example-generic" data-slide-to="0" class="active"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="1"/>'
-        + '<li data-target="#carousel-example-generic" data-slide-to="2"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="0" class="active"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="1"/>'
+        + '<li data-target="#carousel-other-generic" data-slide-to="2"/>'
         + '</ol>'
         + '<div class="carousel-inner">'
         + '<div class="item active" id="one">'
@@ -703,8 +703,8 @@ $(function () {
         + '<div class="carousel-caption"/>'
         + '</div>'
         + '</div>'
-        + '<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"/>'
-        + '<a class="right carousel-control" href="#carousel-example-generic" data-slide="next"/>'
+        + '<a class="left carousel-control" href="#carousel-other-generic" data-slide="prev"/>'
+        + '<a class="right carousel-control" href="#carousel-other-generic" data-slide="next"/>'
         + '</div>'
     var $carousel = $(carouselHTML)
 
