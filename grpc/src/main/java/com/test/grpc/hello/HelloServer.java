@@ -1,15 +1,14 @@
 package com.test.grpc.hello;
 
 import io.grpc.BindableService;
-import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
 import java.io.IOException;
 
-public class HelloWorldServer {
+public class HelloServer {
     private int port = 8051;
-    private Server server;
+    private io.grpc.Server server;
 
     private void start() throws IOException {
         server = ServerBuilder.forPort(port)
@@ -21,7 +20,7 @@ public class HelloWorldServer {
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.err.println("*** shutting down gRPC server since JVM is shutting down");
-            HelloWorldServer.this.stop();
+            HelloServer.this.stop();
             System.err.println("*** server shut down");
         }));
     }
@@ -39,13 +38,11 @@ public class HelloWorldServer {
         }
     }
 
-
     public static void main(String[] args) throws IOException, InterruptedException {
-        final HelloWorldServer server = new HelloWorldServer();
+        final HelloServer server = new HelloServer();
         server.start();
         server.blockUntilShutdown();
     }
-
 
     // 实现 定义一个实现服务接口的类
     private class GreeterImpl extends GreeterGrpc.GreeterImplBase {

@@ -8,8 +8,8 @@
     <context:property-placeholder location="classpath:mongodb.properties" ignore-unresolvable="true"/>
 
     <!-- 定义mongo对象，对应的是mongodb官方jar包中的Mongo，replica-set设置集群副本的ip地址和端口 host="${mongo.host}" port="${mongo.port}" -->
-    <mongo:mongo-client id="mongoClient" replica-set="${mongo.host}" credentials="${mongo.user}:${mongo.pwd}@${mongo.defaultDbName}">
-        <mongo:client-options
+    <mongo:mongo-helloClient id="mongoClient" replica-set="${mongo.host}" credentials="${mongo.user}:${mongo.pwd}@${mongo.defaultDbName}">
+        <mongo:helloClient-options
                 connections-per-host="${mongo.connectionsPerHost}"
                 min-connections-per-host="${mongo.minConnectionsPerHost}"
                 threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
@@ -26,9 +26,9 @@
                 heartbeat-frequency="${mongo.heartbeatFrequency}"
                 read-preference="SECONDARY_PREFERRED"
         />
-    </mongo:mongo-client>
+    </mongo:mongo-helloClient>
 
-    <!--<mongo:mongo-client id="mongoClient" host="${mongo.host}" port="${mongo.port}" credentials="${mongo.user}:${mongo.pwd}@${mongo.defaultDbName}">-->
+    <!--<mongo:mongo-helloClient id="mongoClient" host="${mongo.host}" port="${mongo.port}" credentials="${mongo.user}:${mongo.pwd}@${mongo.defaultDbName}">-->
     <!-- mongo的工厂，通过它来取得mongo实例,dbname为mongodb的数据库名，没有的话会自动创建 -->
     <mongo:db-factory id="mongoDbFactory" dbname="${mongo.defaultDbName}" mongo-ref="mongoClient"/>
     <mongo:template id="mongoTemplate" db-factory-ref="mongoDbFactory" write-concern="NORMAL"/>
