@@ -3,48 +3,22 @@ package com.thread;
 import java.util.concurrent.*;
 
 public class TestThreadPool {
-    public static void main(String[] args) {
-        Service1 myTask = new Service1(0);
-        myTask.init();
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        /*MyExecutor myTask2 = new MyExecutor();
+        myTask2.init();*/
 
-        Service2 myTask2 = new Service2();
-        myTask2.init();
+        MyExecutorFuture myExecutorFuture = new MyExecutorFuture();
+        Object object = myExecutorFuture.getResult();
+        System.out.println("object=" + object);
+        myExecutorFuture.destroy();
     }
 
-    static class Service1 {
-        private int taskNum;
-        private ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS,
-                new ArrayBlockingQueue<>(5));
-
-        public Service1(int num) {
-            this.taskNum = num;
-        }
-
-        public void init(){
-            executor.execute(() -> {
-                while(true){
-                    System.out.println("正在执行task " + taskNum);
-                    try {
-                        Thread.currentThread().sleep(2000);
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    if(taskNum == 10) break;
-                    System.out.println("task " + taskNum++ +"执行完毕");
-                }
-            });
-        }
-    }
-
-    static class Service2 {
+    static class MyExecutor {
         private boolean running = false;
         private int num = 0 ;
         private ExecutorService executor = Executors.newFixedThreadPool(3);
 
-        public Service2(){
+        public MyExecutor(){
             //add hook
             Runtime.getRuntime().addShutdownHook(new Thread(() -> destroy()));
         }
@@ -69,6 +43,26 @@ public class TestThreadPool {
         public void destroy(){
             System.out.println("shutdown!!!");
             running = false;
+            executor.shutdown();
+        }
+    }
+
+    static class MyExecutorFuture{
+        private ExecutorService executor = Executors.newFixedThreadPool(1);
+
+        public MyExecutorFuture(){
+
+        }
+
+        public Object getResult() throws ExecutionException, InterruptedException {
+            return this.submit().get();
+        }
+
+        public Future<Object> submit(){
+            return executor.submit(() -> "Halo");
+        }
+
+        public void destroy(){
             executor.shutdown();
         }
     }
