@@ -1194,7 +1194,7 @@ QUnit.pushFailure = function() {
 	return currentTest.pushFailure.apply( currentTest, arguments );
 };
 
-// Based on Java's String.hashCode, a simple but not
+// Based on Java's String.hashCode, a hello but not
 // rigorously collision resistant hashing function
 function generateHash( module, testName ) {
 	var hex,

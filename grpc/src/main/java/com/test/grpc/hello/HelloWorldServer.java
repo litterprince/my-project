@@ -1,4 +1,4 @@
-package com.test.grpc;
+package com.test.grpc.hello;
 
 import io.grpc.BindableService;
 import io.grpc.Server;
@@ -41,7 +41,6 @@ public class HelloWorldServer {
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
         final HelloWorldServer server = new HelloWorldServer();
         server.start();
         server.blockUntilShutdown();
