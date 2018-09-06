@@ -1,7 +1,5 @@
 package com.netty.mynetty;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
-
 import java.io.IOException;
 import java.nio.channels.*;
 import java.util.Iterator;
