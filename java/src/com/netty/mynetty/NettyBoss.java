@@ -6,17 +6,17 @@ import java.util.Iterator;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class NettyBoss {
-    public Executor executor;
+    public ExecutorService executor;
     protected Selector selector;
     protected AtomicBoolean wakenUp = new AtomicBoolean();
     public Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
     protected ThreadHandle threadHandle;
 
-    public NettyBoss(Executor executor, ThreadHandle threadHandle){
+    public NettyBoss(ExecutorService executor, ThreadHandle threadHandle){
         this.threadHandle = threadHandle;
         this.executor = executor;
         try {
@@ -24,8 +24,11 @@ public class NettyBoss {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //add hook
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> destroy()));
+
         executor.execute(()->{
-            while(true){
+            while(!Thread.interrupted()){
                 try {
                     wakenUp.set(false);
                     selector.select();
@@ -42,6 +45,11 @@ public class NettyBoss {
                 }
             }
         });
+    }
+
+    private void destroy() {
+        System.out.println("boss executor shutdown...");
+        executor.shutdown();
     }
 
     private void process(Selector selector) throws IOException {

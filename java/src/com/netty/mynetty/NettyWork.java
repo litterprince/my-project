@@ -10,24 +10,27 @@ import java.util.Iterator;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class NettyWork {
-    public Executor executor;
+    public ExecutorService executor;
     protected Selector selector;
     protected AtomicBoolean wakeup = new AtomicBoolean();
     public Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
 
-    public NettyWork(Executor executor){
+    public NettyWork(ExecutorService executor){
         this.executor = executor;
         try {
             this.selector = Selector.open();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //add hook
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> destroy()));
+
         executor.execute(()->{
-            while(true){
+            while(!Thread.interrupted()){
                 try {
                     wakeup.set(false);
                     selector.select();
@@ -43,6 +46,11 @@ public class NettyWork {
                 }
             }
         });
+    }
+
+    private void destroy() {
+        System.out.println("worker executor shutdown...");
+        executor.shutdown();
     }
 
     private void process(Selector selector) throws IOException {
