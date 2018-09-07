@@ -40,6 +40,13 @@ public class NettyBoss {
                         task.run();
                     }
                     this.process(selector);
+
+                    try {
+                        Thread.sleep(30);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
