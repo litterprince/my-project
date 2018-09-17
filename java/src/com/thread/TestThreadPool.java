@@ -4,13 +4,13 @@ import java.util.concurrent.*;
 
 public class TestThreadPool {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        /*MyExecutor myTask2 = new MyExecutor();
-        myTask2.init();*/
+        MyExecutor myTask2 = new MyExecutor();
+        myTask2.init();
 
-        MyExecutorFuture myExecutorFuture = new MyExecutorFuture();
+        /*MyExecutorFuture myExecutorFuture = new MyExecutorFuture();
         Object object = myExecutorFuture.getResult();
         System.out.println("object=" + object);
-        myExecutorFuture.destroy();
+        myExecutorFuture.destroy();*/
     }
 
     static class MyExecutor {
