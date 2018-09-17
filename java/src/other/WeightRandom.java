@@ -1,4 +1,4 @@
-package com.other;
+package other;
 
 import javafx.util.Pair;
 
