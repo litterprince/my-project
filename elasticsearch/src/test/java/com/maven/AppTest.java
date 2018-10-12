@@ -63,7 +63,7 @@ public class AppTest
                 //.put("client.transport.ping_timeout", 5) // 报错, ping等待时间,
                 .build();
         client = TransportClient.builder().settings(settings).build()
-                .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("172.20.4.203", 9300)))
+                .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("172.20.4.204", 9300)))
                 .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("172.20.4.201", 9300)))
                 .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("172.20.4.202", 9300)));
 
