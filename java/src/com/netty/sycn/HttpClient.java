@@ -1,4 +1,4 @@
-package com.netty.rpc;
+package com.netty.sycn;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -7,7 +7,6 @@ import com.netty.utils.MD5Util;
 import com.netty.utils.MsgMD5;
 import com.netty.utils.StringUtils;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
@@ -18,70 +17,36 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RpcClient {
+public class HttpClient {
     private static final int LARK_LENGTH_SIZE = 4;
     private static final short CLIENT_RESPONSE_TAG = 1000;
-    private SocketChannel socketChannel;
+    private ClientHandler clientHandler = new ClientHandler();
 
-    public void connect(String host, int port, ChannelHandler handler) throws Exception {
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
-
-        try {
-            Bootstrap b = new Bootstrap();
-            b.group(workerGroup);
-            b.channel(NioSocketChannel.class);
-            b.option(ChannelOption.SO_KEEPALIVE, true);
-            b.handler(new ChannelInitializer<SocketChannel>() {
-                @Override
-                public void initChannel(SocketChannel socketChannel) throws Exception {
-                    socketChannel.pipeline().addLast(handler);
-                }
-            });
-
-            // Start the client.
-            ChannelFuture future = b.connect(host, port).sync();
-
-            // Wait until the connection is closed.
-            future.channel().closeFuture().sync();
-        } catch (Exception e){
-            e.printStackTrace();
-        } finally {
-            workerGroup.shutdownGracefully();
-        }
-    }
-
-    public static class NettyClientHandler extends ChannelInboundHandlerAdapter {
-        @Override
-        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-            ByteBuf result = (ByteBuf) msg;
-            byte[] result1 = new byte[result.readableBytes()];
-            result.readBytes(result1);
-            result.release();
-            System.out.println("receive data:" + new String(result1));
-        }
-
-        @Override
-        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-            // 当出现异常就关闭连接
-            cause.printStackTrace();
-            ctx.close();
-        }
-
-        // 连接成功后，向server发送消息
-        @Override
-        public void channelActive(ChannelHandlerContext ctx) throws Exception {
-            byte[] b = getSendData();
-            //System.out.println("send data:"+ new String(b));
-            ByteBuf encoded = ctx.alloc().buffer(b.length);
-            encoded.writeBytes(b);
-            ctx.write(encoded);
-            ctx.flush();
+    public void connect(String host ,int port) throws Exception {
+        EventLoopGroup loopGroup = new NioEventLoopGroup();
+        Bootstrap b = new Bootstrap();
+        b.group(loopGroup).channel(NioSocketChannel.class).handler(new ChannelInitializer<SocketChannel>() {
+            @Override
+            protected void initChannel(SocketChannel ch) throws Exception {
+                ch.pipeline().addLast(clientHandler);
+            }
+        });
+        Channel channel = b.connect(host, port).sync().channel();
+        while (!channel.isActive()) {
+            Thread.sleep(1000);
         }
     }
 
     public static void main(String[] args) throws Exception {
-        RpcClient client = new RpcClient();
-        client.connect("127.0.0.1", 12311, new NettyClientHandler());
+        HttpClient client = new HttpClient();
+        client.connect("127.0.0.1",12311);
+        byte[] b = (byte[]) client.getBody();
+    }
+
+    public Object getBody() throws Exception {
+        ChannelPromise promise = clientHandler.sendMessage(getSendData());
+        promise.await();
+        return clientHandler.getMessage();
     }
 
     public static byte[] getSendData() {
