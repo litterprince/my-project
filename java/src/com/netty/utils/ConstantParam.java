@@ -13,4 +13,6 @@ public class ConstantParam {
     public static final String RPC_USER_APPID = "appid";
     public static final String RPC_USER_APPKEY = "appkey";
     public static final String RPC_ETCD_SERVICE = "etcdService";
+    public static final String RPC_CLASS_NAME= "className";
+    public static final String RPC_METHOD_NAME = "methodName";
 }
