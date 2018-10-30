@@ -13,12 +13,12 @@ public class Server {
             ServerSocket serverSocket = new ServerSocket(8888);
             System.out.println("服务端已启动，等待客户端连接..");
 
-            while (!Thread.interrupted()) {
+            while (true) {
                 Socket socket = serverSocket.accept();// 侦听并接受到此套接字的连接,返回一个Socket对象
                 SocketThread socketThread = new SocketThread(socket);
                 socketThread.start();
 
-                Thread.sleep(1000 * 60 * 10);
+                Thread.sleep(1000);
             }
 
         } catch (IOException e) {

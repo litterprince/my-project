@@ -22,7 +22,7 @@ public class MyExecutor {
         @Override
         public void run() {
             while (true){
-                System.out.println("task "+ num++);
+                System.out.println("task "+ num++ + ",thread name:"+Thread.currentThread().getName());
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {

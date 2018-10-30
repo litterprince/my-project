@@ -3,6 +3,7 @@ package test;
 import javafx.util.Duration;
 import sun.misc.BASE64Encoder;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -12,7 +13,16 @@ import java.util.concurrent.TimeUnit;
 
 public class Test {
     public static void main(String[] args) {
-       System.out.println(Long.parseLong("-1"));
+
+    }
+
+    private static String getMessage(){
+        StringBuilder sb = new StringBuilder();
+        int length = 188;
+        for(int i=0;i<length;i++){
+            sb.append(i);
+        }
+        return sb.toString();
     }
 
     public static void time(){
@@ -37,4 +47,7 @@ public class Test {
         System.out.println("sTime="+sTime);
     }
 
+    public static void testInteger(Integer a){
+        a++ ;
+    }
 }

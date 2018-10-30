@@ -34,14 +34,12 @@ public class Server {
             socket.shutdownOutput();//关闭输出流
 
 
-
             //关闭相对应的资源
             printWriter.close();
             outputStream.close();
             bufferedReader.close();
             inputStream.close();
             socket.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
