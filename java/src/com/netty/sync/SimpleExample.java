@@ -8,6 +8,8 @@ import com.netty.utils.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.System.exit;
+
 public class SimpleExample extends TextRpcClient {
     public static void main(String[] args) throws Exception {
         Map<String, String> conf = new HashMap<String, String>();
@@ -22,6 +24,7 @@ public class SimpleExample extends TextRpcClient {
         client.connect(conf);
         Long data = client.getDecryptData(111);
         System.out.println("data:" +data);
+        exit(0);
     }
 
     public Long getDecryptData(long data) throws Exception {

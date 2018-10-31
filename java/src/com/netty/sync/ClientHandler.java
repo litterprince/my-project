@@ -41,21 +41,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
         return promise;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ByteBuf result = (ByteBuf) msg;
-        byte[] b = new byte[result.readableBytes()];
-        result.readBytes(b);
-        message = getReceive(b);
-        promise.setSuccess();
-        result.release();
-    }
-
-    public byte[] getSendData(Map<String, String> conf, JSONArray values) {
+    private byte[] getSendData(Map<String, String> conf, JSONArray values) {
         String command = StringUtils.getString(conf.get(ConstantParam.RPC_USER_COMMAND), "");
         String etcdService = StringUtils.getString(conf.get(ConstantParam.RPC_ETCD_SERVICE), "");
         String secret = StringUtils.getString(conf.get(ConstantParam.RPC_USER_SECRET), "");
@@ -139,7 +125,23 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
         return i32out;
     }
 
-    public String getReceive(byte[] b) throws Exception {
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        ByteBuf result = (ByteBuf) msg;
+        byte[] b = new byte[result.readableBytes()];
+        result.readBytes(b);
+        message = getReceive(b);
+        promise.setSuccess();
+        result.release();
+        //关闭链路
+        ctx.close();
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    private String getReceive(byte[] b) throws Exception {
         try {
             int recTag = (short) ((b[0] & 255) << 8 | b[1] & 255);
             int totalLen = (int) ((b[2] & 255) << 24 | (b[3] & 255) << 16 | (b[4] & 255) << 8 | b[5] & 255);
