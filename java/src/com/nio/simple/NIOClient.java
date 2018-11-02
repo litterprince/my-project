@@ -1,4 +1,4 @@
-package com.io.nio;
+package com.nio.simple;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -7,7 +7,6 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
-import java.util.Set;
 
 public class NIOClient {
     private Selector selector;          //创建一个选择器
