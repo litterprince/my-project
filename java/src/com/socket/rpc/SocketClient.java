@@ -2,10 +2,10 @@ package com.socket.rpc;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.netty.utils.ConstantParam;
-import com.netty.utils.MD5Util;
-import com.netty.utils.MsgMD5;
-import com.netty.utils.StringUtils;
+import com.netty.rpc.utils.ConstantParam;
+import com.netty.rpc.utils.MD5Util;
+import com.netty.rpc.utils.MsgMD5;
+import com.netty.rpc.utils.StringUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.netty.utils;
+package com.netty.rpc.utils;
 
 import java.security.MessageDigest;
 

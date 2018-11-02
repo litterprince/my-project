@@ -1,29 +1,23 @@
-package com.netty.rpc;
+package com.netty.promise;
 
-import com.alibaba.fastjson.JSONArray;
-import com.netty.rpc.utils.ConstantParam;
-import com.netty.rpc.utils.MD5Util;
-import com.netty.rpc.utils.StringUtils;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-import java.util.Map;
-
-public class RpcClient {
+public class PromiseClient {
     private ClientHandler clientHandler = new ClientHandler();
     private final int CONNECT_TIMEOUT = 6000;
 
-    public void connect(String host, int port){
+    public PromiseClient(String host, int port) {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
             b.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, CONNECT_TIMEOUT);//连接超时时间
             b.group(workerGroup).channel(NioSocketChannel.class).handler(new ChannelInitializer<SocketChannel>() {
                 @Override
-                protected void initChannel(SocketChannel ch) {
+                protected void initChannel(SocketChannel ch)  {
                     ch.pipeline().addLast("handler", clientHandler);
                 }
             });
@@ -46,15 +40,15 @@ public class RpcClient {
         }
     }
 
-    public String getResponse() throws Exception {
-        ChannelPromise promise = clientHandler.sendMessage();
+    public String getResponse() throws InterruptedException {
+        ChannelPromise promise = clientHandler.sendMessage("hello".getBytes());
         promise.await();
         return clientHandler.getMessage();
     }
 
-    public static void main(String[] args) throws Exception {
-        RpcClient client = new RpcClient();
-        client.connect("127.0.0.1", 9999);
-        System.out.println(""+ client.getResponse());
+    public static void main(String[] args) throws InterruptedException {
+        PromiseClient client = new PromiseClient("127.0.0.1", 9999);
+        System.out.println("" + client.getResponse());
     }
+
 }
