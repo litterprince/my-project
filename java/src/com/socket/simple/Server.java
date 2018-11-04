@@ -10,10 +10,9 @@ public class Server {
      */
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket=new ServerSocket(8888);
+            ServerSocket serverSocket=new ServerSocket(9999);
             System.out.println("服务端已启动，等待客户端连接..");
             Socket socket=serverSocket.accept();//侦听并接受到此套接字的连接,返回一个Socket对象
-
 
             //根据输入输出流和客户端连接
             InputStream inputStream=socket.getInputStream();//得到一个输入流，接收客户端传递的信息
@@ -32,7 +31,6 @@ public class Server {
             printWriter.print("你好，服务端已接收到您的信息");
             printWriter.flush();
             socket.shutdownOutput();//关闭输出流
-
 
             //关闭相对应的资源
             printWriter.close();

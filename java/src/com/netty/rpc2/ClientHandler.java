@@ -1,25 +1,28 @@
-package com.netty.rpc;
+package com.netty.rpc2;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.ChannelPromise;
 
-/*@ChannelHandler.Sharable*/
+import java.util.concurrent.CountDownLatch;
+
 public class ClientHandler extends ChannelInboundHandlerAdapter {
     private ChannelHandlerContext ctx;
     private ChannelPromise promise;
     private String message;
+    private CountDownLatch latch = new CountDownLatch(1);
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
         this.ctx = ctx;
+        latch.countDown();
     }
 
-    public ChannelPromise sendMessage() {
+    public ChannelPromise sendMessage(byte[] b) throws InterruptedException {
+        latch.await();
         if (ctx == null) throw new IllegalStateException();
-        byte[] b = "hello".getBytes();
         //System.out.println("send message:"+ new String(b));
         ByteBuf encoded = ctx.alloc().buffer(b.length);
         encoded.writeBytes(b);
