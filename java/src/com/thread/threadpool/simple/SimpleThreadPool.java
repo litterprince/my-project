@@ -1,16 +1,12 @@
-package com.thread;
+package com.thread.threadpool.simple;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-public class TestThreadPool {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        MyExecutor myTask2 = new MyExecutor();
-        myTask2.init();
-
-        /*MyExecutorFuture myExecutorFuture = new MyExecutorFuture();
-        Object object = myExecutorFuture.getResult();
-        System.out.println("object=" + object);
-        myExecutorFuture.destroy();*/
+public class SimpleThreadPool {
+    public static void main(String[] args) {
+        MyExecutor myExecutor = new MyExecutor();
+        myExecutor.init();
     }
 
     static class MyExecutor {
@@ -43,26 +39,6 @@ public class TestThreadPool {
         public void destroy(){
             System.out.println("shutdown!!!");
             running = false;
-            executor.shutdown();
-        }
-    }
-
-    static class MyExecutorFuture{
-        private ExecutorService executor = Executors.newFixedThreadPool(1);
-
-        public MyExecutorFuture(){
-
-        }
-
-        public Object getResult() throws ExecutionException, InterruptedException {
-            return this.submit().get();
-        }
-
-        public Future<Object> submit(){
-            return executor.submit(() -> "Halo");
-        }
-
-        public void destroy(){
             executor.shutdown();
         }
     }

@@ -1,4 +1,4 @@
-package com.thread.threadpool;
+package com.thread.threadpool.complex;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,6 @@ import java.util.concurrent.*;
 /**
  * 线程池Executor
  * 共享锁CountDownLatch
- * 线程间的数据交换Exchanger
  * Callable和Future,可以在任务执行完毕之后得到任务的执行结果
  * */
 public class ConcurrentTaskExecutor {
@@ -16,36 +15,24 @@ public class ConcurrentTaskExecutor {
     public void executeTask() throws Exception {
         int personCount = 10;
         int threadCount = 5;
-
         CountDownLatch beginLatch = new CountDownLatch(1);
         CountDownLatch endLatch = new CountDownLatch(personCount);
-        Exchanger<Integer> exchanger = new Exchanger<Integer>();
-
-        List<FutureTask<String>> futureTaskList = new ArrayList<FutureTask<String>>();
-        for (int i = 0; i < personCount; i++) {
-            futureTaskList.add(new FutureTask<String>(new ExecuteCallable(beginLatch, endLatch, exchanger, i, this)));
-        }
-
+        List<FutureTask<String>> futureTaskList = new ArrayList<>();
         ExecutorService execService = Executors.newFixedThreadPool(threadCount);
+
+        // 初始化行子线程
+        for (int i = 0; i < personCount; i++) {
+            futureTaskList.add(new FutureTask<>(new ExecuteCallable(beginLatch, endLatch, i, this)));
+        }
         for (FutureTask<String> futureTask : futureTaskList) {
             execService.execute(futureTask);
         }
         //new Thread(new InterruptRunnable(this, beginLatch)).start();
+        beginLatch.countDown();//被阻塞的子线程开始执行
 
-        beginLatch.countDown();//beginLatch值减一，被阻塞的线程可以继续执行
+        endLatch.await();//阻塞主线程，等待所有子线程执行完毕
 
-        Integer totalResult = Integer.valueOf(0);
-        for (int i = 0; i < personCount; i++) {
-            Integer partialResult = exchanger.exchange(Integer.valueOf(0));//等待exchanger交换后，往下执行
-            if(partialResult != 0){
-                totalResult = totalResult + partialResult;
-                System.out.println(String.format("Progress: %s/%s", totalResult, personCount));
-            }
-        }
-
-        endLatch.await();//阻塞主线程，等待endLatch值为0再继续执行
-
-        System.out.println("--------------");
+        // 获取执行结果
         for (FutureTask<String> futureTask : futureTaskList) {
             System.out.println(futureTask.get());//主线程会阻塞，来等待线程返回数据
         }
@@ -58,5 +45,10 @@ public class ConcurrentTaskExecutor {
 
     public void setCanceled(boolean canceled){
         this.canceled = canceled;
+    }
+
+    public static void main(String[] args) throws Exception {
+        ConcurrentTaskExecutor executor = new ConcurrentTaskExecutor();
+        executor.executeTask();
     }
 }
