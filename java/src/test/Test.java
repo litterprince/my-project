@@ -13,41 +13,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Test {
     public static void main(String[] args) {
+        Father son = new Son();
+        System.out.println(""+son.getClass());
+    }
+
+    static class Father{
 
     }
 
-    private static String getMessage(){
-        StringBuilder sb = new StringBuilder();
-        int length = 188;
-        for(int i=0;i<length;i++){
-            sb.append(i);
-        }
-        return sb.toString();
-    }
+    static class Son extends Father{
 
-    public static void time(){
-        double t = Duration.valueOf("3ms").toMillis();
-        long seconds = TimeUnit.MILLISECONDS.toSeconds(3);
-        System.out.println(seconds);
-    }
-
-    public static void base64(){
-        String value = "demo.test";
-        String str = new BASE64Encoder().encode(value.getBytes());
-        System.out.println(str);
-    }
-
-    public static void date() throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Calendar cal = Calendar.getInstance();
-        Date eTime = cal.getTime();
-        cal.add(Calendar.HOUR, -4);//仅 startTime 为空才会使用
-        Date sTime = sdf.parse("2018-09-27 00:00:00");
-        System.out.println("eTime="+eTime);
-        System.out.println("sTime="+sTime);
-    }
-
-    public static void testInteger(Integer a){
-        a++ ;
     }
 }

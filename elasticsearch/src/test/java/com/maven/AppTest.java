@@ -156,7 +156,7 @@ public class AppTest
     public void testGet() {
         /*GetResponse response = client.prepareGet("twitter", "tweet", "1")
                                 .get();*/
-        GetResponse response = client.prepareGet("twitter", "tweet", "1")
+        GetResponse response = client.prepareGet("trace_stats", "trace_stats", "bcc3f55d88464344adea6b3d3e3db8e6")
                 .setOperationThreaded(false)    // 线程安全
                 .get();
         System.out.println(response.getSourceAsString());
