@@ -18,6 +18,7 @@ import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.script.Script;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,6 +35,8 @@ import java.util.concurrent.TimeUnit;
 public class AppTest 
 {
     private TransportClient client;
+    private String indexName = "accounts";
+    private String typeName = "person";
 
     @Before
     public void before() {
@@ -76,7 +79,7 @@ public class AppTest
         json.put("postDate", new Date());
         json.put("message", "trying out elasticsearch");
         // 存json入索引中
-        IndexResponse response = client.prepareIndex("twitter", "tweet", "1").setSource(json).get();
+        IndexResponse response = client.prepareIndex(indexName, typeName, "1").setSource(json).get();
         // 结果获取
         String index = response.getIndex();
         String type = response.getType();
@@ -91,7 +94,7 @@ public class AppTest
      */
     @Test
     public void testGet() {
-        GetResponse response = client.prepareGet("trace_stats", "trace_stats", "bcc3f55d88464344adea6b3d3e3db8e6")
+        GetResponse response = client.prepareGet(indexName, typeName, "bcc3f55d88464344adea6b3d3e3db8e6")
                 .setOperationThreaded(false)    // 线程安全
                 .get();
         System.out.println(response.getSourceAsString());
@@ -102,8 +105,7 @@ public class AppTest
      */
     @Test
     public void testDelete() {
-        DeleteResponse response = client.prepareDelete("twitter", "tweet", "1")
-                .get();
+        DeleteResponse response = client.prepareDelete(indexName, typeName, "1").get();
         String index = response.getIndex();
         String type = response.getType();
         String id = response.getId();
@@ -118,29 +120,28 @@ public class AppTest
     @Test
     public void testUpdate() throws Exception {
         // 使用Script对象进行更新
-        /*UpdateResponse response = client.prepareUpdate("twitter", "tweet", "1")
-                .setScript(new Script("hits._source.gender = \"male\""))
-                .get();
+        UpdateResponse response = client.prepareUpdate(indexName, typeName, "1")
+                .setScript(new Script("hits._source.gender = \"male\"")).get();
 
         // 使用XContFactory.jsonBuilder() 进行更新
-        UpdateResponse response = client.prepareUpdate("twitter", "tweet", "1")
+        UpdateResponse response1 = client.prepareUpdate(indexName, typeName, "1")
                 .setDoc(XContentFactory.jsonBuilder()
-                        .startObject()
-                            .field("gender", "malelelele")
-                        .endObject()).get();
+                .startObject()
+                .field("gender", "malelelele")
+                .endObject()).get();
 
         // 使用updateRequest对象及script
-        UpdateRequest updateRequest = new UpdateRequest("twitter", "tweet", "1")
+        UpdateRequest updateRequest = new UpdateRequest(indexName, typeName, "1")
                 .script(new Script("ctx._source.gender=\"male\""));
-        UpdateResponse response = client.update(updateRequest).get();*/
+        UpdateResponse response2 = client.update(updateRequest).get();
 
         // 使用updateRequest对象及documents进行更新
-        UpdateResponse response = client.update(new UpdateRequest("twitter", "tweet", "1")
+        UpdateResponse response3 = client.update(new UpdateRequest(indexName, typeName, "1")
                 .doc(XContentFactory.jsonBuilder()
-                        .startObject()
-                        .field("gender", "male")
-                        .endObject()
-                )).get();
+                .startObject()
+                .field("gender", "male")
+                .endObject()
+            )).get();
         System.out.println(response.getIndex());
     }
 
@@ -152,14 +153,14 @@ public class AppTest
     @Test
     public void testUpsert() throws Exception {
         // 设置查询条件, 查找不到则添加生效
-        IndexRequest indexRequest = new IndexRequest("twitter", "tweet", "1")
+        IndexRequest indexRequest = new IndexRequest(indexName, typeName, "1")
                 .source(XContentFactory.jsonBuilder()
                         .startObject()
                         .field("name", "qergef")
                         .field("gender", "malfdsae")
                         .endObject());
         // 设置更新, 查找到更新下面的设置
-        UpdateRequest upsert = new UpdateRequest("twitter", "tweet", "1")
+        UpdateRequest upsert = new UpdateRequest(indexName, typeName, "1")
                 .doc(XContentFactory.jsonBuilder()
                         .startObject()
                         .field("user", "wenbronk")
@@ -176,8 +177,8 @@ public class AppTest
     @Test
     public void testMultiGet() {
         MultiGetResponse multiGetResponse = client.prepareMultiGet()
-                .add("twitter", "tweet", "1")
-                .add("twitter", "tweet", "2", "3", "4")
+                .add(indexName, typeName, "1")
+                .add(indexName, typeName, "2", "3", "4")
                 .add("anothoer", "type", "foo")
                 .get();
 
@@ -197,7 +198,7 @@ public class AppTest
     @Test
     public void testBulk() throws Exception {
         BulkRequestBuilder bulkRequest = client.prepareBulk();
-        bulkRequest.add(client.prepareIndex("twitter", "tweet", "1")
+        bulkRequest.add(client.prepareIndex(indexName, typeName, "1")
                 .setSource(XContentFactory.jsonBuilder()
                         .startObject()
                         .field("user", "kimchy")
@@ -250,8 +251,8 @@ public class AppTest
         .build();
 
         // 添加单次请求
-        bulkProcessor.add(new IndexRequest("twitter", "tweet", "1"));
-        bulkProcessor.add(new DeleteRequest("twitter", "tweet", "2"));
+        bulkProcessor.add(new IndexRequest(indexName, typeName, "1"));
+        bulkProcessor.add(new DeleteRequest(indexName, typeName, "2"));
 
         // 关闭
         bulkProcessor.awaitClose(10, TimeUnit.MINUTES);

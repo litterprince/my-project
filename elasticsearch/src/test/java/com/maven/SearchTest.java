@@ -176,11 +176,6 @@ public class SearchTest {
 
     }
 
-    @Test
-    public void testAgg1() {
-
-    }
-
     private void println(SearchHits searchHits){
         for (SearchHit hit : searchHits.getHits()) {
             //整个文档输出
