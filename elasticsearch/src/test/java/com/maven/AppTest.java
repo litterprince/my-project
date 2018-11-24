@@ -1,6 +1,5 @@
 package com.maven;
 
-import com.alibaba.fastjson.JSONObject;
 import org.elasticsearch.action.bulk.*;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.delete.DeleteResponse;
@@ -18,13 +17,10 @@ import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
-import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
-import org.elasticsearch.script.Script;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Date;
 import java.util.HashMap;
@@ -39,21 +35,8 @@ public class AppTest
 {
     private TransportClient client;
 
-    /*@Before
-    public void before() throws Exception {
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("cluster.name", "elasticsearch_wenbronk");
-        Settings.Builder settings = Settings.builder().put(map);
-        client = TransportClient.builder().settings(settings).build()
-                .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("www.wenbronk.com"), Integer.parseInt("9300")));
-    }*/
-
     @Before
-    public void before11() throws Exception {
-        // 创建客户端, 使用的默认集群名, "elasticSearch"
-        //client = TransportClient.builder().build()
-                //.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("www.wenbronk.com"), 9300));
-
+    public void before() {
         // 通过setting对象指定集群配置信息, 配置的集群名
         Settings settings = Settings.settingsBuilder().put("cluster.name", "es-owl-2.3.3") // 设置集群名
                //.put("client.transport.sniff", true) // 开启嗅探 , 开启后会一直连接不上, 原因未知
@@ -66,7 +49,6 @@ public class AppTest
                 .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("172.20.4.204", 9300)))
                 .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("172.20.4.201", 9300)))
                 .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("172.20.4.202", 9300)));
-
         // 默认5s
         // 多久打开连接, 默认5s
         System.out.println("success connect");
@@ -76,7 +58,7 @@ public class AppTest
      * 查看集群信息
      */
     @Test
-    public void testInfo() {
+    public void testEsInfo() {
         List<DiscoveryNode> nodes = client.connectedNodes();
         for (DiscoveryNode node : nodes) {
             System.out.println(node.getHostAddress());
@@ -84,62 +66,17 @@ public class AppTest
     }
 
     /**
-     * 组织json串, 方式1,直接拼接
-     */
-    public String createJson1() {
-        String json = "{" +
-                "\"user\":\"kimchy\"," +
-                "\"postDate\":\"2013-01-30\"," +
-                "\"message\":\"trying out Elasticsearch\"" +
-                "}";
-        return json;
-    }
-
-    /**
-     * 使用map创建json
-     */
-    public Map<String, Object> createJson2() {
-        Map<String,Object> json = new HashMap<String, Object>();
-        json.put("user", "kimchy");
-        json.put("postDate", new Date());
-        json.put("message", "trying out elasticsearch");
-        return json;
-    }
-
-    /**
-     * 使用fastjson创建
-     */
-    public JSONObject createJson3() {
-        JSONObject json = new JSONObject();
-        json.put("user", "kimchy");
-        json.put("postDate", new Date());
-        json.put("message", "trying out elasticsearch");
-        return json;
-    }
-
-    /**
-     * 使用es的帮助类
-     */
-    public XContentBuilder createJson4() throws Exception {
-        // 创建json对象, 其中一个创建json的方式
-        XContentBuilder source = XContentFactory.jsonBuilder()
-                .startObject()
-                .field("user", "kimchy")
-                .field("postDate", new Date())
-                .field("message", "trying to out ElasticSearch")
-                .endObject();
-        return source;
-    }
-
-    /**
      * 进行连接测试
      * @throws Exception
      */
     @Test
-    public void test1() throws Exception {
-        XContentBuilder source = createJson4();
+    public void testInsert() throws Exception {
+        Map<String,Object> json = new HashMap<String, Object>();
+        json.put("user", "kimchy");
+        json.put("postDate", new Date());
+        json.put("message", "trying out elasticsearch");
         // 存json入索引中
-        IndexResponse response = client.prepareIndex("twitter", "tweet", "1").setSource(source).get();
+        IndexResponse response = client.prepareIndex("twitter", "tweet", "1").setSource(json).get();
         // 结果获取
         String index = response.getIndex();
         String type = response.getType();
@@ -154,8 +91,6 @@ public class AppTest
      */
     @Test
     public void testGet() {
-        /*GetResponse response = client.prepareGet("twitter", "tweet", "1")
-                                .get();*/
         GetResponse response = client.prepareGet("trace_stats", "trace_stats", "bcc3f55d88464344adea6b3d3e3db8e6")
                 .setOperationThreaded(false)    // 线程安全
                 .get();
@@ -177,38 +112,11 @@ public class AppTest
     }
 
     /**
-     * 测试更新 update API
-     * 使用 updateRequest 对象
-     * @throws Exception
-     */
-    @Test
-    public void testUpdate() throws Exception {
-        UpdateRequest updateRequest = new UpdateRequest();
-        updateRequest.index("twitter");
-        updateRequest.type("tweet");
-        updateRequest.id("1");
-        updateRequest.doc(XContentFactory.jsonBuilder()
-                .startObject()
-                // 对没有的字段添加, 对已有的字段替换
-                .field("gender", "male")
-                .field("message", "hello")
-                .endObject());
-        UpdateResponse response = client.update(updateRequest).get();
-
-        // 打印
-        String index = response.getIndex();
-        String type = response.getType();
-        String id = response.getId();
-        long version = response.getVersion();
-        System.out.println(index + " : " + type + ": " + id + ": " + version);
-    }
-
-    /**
      * 测试update api, 使用client
      * @throws Exception
      */
     @Test
-    public void testUpdate2() throws Exception {
+    public void testUpdate() throws Exception {
         // 使用Script对象进行更新
         /*UpdateResponse response = client.prepareUpdate("twitter", "tweet", "1")
                 .setScript(new Script("hits._source.gender = \"male\""))
@@ -234,19 +142,6 @@ public class AppTest
                         .endObject()
                 )).get();
         System.out.println(response.getIndex());
-    }
-
-    /**
-     * 测试update
-     * 使用updateRequest
-     * @throws Exception
-     * @throws InterruptedException
-     */
-    @Test
-    public void testUpdate3() throws InterruptedException, Exception {
-        UpdateRequest updateRequest = new UpdateRequest("twitter", "tweet", "1")
-                .script(new Script("ctx._source.gender=\"male\""));
-        UpdateResponse response = client.update(updateRequest).get();
     }
 
     /**
