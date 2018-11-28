@@ -1,5 +1,8 @@
 package com.util.calendar;
 
+import org.apache.commons.lang.StringUtils;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -7,11 +10,10 @@ public class simple {
     private static Calendar calendar = Calendar.getInstance();
 
     public static void main(String[] args) {
-        System.out.println(1000*(System.currentTimeMillis()/1000));
-        System.out.println(System.currentTimeMillis());
+        getTime("");
     }
 
-    private static String getESIndex(String index, Integer cycle) {
+    public static String getESIndex(String index, Integer cycle) {
         Date date = new Date();
         calendar.setFirstDayOfWeek(Calendar.MONDAY);
         calendar.setTime(date);
@@ -19,4 +21,24 @@ public class simple {
         int year = calendar.get(Calendar.YEAR);
         return index + "_" + year + "_" + cycle;//trace_stats_2018_46
     }
+
+    public static void getTime(String time){
+        Calendar cal = Calendar.getInstance();
+        if (StringUtils.isNotBlank(time)) {
+            try {
+                cal.setTime(new SimpleDateFormat("yyyy-MM-dd").parse(time));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        Date startTime = cal.getTime();
+        System.out.println("startTime="+startTime);
+        cal.add(Calendar.DAY_OF_MONTH, 1);
+        Date endTime = cal.getTime();
+        System.out.println("endTime="+endTime);
+    }
+
 }
