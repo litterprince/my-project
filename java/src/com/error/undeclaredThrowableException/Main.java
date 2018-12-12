@@ -1,4 +1,4 @@
-package com.exception.undeclaredThrowableException;
+package com.error.undeclaredThrowableException;
 
 import java.lang.reflect.Proxy;
 

@@ -1,4 +1,4 @@
-package com.exception;
+package com.error;
 
 public class test {
     public static void main(String[] args) {

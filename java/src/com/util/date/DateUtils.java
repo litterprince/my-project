@@ -11,18 +11,22 @@ import java.util.*;
  * Created by jm on 2018/11/15.
  * Copyright (c) 2018,jeff.zhew01@gmail.com All Rights Reserved.
  */
-public class simple {
+public class DateUtils {
     public static void main(String[] args) throws Exception {
+        String dateStr = "2018-11-15 16:05:20";//1542269120000L
         try {
-            System.out.println(longToDate(1542269100000L));
-            System.out.println(dateToLong("2018-11-15 16:05:00"));
-            System.out.println(1000*dateToLong("2018-11-15 16:05:00")/1000);
-            System.out.println(1000*dateToLong("2018-11-15 16:05:00")/1000- 60 * 1000);
+            long dateLong = dateToLong(dateStr);
+            System.out.println(longToDate(dateLong));
+            System.out.println();
+
+            long timestamp = dateToLong(dateStr) /1000 *1000;
+            System.out.println(longToDate(timestamp));
             System.out.println();
 
 
-            System.out.println(1000*(System.currentTimeMillis()/1000));
-            System.out.println(1000*(System.currentTimeMillis()/1000) - 60 * 1000);
+            System.out.println(System.currentTimeMillis() /1000 *1000);
+            System.out.println(System.currentTimeMillis() /1000 *1000 - 60 * 1000);
+            System.out.println();
         } catch (Exception e) {
             throw new Exception();
         }
@@ -121,5 +125,10 @@ public class simple {
 
     public static String longToDate(long longDate){
         return dateToStrLong(new Date(longDate));
+    }
+
+    public static Date isoTimeToDate(String dateString) throws ParseException {
+        SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS Z");
+        return sim.parse(dateString);
     }
 }
