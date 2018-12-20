@@ -27,22 +27,30 @@ public class NettyWork {
             e.printStackTrace();
         }
         //add hook
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> destroy()));
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                destroy();
+            }
+        }));
 
-        executor.execute(()->{
-            while(!Thread.interrupted()){
-                try {
-                    wakeup.set(false);
-                    selector.select();
-                    while(true){
-                        final Runnable task = this.taskQueue.poll();
-                        if(task == null)
-                            break;
-                        task.run();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                while(!Thread.interrupted()){
+                    try {
+                        wakeup.set(false);
+                        selector.select();
+                        while(true){
+                            final Runnable task = taskQueue.poll();
+                            if(task == null)
+                                break;
+                            task.run();
+                        }
+                        process(selector);
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    this.process(selector);
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
             }
         });

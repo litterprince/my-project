@@ -27,16 +27,19 @@ public class ThreadHandle {
 
     public void bind(InetSocketAddress inetSocketAddress){
         try {
-            ServerSocketChannel server = ServerSocketChannel.open();
+            final ServerSocketChannel server = ServerSocketChannel.open();
             server.configureBlocking(false);
             server.socket().bind(inetSocketAddress);
 
-            NettyBoss nextBoss = bosses[Math.abs(bossIndex.getAndIncrement() % bosses.length)];
-            Runnable runnable = ()->{
-                try {
-                    server.register(nextBoss.selector, SelectionKey.OP_ACCEPT);
-                } catch (ClosedChannelException e) {
-                    e.printStackTrace();
+            final NettyBoss nextBoss = bosses[Math.abs(bossIndex.getAndIncrement() % bosses.length)];
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        server.register(nextBoss.selector, SelectionKey.OP_ACCEPT);
+                    } catch (ClosedChannelException e) {
+                        e.printStackTrace();
+                    }
                 }
             };
             nextBoss.taskQueue.add(runnable);

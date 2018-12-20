@@ -16,7 +16,19 @@ import java.util.UUID;
  */
 public class Test {
     private static Random random = new Random();
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        testSub();
+    }
+
+    public static void testSub(){
+        String str = "http://a/b/c/d";
+        if(str.indexOf("?") > 0){
+            str = str.substring(0, str.indexOf("?"));
+        }
+        System.out.println(str);
+    }
+
+    public static void testStr(){
         String emptyStr = "";
         String trueStr = "true";
         String falseStr = "false";
@@ -32,10 +44,14 @@ public class Test {
 
         String str = getMsgData();
         System.out.println(str);
-        String str1 = new String(new BASE64Decoder().decodeBuffer(str));
+        String str1 = null;
+        try {
+            str1 = new String(new BASE64Decoder().decodeBuffer(str));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println(str1);
     }
-
 
     private static String getMsgData(){
         String[] ipList = new String[]{"61.139.2.21", "218.88.212.31", "61.139.2.69", "172.20.4.125", "171.104.0.55", "59.49.129.35", "119.57.71.6", "219.78.113.243", "121.56.0.23"};

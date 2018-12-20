@@ -25,30 +25,38 @@ public class NettyBoss {
             e.printStackTrace();
         }
         //add hook
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> destroy()));
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                destroy();
+            }
+        }));
 
-        executor.execute(()->{
-            while(!Thread.interrupted()){
-                try {
-                    wakenUp.set(false);
-                    selector.select();
-                    while(true){
-                        final Runnable task = taskQueue.poll();
-                        if(task == null){
-                            break;
-                        }
-                        task.run();
-                    }
-                    this.process(selector);
-
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                while(!Thread.interrupted()){
                     try {
-                        Thread.sleep(30);
-                    } catch (InterruptedException e) {
+                        wakenUp.set(false);
+                        selector.select();
+                        while(true){
+                            final Runnable task = taskQueue.poll();
+                            if(task == null){
+                                break;
+                            }
+                            task.run();
+                        }
+                        process(selector);
+
+                        try {
+                            Thread.sleep(30);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
             }
         });
@@ -68,15 +76,18 @@ public class NettyBoss {
             SelectionKey key = i.next();
             i.remove();
             ServerSocketChannel server = (ServerSocketChannel) key.channel();
-            SocketChannel channel = server.accept();
+            final SocketChannel channel = server.accept();
             channel.configureBlocking(false);
-            NettyWork nextwoker = threadHandle.workers[Math.abs(threadHandle.workIndex.getAndIncrement() % threadHandle.workers.length)];
-            Runnable runnable = ()->{
-              try {
-                  channel.register(nextwoker.selector, SelectionKey.OP_READ);
-              } catch (ClosedChannelException e) {
-                  e.printStackTrace();
-              }
+            final NettyWork nextwoker = threadHandle.workers[Math.abs(threadHandle.workIndex.getAndIncrement() % threadHandle.workers.length)];
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        channel.register(nextwoker.selector, SelectionKey.OP_READ);
+                    } catch (ClosedChannelException e) {
+                        e.printStackTrace();
+                    }
+                }
             };
             nextwoker.taskQueue.add(runnable);
             if(nextwoker.selector != null){

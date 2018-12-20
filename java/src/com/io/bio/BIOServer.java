@@ -16,9 +16,12 @@ public class BIOServer {
             //获取一个套接字(阻塞)
             final Socket socket = serverSocket.accept();
             System.out.println("来了一个新客户端！");
-            newCashedThreadPool.execute(() -> {
-                //业务处理
-                handler(socket);
+            newCashedThreadPool.execute(new Runnable() {
+                @Override
+                public void run() {
+                    //业务处理
+                    handler(socket);
+                }
             });
         }
     }

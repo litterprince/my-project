@@ -16,21 +16,29 @@ public class SimpleThreadPool {
 
         public MyExecutor(){
             //add hook
-            Runtime.getRuntime().addShutdownHook(new Thread(() -> destroy()));
+            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    destroy();
+                }
+            }));
         }
 
         public void init(){
             System.out.println("begin!!!");
             running = true;
-            executor.execute(() -> {
-                while (!Thread.interrupted() && running) {
-                    System.out.println("task"+ num +"开始...");
-                    System.out.println("task"+ num++ +"结束...");
+            executor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    while (!Thread.interrupted() && running) {
+                        System.out.println("task"+ num +"开始...");
+                        System.out.println("task"+ num++ +"结束...");
 
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             });

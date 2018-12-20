@@ -24,15 +24,18 @@ public class Test {
                 return "Hello World";
             }
         }; // 将异步获取
-        FutureTask<String> task = new FutureTask<>(callable); // 线程异步获取
+        final FutureTask<String> task = new FutureTask<>(callable); // 线程异步获取
         new Thread(task).start(); // 等待结果线程1
-        Thread thread1 = new Thread(() -> {
-            try {
-                System.out.println(task.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println(task.get());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
         });
         thread1.start();
