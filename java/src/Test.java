@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Test {
     private static Random random = new Random();
     public static void main(String[] args) {
-        testSub();
+        
     }
 
     public static void testSub(){

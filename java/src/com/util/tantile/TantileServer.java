@@ -1,4 +1,4 @@
-package com.util.other;
+package com.util.tantile;
 
 import java.util.ArrayList;
 import java.util.Collections;
