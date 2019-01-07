@@ -3,7 +3,7 @@ package com.util.date;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
 
 /**
  * Function: Please Descrip This Class.
@@ -13,19 +13,15 @@ import java.util.*;
  */
 public class DateUtils {
     public static void main(String[] args) throws Exception {
-        String dateStr = "2018-11-15 16:05:20";//1542269120000L
+        String dateStr = "2018-12-27 23:59:59";
         try {
             long dateLong = dateToLong(dateStr);
-            System.out.println(longToDate(dateLong));
+            System.out.println("l=" + dateLong);
+
+            System.out.println("d=" + longToDate(dateLong));
             System.out.println();
 
-            long timestamp = dateToLong(dateStr) /1000 *1000;
-            System.out.println(longToDate(timestamp));
-            System.out.println();
-
-
-            System.out.println(System.currentTimeMillis() /1000 *1000);
-            System.out.println(System.currentTimeMillis() /1000 *1000 - 60 * 1000);
+            System.out.println("iso=" + toIsoTime(null));
             System.out.println();
         } catch (Exception e) {
             throw new Exception();
@@ -128,7 +124,14 @@ public class DateUtils {
     }
 
     public static Date isoTimeToDate(String dateString) throws ParseException {
-        SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS Z");
-        return sim.parse(dateString);
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS Z");
+        return sf.parse(dateString);
+    }
+
+    public static String toIsoTime(Date date){
+        if(date == null){
+            date = new Date();
+        }
+        return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS Z").format(date);
     }
 }

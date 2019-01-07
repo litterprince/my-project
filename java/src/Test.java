@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Function: Please Descrip This Class.
@@ -17,7 +19,19 @@ import java.util.UUID;
 public class Test {
     private static Random random = new Random();
     public static void main(String[] args) {
-        
+        testToml();
+    }
+
+    private static String formatUserIp(String ip){
+        if(ip!=null && !ip.equals("") && ip.contains(",")){
+            String[] uIps = ip.split(",");
+            for(String uIp: uIps){
+                if(uIp!=null && !uIp.startsWith("10.17")){
+                    return uIp.replaceAll("\\s|\n", "");
+                }
+            }
+        }
+        return ip;
     }
 
     public static void testSub(){
@@ -28,7 +42,7 @@ public class Test {
         System.out.println(str);
     }
 
-    public static void testStr(){
+    public static void testDecoder(){
         String emptyStr = "";
         String trueStr = "true";
         String falseStr = "false";
@@ -123,5 +137,35 @@ public class Test {
                 .append(getRandomString(random.nextInt(5))).append("/")
                 .append(getRandomString(random.nextInt(5))).append("/");
         return sb.toString();
+    }
+
+    public static boolean isChinese(String str) {
+        String regEx = "[\u4e00-\u9fa5]";
+        Pattern pat = Pattern.compile(regEx);
+        Matcher matcher = pat.matcher(str);
+        boolean flg = false;
+        if (matcher.find())
+            flg = true;
+
+        return flg;
+    }
+
+    public static void testToml(){
+        String str ="'''\n" +
+                "Roses are red\n" +
+                "Violets are blue'''";
+        //String regEx = "(\\s*([a-zA-Z_0-9\\-\\u4e00-\\u9fa5]+)\\s*=\\s*)?\"(.*)\"\\s*";
+        String regEx = "'''(.*)'''";
+        Pattern pat = Pattern.compile(regEx, Pattern.DOTALL);
+        Matcher matcher = pat.matcher(str);
+        boolean flg1 = matcher.matches();
+        System.out.println(flg1);
+    }
+
+    public static void testRegEx(String str, String regEx){
+        Pattern pat = Pattern.compile(regEx, Pattern.DOTALL);
+        Matcher matcher = pat.matcher(str);
+        boolean flg1 = matcher.matches();
+        System.out.println(flg1);
     }
 }
