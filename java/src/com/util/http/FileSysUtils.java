@@ -1,7 +1,7 @@
 package com.util.http;
 
 import com.alibaba.fastjson.JSONObject;
-import com.util.MD5;
+import com.util.md5.MD5;
 import sun.misc.BASE64Encoder;
 
 import java.nio.charset.StandardCharsets;
