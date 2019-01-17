@@ -1,4 +1,4 @@
-package antexam.minstack;
+package exam.minstack;
 
 public class AntMinStack {
     private int[] data = null;

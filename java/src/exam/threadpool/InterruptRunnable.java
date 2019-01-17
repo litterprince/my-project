@@ -1,4 +1,4 @@
-package antexam.threadpool;
+package exam.threadpool;
 
 import java.util.concurrent.CountDownLatch;
 

@@ -1,4 +1,4 @@
-package antexam.singleton;
+package exam.singleton;
 
 import java.util.HashSet;
 import java.util.Set;

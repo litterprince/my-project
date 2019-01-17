@@ -1,4 +1,4 @@
-package antexam.singleton;
+package exam.singleton;
 
 public class SingleDemo {
     private static SingleDemo s = null;

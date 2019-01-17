@@ -1,4 +1,4 @@
-package antexam.calculator;
+package exam.calculator;
 
 import java.util.Collections;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package antexam.wordcount;
+package exam.wordcount;
 
 import java.io.*;
 import java.util.Scanner;

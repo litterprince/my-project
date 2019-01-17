@@ -19,8 +19,6 @@ import java.util.regex.Pattern;
 public class Test {
     private static Random random = new Random();
     public static void main(String[] args) {
-        System.out.println(Integer.toBinaryString(4));
-        System.out.println(Integer.toBinaryString(2));
     }
 
     private static String formatUserIp(String ip){
@@ -168,5 +166,9 @@ public class Test {
         Matcher matcher = pat.matcher(str);
         boolean flg1 = matcher.matches();
         System.out.println(flg1);
+    }
+
+    public static void testNums(int[] nums){
+       nums[2] = 10;
     }
 }

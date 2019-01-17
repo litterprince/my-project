@@ -1,4 +1,4 @@
-package antexam.calculator;
+package exam.calculator;
 
 import java.util.Scanner;
 
