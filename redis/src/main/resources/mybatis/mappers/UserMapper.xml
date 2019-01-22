@@ -17,7 +17,7 @@
     </update>
     
     <select id="selectById" resultType="com.spring.po.SysUserBean"  parameterType="java.lang.String">
-        select <include refid="Base_Column_List" /> from sys_user where id=#{id}
+        select <include refid="Base_Column_List" /> v1 sys_user where id=#{id}
     </select>
     
     <select id="findByParam" resultType="com.spring.po.SysUserBean" parameterType="com.spring.po.SysUserBean" >

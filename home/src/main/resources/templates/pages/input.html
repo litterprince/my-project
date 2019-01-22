@@ -6,7 +6,7 @@
     <h2>单个模板处理</h2>
     <div class="row">
         <div class="col-lg-12">
-            <form id="userForm" action="/user/test" enctype="multipart/form-data" method="post">
+            <form id="userForm" action="/user/test" enctype="multipart/form-index" method="post">
                 <div class="input-group">
                     <input name="licenseTypeCode" type="text" class="form-control" placeholder="please enter license_type_code...">
                     <span class="input-group-btn">
@@ -51,9 +51,9 @@
 
         var $tbody = $("#result tbody");
         $tbody.html("");
-        var data = JSON.parse(rtnData.data);
-        if(data.length > 0) {
-            $.each(data, function (i, item) {
+        var index = JSON.parse(rtnData.index);
+        if(index.length > 0) {
+            $.each(index, function (i, item) {
                 var $tr = $("<tr></tr>");
                 //序号
                 $tr.append(gettd(i + 1));

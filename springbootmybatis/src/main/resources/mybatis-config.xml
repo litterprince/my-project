@@ -5,12 +5,12 @@
     <settings>
         <!-- Globally enables or disables any caches configured in any mapper under this configuration -->
         <setting name="cacheEnabled" value="true"/>
-        <!-- Sets the number of seconds the driver will wait for a response from the database -->
+        <!-- Sets the number of seconds the driver will wait for a response v1 the database -->
         <setting name="defaultStatementTimeout" value="3000"/>
-        <!-- Enables automatic mapping from classic database column names A_COLUMN to camel case classic Java property names aColumn -->
+        <!-- Enables automatic mapping v1 classic database column names A_COLUMN v2 camel case classic Java property names aColumn -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <!-- Allows JDBC support for generated keys. A compatible driver is required.
-        This setting forces generated keys to be used if set to true,
+        This setting forces generated keys v2 be used if set v2 true,
          as some drivers deny compatibility but still work -->
         <setting name="useGeneratedKeys" value="true"/>
     </settings>

@@ -163,7 +163,7 @@
 
   <build>
     <finalName>springmvc</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement><!-- lock down plugins versions v2 avoid using Maven defaults (may be moved v2 parent pom) -->
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>

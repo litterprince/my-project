@@ -2,7 +2,6 @@ package algorithm.sort;
 
 public class SortTest {
     private static int[] numbers = {2, 3, 1, 4, 0, 8, 6};
-    //private static int[] numbers = {1,2,3,4,5};
 
     public static void main(String[] args){
         mergeSort(numbers, 0, numbers.length-1);
@@ -38,8 +37,8 @@ public class SortTest {
 
     /**
      * 选择排序
-     * 在未排序序列中找到最小元素，存放到排序序列的末尾
-     * 再从剩余未排序元素中继续寻找最小元素，然后放到排序序列末尾
+     * 在未排序序列中找到最小元素，存放到起始位置
+     * 再从剩余未排序元素中继续寻找最小元素，然后放到起始位置
      * 以此类推，直到所有元素均排序完毕。
      *
      * @param numbers 需要排序的整型数组
@@ -102,13 +101,14 @@ public class SortTest {
      * @param numbers 需要排序的整型数组
      */
     public static void mergeSort(int[] numbers, int start, int end){
+        if(start >= end)
+            return;
+
         int mid = (start + end)/2;
-        if(start < end){
-            mergeSort(numbers, start, mid);
-            mergeSort(numbers,mid+1, end);
-            //左右归并
-            merge(numbers, start, mid, end);
-        }
+        mergeSort(numbers, start, mid);
+        mergeSort(numbers,mid+1, end);
+        //左右归并
+        merge(numbers, start, mid, end);
     }
     private static void merge(int[] data, int start, int mid, int end) {
         int[] B = new int[data.length];
@@ -143,11 +143,37 @@ public class SortTest {
      *  重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分割之后，
      *  该基准是它的最后位置。这个称为分割（partition）操作。
      *  递归地把小于基准值元素的子数列和大于基准值元素的子数列排序。
+     *  注意：一定是右哨兵先走（这样左右哨兵碰面的时候是停在了比基准小的数字上面）
      *
      * @param numbers 需要排序的整型数组
      */
     public static void quickSort(int[] numbers, int start, int end){
+        if(start > end)
+            return;
 
+        int base = numbers[start];
+        int i=start, j=end, temp;
+        while (i < j){
+            while(i < j && numbers[j] >= base){
+                j --;
+            }
+            while(i < j && numbers[i] <= base){
+                i ++;
+            }
+            if(i < j) {
+                temp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+            }
+        }
+
+        // i equals j, base equals numbers[start]
+        // change base
+        numbers[start] = numbers[i];
+        numbers[i] = base;
+
+        quickSort(numbers, start, j-1);
+        quickSort(numbers, j+1, end);
     }
 
     private static void printInfo(int[] numbers){

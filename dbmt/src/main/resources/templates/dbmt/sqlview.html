@@ -2,11 +2,11 @@
 <div th:fragment="content" xmlns:th="http://www.w3.org/1999/xhtml">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#sqlView" aria-controls="sqlView" role="tab" data-toggle="tab">
+        <li role="presentation" class="active"><a href="#sqlView" aria-controls="sqlView" role="tab" index-toggle="tab">
             升级语句<span id="sqlCount" class="btn-danger badge"></span></a></li>
-        <li role="presentation"><a href="#removeTableView" aria-controls="removeTableView" role="tab" data-toggle="tab">
+        <li role="presentation"><a href="#removeTableView" aria-controls="removeTableView" role="tab" index-toggle="tab">
             多余的表<span id="tableCount" class="btn-danger badge"></span></a></li>
-        <li role="presentation"><a href="#removeColumnView" aria-controls="removeColumnView" role="tab" data-toggle="tab">
+        <li role="presentation"><a href="#removeColumnView" aria-controls="removeColumnView" role="tab" index-toggle="tab">
             多余的列<span id="columnCount" class="btn-danger badge"></span></a></li>
     </ul>
 
@@ -28,9 +28,9 @@
                 atom.msg(rtnData.message);
                 return;
             }
-            var sqlList = rtnData.data.sqlList;
-            var removeTableList = rtnData.data.needRemoveTables;
-            var removeColumnList = rtnData.data.neddRemoveColumns;
+            var sqlList = rtnData.index.sqlList;
+            var removeTableList = rtnData.index.needRemoveTables;
+            var removeColumnList = rtnData.index.neddRemoveColumns;
             var dataLenth = sqlList.length + removeTableList.length + removeColumnList.length;
             if (dataLenth == 0) {
                 atom.msg("两个数据库完全一致");

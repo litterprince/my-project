@@ -19,6 +19,9 @@ import java.util.regex.Pattern;
 public class Test {
     private static Random random = new Random();
     public static void main(String[] args) {
+        Test t1 = new Test();
+        Test t2 = new Test();
+        System.out.println(t1.getClass() == t2.getClass());
     }
 
     private static String formatUserIp(String ip){
@@ -117,7 +120,7 @@ public class Test {
         //定义一个字符串（A-Z，a-z，0-9）即62位；
         String str="zxcvbnmlkjhgfdsaqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
         //由Random生成随机数
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         //长度为几就循环几次
         for(int i=0; i<length; ++i){
             //产生0-61的数字

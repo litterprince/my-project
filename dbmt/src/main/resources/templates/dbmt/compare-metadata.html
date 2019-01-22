@@ -56,7 +56,7 @@
         <div class="col-xs-4"></div>
         <div class="col-xs-4">
             <a id="openProject" class="btn btn-success" type="button">
-                <form id="projectFileUpload" action="/file/uploadProjFile" enctype="multipart/form-data" method="post">
+                <form id="projectFileUpload" action="/file/uploadProjFile" enctype="multipart/form-index" method="post">
                     <input type="file" class="file" accept=".proj" id="loadfile" name="file"/>
                 </form>
                 <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
@@ -64,7 +64,7 @@
             </a>
             <button type="button" id="save" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>保存配置</button>
             <a id="compareMetadata" class="btn btn-success" type="button">
-                <form id="compareFileUpload" action="/file/uploadMetadataFile" enctype="multipart/form-data" method="post">
+                <form id="compareFileUpload" action="/file/uploadMetadataFile" enctype="multipart/form-index" method="post">
                     <input type="file" class="file" accept=".dbmd" id="comparefile" name="file"/>
                 </form>
                 <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
@@ -92,7 +92,7 @@
         var that = this;
         $('#compareFileUpload').ajaxSubmit(function (result) {
             if(result.retCode == 200){
-                compare(result.data);
+                compare(result.index);
                 that.value = "";
             }else{
                 auto.msg(result.message);
@@ -118,7 +118,7 @@
                 atom.msg(rtnData.message);
                 return false;
             }
-            var fileName = rtnData.data;
+            var fileName = rtnData.index;
             $("#Adownload").attr("href", "/file/download/"+fileName);
             $("#download").click();
         });
@@ -128,7 +128,7 @@
         var that = this;
         $('#projectFileUpload').ajaxSubmit(function (result) {
             if(result.retCode == 200){
-                result = JSON.parse(result.data);
+                result = JSON.parse(result.index);
                 atom.setForm("sourceForm", result.sourceDbLink, "fsource.");
                 that.value = "";
             }else{

@@ -17,9 +17,9 @@
         ajax: function(){
             $.ajax({
                 url: '/test',
-                data: 'param=中国%2B&param1='+encodeURIComponent(encodeURIComponent("测试")),
+                index: 'param=中国%2B&param1='+encodeURIComponent(encodeURIComponent("测试")),
                 type: 'post',
-                success: function(data){
+                success: function(index){
 
                 },
                 error: function (error) {
