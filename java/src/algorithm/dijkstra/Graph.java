@@ -1,11 +1,12 @@
 package algorithm.dijkstra;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * undirected graph
  */
 public class Graph {
     private VNode[] mVexs; // VNode array list
-    private int shortestCost;
 
     public Graph buildGraph(String content){
         String[] c = content.split("\n");
@@ -132,15 +133,15 @@ public class Graph {
     }
 
     public String getShortestRout(int start, int end){
-        shortestCost = 0;
+        AtomicInteger length = new AtomicInteger(0);
         StringBuilder result = new StringBuilder();
         int[] prev = new int[mVexs.length];
         int[] dist = new int[mVexs.length];
         dijkstra(start, prev, dist);
         StringBuilder route = new StringBuilder();
-        dfs(start, end, prev, dist, route);
+        dfs(start, end, prev, dist, route, length);
         String routeStr = route.append(String.valueOf(mVexs[start].getData())).reverse().toString();
-        return result.append("shortest:").append(routeStr).append("; cost:").append(shortestCost).toString();
+        return result.append("shortest:").append(routeStr).append("; cost:").append(length).toString();
     }
 
     /**
@@ -196,17 +197,16 @@ public class Graph {
 
     }
 
-    private void dfs(int start, int end, int[] prev, int[] dist, StringBuilder route){
+    private void dfs(int start, int end, int[] prev, int[] dist, StringBuilder route, AtomicInteger length){
         if(start == prev[end]){
-            shortestCost += dist[end];
+            length.addAndGet(dist[end]);
             route.append(mVexs[end].getData());
             return;
         }
 
-        shortestCost += dist[end];
+        length.addAndGet(dist[end]);
         route.append(mVexs[end].getData());
-        end = prev[end];
 
-        dfs(start, end, prev, dist, route);
+        dfs(start, prev[end], prev, dist, route, length);
     }
 }
