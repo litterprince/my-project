@@ -1,28 +1,28 @@
-package algorithm.topology;
+package algorithm.graph.topology;
 
 import java.util.*;
 
-public class Graph {
+public class TopologyG {
     private Map<Integer,Node> nodes;
     private Set<Edge> edges;
     private List<Node> result;
     private Queue<Node> zeroQueue;
 
-    public Graph(){
+    public TopologyG(){
         this.nodes = new HashMap<>();
         this.edges = new HashSet<>();
         this.result = new ArrayList<>();
         this.zeroQueue = new LinkedList<>();
     }
 
-    public Graph(Map<Integer,Node> nodes, Set<Edge> edges) {
+    public TopologyG(Map<Integer,Node> nodes, Set<Edge> edges) {
         this.nodes = nodes;
         this.edges = edges;
         this.result = new ArrayList<>();
         this.zeroQueue = new LinkedList<>();
     }
 
-    public Graph buildGraph(String content){
+    public TopologyG buildGraph(String content){
         String[] lines = content.split("\n");
         for(String s : lines){
             String[] line = s.split(",");

@@ -1,7 +1,7 @@
-package algorithm.dijkstra;
+package algorithm.graph.domain.link;
 
 public class ENode {
-    private int ivex;// point to the end VNode
+    private int ivex;// point to the end VertexOfLink
     private int weight;
     private ENode nextEdge;// point next ENode
 

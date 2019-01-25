@@ -1,4 +1,4 @@
-package algorithm.topology;
+package algorithm.graph.topology;
 
 public class Edge {
     private int weight;

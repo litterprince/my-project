@@ -1,4 +1,4 @@
-package algorithm.topology;
+package algorithm.graph.topology;
 
 public class Main {
     public static void main(String[] args){
@@ -7,7 +7,7 @@ public class Main {
                 "3,4,1\n" +
                 "3,5,1\n" +
                 "4,5,1\n";
-        Graph graph = new Graph().buildGraph(content);
-        graph.topologySort(1);
+        TopologyG topologyG = new TopologyG().buildGraph(content);
+        topologyG.topologySort(1);
     }
 }

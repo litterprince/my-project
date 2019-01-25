@@ -1,26 +1,26 @@
-package algorithm.graph;
+package algorithm.graph.domain.array;
 
 /**
  * A->B的一条线路
  */
 public class Edge {
-	private Vertex v1;
-	private Vertex v2;
+	private VertexOfArray v1;
+	private VertexOfArray v2;
 	private Integer length;
 
-	public Vertex getV1() {
+	public VertexOfArray getV1() {
 		return v1;
 	}
 
-	public void setV1(Vertex v1) {
+	public void setV1(VertexOfArray v1) {
 		this.v1 = v1;
 	}
 
-	public Vertex getV2() {
+	public VertexOfArray getV2() {
 		return v2;
 	}
 
-	public void setV2(Vertex v2) {
+	public void setV2(VertexOfArray v2) {
 		this.v2 = v2;
 	}
 
@@ -35,8 +35,8 @@ public class Edge {
 	public Edge createByString(String str) {
 		try {
 			str = str.trim();
-			this.v1 = new Vertex(str.charAt(0));
-			this.v2 = new Vertex(str.charAt(1));
+			this.v1 = new VertexOfArray(str.charAt(0));
+			this.v2 = new VertexOfArray(str.charAt(1));
 
 			char last = str.charAt(str.length() - 1);
 			if (last >= '0' && last <= '9') {

@@ -1,4 +1,4 @@
-package algorithm.topology;
+package algorithm.graph.topology;
 
 import java.util.ArrayList;
 import java.util.List;
