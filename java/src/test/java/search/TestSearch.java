@@ -17,7 +17,8 @@ public class TestSearch {
                 "C,E,2\n" +
                 "E,B,3\n" +
                 "A,E,7";
-        IGraph graph = new GraphOfArray().buildGraph(content);
+        IGraph graph = new GraphOfArray(true).buildGraph(content);
+        System.out.println(graph.toString());
 
         IComputer computer = new DfsCompute(graph);
         computer.compute(graph.getVertex('E'));

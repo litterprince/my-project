@@ -1,35 +1,34 @@
 package algorithm.graph.domain;
 
-public class BaseGraph implements IGraph {
-    @Override
-    public int getVertexNum() {
-        return 0;
+public abstract class AbstractGraph implements IGraph {
+    // false mean this graph is undirected graph and it is default value
+    private boolean directed = false;
+
+    public void setDirected(boolean directed) {
+        this.directed = directed;
+    }
+
+    public boolean isDirected() {
+        return directed;
     }
 
     @Override
-    public int getPosition(IVertex t) {
-        return 0;
-    }
+    abstract public int getVertexNum();
 
     @Override
-    public int getWeight(int t1, int t2) {
-        return 0;
-    }
+    abstract public int getPosition(IVertex t);
 
     @Override
-    public IVertex getVertex(int index) {
-        return null;
-    }
+    abstract public int getWeight(int t1, int t2);
 
     @Override
-    public IVertex getVertex(char c) {
-        return null;
-    }
+    abstract public IVertex getVertex(int index);
 
     @Override
-    public IVertex[] getReachable(IVertex vertex) {
-        return null;
-    }
+    abstract public IVertex getVertex(char c);
+
+    @Override
+    abstract public IVertex[] getReachable(IVertex vertex);
 
     public static class GraphData {
         private char start;// the start vertex

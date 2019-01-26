@@ -1,13 +1,13 @@
 package algorithm.graph.domain.array;
 
-import algorithm.graph.domain.BaseGraph;
+import algorithm.graph.domain.AbstractGraph;
 import algorithm.graph.domain.IVertex;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class GraphOfArray extends BaseGraph {
+public class GraphOfArray extends AbstractGraph {
 	private final static int SCALE_INCREMENT = 10; // scale increment
 	private int scale = 5;// initial value of scale
 	private int[][] map;// adjacency matrix
@@ -16,8 +16,14 @@ public class GraphOfArray extends BaseGraph {
 
     // init method
     public GraphOfArray() {
-        vertexList = new VertexOfArray[scale];
-        map = new int[scale][scale];
+        this.vertexList = new VertexOfArray[scale];
+        this.map = new int[scale][scale];
+    }
+
+    public GraphOfArray(boolean directed){
+        this.vertexList = new VertexOfArray[scale];
+        this.map = new int[scale][scale];
+        setDirected(directed);
     }
 
     public GraphOfArray buildGraph(File file) {
@@ -42,49 +48,23 @@ public class GraphOfArray extends BaseGraph {
     }
 
     public GraphOfArray buildGraph(String str, String splitStr) {
-        EdgeOfArray edgeOfArray;
         String[] trainLineStr = str.split(splitStr);
-
         for (String string : trainLineStr) {
-            edgeOfArray = createByString(string);
-            if(edgeOfArray != null)
-                add(edgeOfArray);
+            add(string);
         }
         return this;
     }
 
-    private EdgeOfArray createByString(String str) {
-        String[] c = str.split(",");
-        if(c.length < 3) return null;
+    private void add(String string) {
+        EdgeOfArray edgeOfArray = addEdge(string);
 
-        VertexOfArray from = new VertexOfArray(c[0].charAt(0));
-        VertexOfArray to = new VertexOfArray(c[1].charAt(0));
-        Integer length = Integer.valueOf(c[2]);
-        return new EdgeOfArray(from, to, length);
-    }
-
-    private void expansion() {
-		scale += SCALE_INCREMENT;
-
-		// expand map array
-        int[][] newMap = new int[scale][scale];
-        System.arraycopy(map, 0, newMap, 0, map.length);
-        map = newMap;
-
-        // expand vertex array
-        VertexOfArray[] newVertexOfArrays = new VertexOfArray[scale];
-        System.arraycopy(vertexList, 0, newVertexOfArrays, 0, vertexList.length);
-        vertexList = newVertexOfArrays;
-    }
-
-    private boolean add(EdgeOfArray edgeOfArray) {
-		if (edgeOfArray.isRightLine()) {
+        if (edgeOfArray != null && edgeOfArray.isRightLine()) {
             // if scale is enough
             if (scale < getVertexNum() + 2) {
                 expansion();
             }
 
-			// add from vertex
+            // add from vertex
             VertexOfArray from = edgeOfArray.getFrom();
             from.OutDegreeIncrement();
             int fromIndex = addVertex(from);
@@ -94,13 +74,23 @@ public class GraphOfArray extends BaseGraph {
             to.InDegreeIncrement();
             int toIndex = addVertex(to);
 
-            // set length
-			map[fromIndex][toIndex] = edgeOfArray.getLength();
-			return true;
-		}
+            map[fromIndex][toIndex] = edgeOfArray.getLength();
+            // undirected graph
+            if(!isDirected()){
+                map[toIndex][fromIndex] = edgeOfArray.getLength();
+            }
+        }
+    }
 
-		return false;
-	}
+    private EdgeOfArray addEdge(String string) {
+        String[] c = string.split(",");
+        if(c.length < 3) return null;
+
+        VertexOfArray from = new VertexOfArray(c[0].charAt(0));
+        VertexOfArray to = new VertexOfArray(c[1].charAt(0));
+        Integer length = Integer.valueOf(c[2]);
+        return new EdgeOfArray(from, to, length);
+    }
 
 	private int addVertex(VertexOfArray vertex) {
 		// if exist
@@ -170,11 +160,25 @@ public class GraphOfArray extends BaseGraph {
         return vertexNum++;
     }
 
+    private void expansion() {
+        scale += SCALE_INCREMENT;
+
+        // expand map array
+        int[][] newMap = new int[scale][scale];
+        System.arraycopy(map, 0, newMap, 0, map.length);
+        map = newMap;
+
+        // expand vertex array
+        VertexOfArray[] newVertexOfArrays = new VertexOfArray[scale];
+        System.arraycopy(vertexList, 0, newVertexOfArrays, 0, vertexList.length);
+        vertexList = newVertexOfArrays;
+    }
+
     @Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		if (getVertexNum() == 0) {
-			return "No endTown !";
+			return "No Vertex !";
 		}
 
         for (int i = 0; i < getVertexNum(); i++) {

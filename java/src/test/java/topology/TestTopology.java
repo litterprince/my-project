@@ -12,7 +12,8 @@ public class TestTopology {
                 "C,D,1\n" +
                 "C,E,1\n" +
                 "D,E,1\n";
-        IGraph graph = new GraphOfLink().buildGraph(content);
+        IGraph graph = new GraphOfLink(true).buildGraph(content);
+        System.out.println(graph.toString());
         IComputer computer = new TopologyCompute(graph);
         computer.compute(null);
     }

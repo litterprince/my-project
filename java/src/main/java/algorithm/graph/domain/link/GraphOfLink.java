@@ -1,6 +1,6 @@
 package algorithm.graph.domain.link;
 
-import algorithm.graph.domain.BaseGraph;
+import algorithm.graph.domain.AbstractGraph;
 import algorithm.graph.domain.IVertex;
 
 import java.io.File;
@@ -10,8 +10,15 @@ import java.util.Scanner;
 /**
  * undirected graph
  */
-public class GraphOfLink extends BaseGraph {
+public class GraphOfLink extends AbstractGraph {
     private VertexOfLink[] mVexes;
+
+    public GraphOfLink(){
+    }
+
+    public GraphOfLink(boolean directed){
+        setDirected(directed);
+    }
 
     public GraphOfLink buildGraph(File file) {
         StringBuilder sb = new StringBuilder();
@@ -48,13 +55,10 @@ public class GraphOfLink extends BaseGraph {
             GraphData data = new GraphData(start, end, Integer.parseInt(list[2]));
             edges[i] = data;
         }
-        return buildGraph(vertexes, edges);
+        return buildGraph(vertexes, edges, count);
     }
 
-    public GraphOfLink buildGraph(char[] vertexes, GraphData[] edges){
-        // init variables
-        int vLen = vertexes.length;
-
+    private GraphOfLink buildGraph(char[] vertexes, GraphData[] edges, int vLen){
         // init VertexOfLink
         mVexes = new VertexOfLink[vLen];
         for(int i = 0; i< mVexes.length; i++){
@@ -62,43 +66,62 @@ public class GraphOfLink extends BaseGraph {
             mVexes[i].setValue(vertexes[i]);
         }
 
-        // init EdgeOfLink
-        for(GraphData data: edges){
-            // read from GraphData
-            char start = data.getStart();
-            char end = data.getEnd();
-            int weight = data.getWeight();
-            if(start == end) continue;
-
-            // read start and end of edge
-            int startIndex = getPosition(start);
-            mVexes[startIndex].outDegreeIncrement();
-            int entIndex = getPosition(end);
-            mVexes[entIndex].inDegreeIncrement();
-
-            // init node1
-            EdgeOfLink node1 = new EdgeOfLink();
-            node1.setIvex(entIndex);
-            node1.setWeight(weight);
-            // put node1 to the end of p1
-            if(mVexes[startIndex].getFirstEdge() == null){
-                mVexes[startIndex].setFirstEdge(node1);
-            }else{
-                linkLast(mVexes[startIndex].getFirstEdge(), node1);
-            }
-
-            // init node2
-            EdgeOfLink node2 = new EdgeOfLink();
-            node2.setIvex(startIndex);
-            node2.setWeight(weight);
-            // put node2 to the end of p2
-            if(mVexes[entIndex].getFirstEdge() == null){
-                mVexes[entIndex].setFirstEdge(node2);
-            }else{
-                linkLast(mVexes[entIndex].getFirstEdge(), node2);
-            }
+        for(GraphData data: edges) {
+            add(data);
         }
         return this;
+    }
+
+    private void add(GraphData data){
+        // read from GraphData
+        char start = data.getStart();
+        char end = data.getEnd();
+        int weight = data.getWeight();
+        if(start == end) return;
+
+        // from vertex
+        int startIndex = getPosition(start);
+        VertexOfLink fromVertex = mVexes[startIndex];
+        fromVertex.outDegreeIncrement();
+
+        // end vertex
+        int entIndex = getPosition(end);
+        VertexOfLink toVertex = mVexes[entIndex];
+        toVertex.inDegreeIncrement();
+
+        // init from vertex and end vertex
+        EdgeOfLink edge1 = new EdgeOfLink();
+        edge1.setIvex(entIndex);
+        edge1.setWeight(weight);
+        if(fromVertex.getFirstEdge() == null){
+            fromVertex.setFirstEdge(edge1);
+        }else{
+            addEdge(fromVertex.getFirstEdge(), edge1);
+        }
+
+        // undirected graph
+        if(!isDirected()) {
+            EdgeOfLink edge2 = new EdgeOfLink();
+            edge2.setIvex(startIndex);
+            edge2.setWeight(weight);
+            // put node2 to the end of p2
+            if (toVertex.getFirstEdge() == null) {
+                toVertex.setFirstEdge(edge2);
+            } else {
+                addEdge(toVertex.getFirstEdge(), edge2);
+            }
+        }
+    }
+
+    private void addEdge(EdgeOfLink list, EdgeOfLink node){
+        if(list == null || node == null) {
+            return;
+        }
+        EdgeOfLink end = list;
+        while(end.getNextEdge() != null){
+            end = end.getNextEdge();
+        }
+        end.setNextEdge(node);
     }
 
     private int addVertex(char[] v, char c, int len){
@@ -115,22 +138,6 @@ public class GraphOfLink extends BaseGraph {
         }
 
         return len;
-    }
-
-    /**
-     * put node to the end of list
-     * @param list node list
-     * @param node node
-     */
-    private void linkLast(EdgeOfLink list, EdgeOfLink node){
-        if(list == null || node == null) {
-            return;
-        }
-        EdgeOfLink end = list;
-        while(end.getNextEdge() != null){
-            end = end.getNextEdge();
-        }
-        end.setNextEdge(node);
     }
 
     @Override
@@ -151,6 +158,15 @@ public class GraphOfLink extends BaseGraph {
     @Override
     public int getPosition(IVertex node){
         return getPosition(node.getValue());
+    }
+    private int getPosition(char ch){
+        VertexOfLink node = new VertexOfLink(ch);
+        for (int i = 0; i < mVexes.length; i++) {
+            if(mVexes[i].equals(node)){
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -186,13 +202,16 @@ public class GraphOfLink extends BaseGraph {
         return  vertices;
     }
 
-    private int getPosition(char ch){
-        VertexOfLink node = new VertexOfLink(ch);
-        for (int i = 0; i < mVexes.length; i++) {
-            if(mVexes[i].equals(node)){
-                return i;
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(IVertex vertex : mVexes){
+            sb.append(vertex.getValue()).append(": ").append(vertex.getValue()).append("->");
+            for(IVertex v : getReachable(vertex)){
+                sb.append(v.getValue()).append("->");
             }
+            sb.append("\n");
         }
-        return -1;
+        return sb.toString();
     }
 }
