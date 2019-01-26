@@ -3,15 +3,13 @@ package algorithm.graph.core;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IVertex;
 
-public class BaseComputer implements IComputer {
+public abstract class AbstractComputer implements IComputer {
     protected IGraph graph;
 
-    public BaseComputer(IGraph graph){
+    public AbstractComputer(IGraph graph){
         this.graph = graph;
     }
 
     @Override
-    public void compute(IVertex t) {
-
-    }
+    abstract public void compute(IVertex t);
 }

@@ -16,14 +16,15 @@ public class GraphOfArray extends AbstractGraph {
 
     // init method
     public GraphOfArray() {
+        super(false);
         this.vertexList = new VertexOfArray[scale];
         this.map = new int[scale][scale];
     }
 
     public GraphOfArray(boolean directed){
+        super(directed);
         this.vertexList = new VertexOfArray[scale];
         this.map = new int[scale][scale];
-        setDirected(directed);
     }
 
     public GraphOfArray buildGraph(File file) {

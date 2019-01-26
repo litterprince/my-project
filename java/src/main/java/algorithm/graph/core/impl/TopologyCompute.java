@@ -1,13 +1,12 @@
 package algorithm.graph.core.impl;
 
-import algorithm.graph.core.BaseComputer;
+import algorithm.graph.core.AbstractComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IVertex;
 
-import javax.crypto.spec.IvParameterSpec;
 import java.util.*;
 
-public class TopologyCompute extends BaseComputer {
+public class TopologyCompute extends AbstractComputer {
     private int[] inDegree;
     private char[] result;
     public TopologyCompute(IGraph graph) {

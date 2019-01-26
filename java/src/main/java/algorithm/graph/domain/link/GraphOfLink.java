@@ -14,10 +14,11 @@ public class GraphOfLink extends AbstractGraph {
     private VertexOfLink[] mVexes;
 
     public GraphOfLink(){
+        super(false);
     }
 
     public GraphOfLink(boolean directed){
-        setDirected(directed);
+        super(directed);
     }
 
     public GraphOfLink buildGraph(File file) {

@@ -1,10 +1,10 @@
 package algorithm.graph.core.impl;
 
-import algorithm.graph.core.BaseComputer;
+import algorithm.graph.core.AbstractComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IVertex;
 
-public class DijkstraCompute extends BaseComputer {
+public class DijkstraCompute extends AbstractComputer {
 
     public DijkstraCompute(IGraph graph) {
         super(graph);

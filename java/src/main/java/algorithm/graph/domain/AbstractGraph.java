@@ -2,13 +2,13 @@ package algorithm.graph.domain;
 
 public abstract class AbstractGraph implements IGraph {
     // false mean this graph is undirected graph and it is default value
-    private boolean directed = false;
+    private boolean directed;
 
-    public void setDirected(boolean directed) {
+    public AbstractGraph(boolean directed) {
         this.directed = directed;
     }
 
-    public boolean isDirected() {
+    protected boolean isDirected() {
         return directed;
     }
 
