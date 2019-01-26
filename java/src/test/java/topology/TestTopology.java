@@ -1,7 +1,7 @@
 package topology;
 
 import algorithm.graph.core.IComputer;
-import algorithm.graph.core.impl.TopologyCompute;
+import algorithm.graph.core.impl.TopologyComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.link.GraphOfLink;
 
@@ -14,7 +14,7 @@ public class TestTopology {
                 "D,E,1\n";
         IGraph graph = new GraphOfLink(true).buildGraph(content);
         System.out.println(graph.toString());
-        IComputer computer = new TopologyCompute(graph);
+        IComputer computer = new TopologyComputer(graph);
         computer.compute(null);
     }
 }

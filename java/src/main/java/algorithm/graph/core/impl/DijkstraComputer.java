@@ -4,9 +4,9 @@ import algorithm.graph.core.AbstractComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IVertex;
 
-public class DijkstraCompute extends AbstractComputer {
+public class DijkstraComputer extends AbstractComputer {
 
-    public DijkstraCompute(IGraph graph) {
+    public DijkstraComputer(IGraph graph) {
         super(graph);
     }
 
@@ -21,21 +21,22 @@ public class DijkstraCompute extends AbstractComputer {
      * dist distance array list, the value of index is the distance start from the previous vertex to the vertex which current index point to
      */
     private void dijkstra(int start){
+        //TODO: it seems like not correct, need to fixed it
         // set true if find shortest rout
         int[] prev = new int[graph.getVertexNum()];
         int[] dist = new int[graph.getVertexNum()];
-        boolean[] flag = new boolean[graph.getVertexNum()];
+        boolean[] isVisited = new boolean[graph.getVertexNum()];
 
         // init prev and dist array list
         for (int i = 0; i < graph.getVertexNum(); i++) {
             prev[i] = start;
             dist[i] = graph.getWeight(start, i);
-            flag[i] = false;
+            isVisited[i] = false;
         }
 
         // int vs's data in prev and dist
         dist[start] = 0;
-        flag[start] = true;
+        isVisited[start] = true;
 
         // start to compute
         int k = start;
@@ -43,19 +44,19 @@ public class DijkstraCompute extends AbstractComputer {
             // find the shortest rout form temp to j and record the index
             int min = Integer.MAX_VALUE;
             for (int j = 0; j < graph.getVertexNum(); j++) {
-                if(!flag[j] && dist[j] < min && prev[j] == k){
+                if(!isVisited[j] && dist[j] < min && prev[j] == k){
                     min = dist[j];
                     k = j;
                 }
             }
 
             // set flag's value of k with true
-            flag[k] = true;
+            isVisited[k] = true;
 
             // init pre and dist with the new beginning vertex of k
             for (int j = 0; j < graph.getVertexNum(); j++) {
                 int weight = graph.getWeight(k, j);
-                if(!flag[j]){
+                if(!isVisited[j]){
                     prev[j] = k;
                     dist[j] = weight;
                 }

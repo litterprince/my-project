@@ -1,11 +1,11 @@
 package algorithm.graph.compute.impl;
 
-import algorithm.graph.core.SearchCompute;
+import algorithm.graph.core.SearchComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IVertex;
 
-public class DfsCompute extends SearchCompute {
-    public DfsCompute(IGraph graph) {
+public class DfsComputer extends SearchComputer {
+    public DfsComputer(IGraph graph) {
         super(graph);
     }
 

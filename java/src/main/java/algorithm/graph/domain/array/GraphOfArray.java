@@ -166,7 +166,9 @@ public class GraphOfArray extends AbstractGraph {
 
         // expand map array
         int[][] newMap = new int[scale][scale];
-        System.arraycopy(map, 0, newMap, 0, map.length);
+        for (int i = 0; i < map.length; i++) {
+            System.arraycopy(map[i], 0, newMap[i], 0, map.length);
+        }
         map = newMap;
 
         // expand vertex array

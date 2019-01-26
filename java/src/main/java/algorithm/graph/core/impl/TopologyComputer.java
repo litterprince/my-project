@@ -6,10 +6,10 @@ import algorithm.graph.domain.IVertex;
 
 import java.util.*;
 
-public class TopologyCompute extends AbstractComputer {
+public class TopologyComputer extends AbstractComputer {
     private int[] inDegree;
     private char[] result;
-    public TopologyCompute(IGraph graph) {
+    public TopologyComputer(IGraph graph) {
         super(graph);
         inDegree = new int[graph.getVertexNum()];
         result = new char[graph.getVertexNum()];

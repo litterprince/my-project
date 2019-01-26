@@ -1,11 +1,11 @@
-package dijkstra;
+package prim;
 
 import algorithm.graph.core.IComputer;
-import algorithm.graph.core.impl.DijkstraComputer;
+import algorithm.graph.core.impl.PrimComputer;
 import algorithm.graph.domain.IGraph;
-import algorithm.graph.domain.link.GraphOfLink;
+import algorithm.graph.domain.array.GraphOfArray;
 
-public class TestDijkstra {
+public class TestPrim {
     public static void main(String[] args){
         String content  = "A,B,12\n"+
                 "A,F,16\n"+
@@ -19,9 +19,9 @@ public class TestDijkstra {
                 "E,F,2\n"+
                 "E,G,8\n"+
                 "F,G,9\n";
-        IGraph graph = new GraphOfLink().buildGraph(content);
+        IGraph graph = new GraphOfArray(true).buildGraph(content);
         System.out.println(graph.toString());
-        IComputer computer = new DijkstraComputer(graph);
-        computer.compute(graph.getVertex('D'));
+        IComputer computer = new PrimComputer(graph);
+        computer.compute(graph.getVertex('A'));
     }
 }

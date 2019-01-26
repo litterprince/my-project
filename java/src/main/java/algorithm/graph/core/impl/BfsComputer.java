@@ -1,14 +1,14 @@
 package algorithm.graph.compute.impl;
 
-import algorithm.graph.core.SearchCompute;
+import algorithm.graph.core.SearchComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IVertex;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class BfsCompute extends SearchCompute {
-    public BfsCompute(IGraph graph) {
+public class BfsComputer extends SearchComputer {
+    public BfsComputer(IGraph graph) {
         super(graph);
     }
 

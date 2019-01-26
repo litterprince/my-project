@@ -1,7 +1,5 @@
 package search;
 
-import algorithm.graph.compute.impl.BfsCompute;
-import algorithm.graph.compute.impl.DfsCompute;
 import algorithm.graph.core.IComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.array.GraphOfArray;
@@ -20,10 +18,10 @@ public class TestSearch {
         IGraph graph = new GraphOfArray(true).buildGraph(content);
         System.out.println(graph.toString());
 
-        IComputer computer = new DfsCompute(graph);
+        IComputer computer = new algorithm.graph.compute.impl.DfsComputer(graph);
         computer.compute(graph.getVertex('E'));
 
-        IComputer bfsCompute = new BfsCompute(graph);
+        IComputer bfsCompute = new algorithm.graph.compute.impl.BfsComputer(graph);
         bfsCompute.compute(graph.getVertex('E'));
     }
 }
