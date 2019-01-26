@@ -38,20 +38,20 @@ public class GraphOfLink extends BaseGraph {
         String[] c = content.split(splitStr);
         char[] vertexes = new char[c.length];
         int count = 0;
-        EData[] edges = new EData[c.length];
+        GraphData[] edges = new GraphData[c.length];
         for(int i=0;i<c.length;i++){
             String[] list = c[i].split(",");
             char start = list[0].charAt(0);
             count = addVertex(vertexes, start, count);
             char end = list[1].charAt(0);
             count = addVertex(vertexes, end, count);
-            EData data = new EData(start, end, Integer.parseInt(list[2]));
+            GraphData data = new GraphData(start, end, Integer.parseInt(list[2]));
             edges[i] = data;
         }
         return buildGraph(vertexes, edges);
     }
 
-    public GraphOfLink buildGraph(char[] vertexes, EData[] edges){
+    public GraphOfLink buildGraph(char[] vertexes, GraphData[] edges){
         // init variables
         int vLen = vertexes.length;
 
@@ -63,15 +63,18 @@ public class GraphOfLink extends BaseGraph {
         }
 
         // init EdgeOfLink
-        for(EData data: edges){
-            // read from EData
+        for(GraphData data: edges){
+            // read from GraphData
             char start = data.getStart();
             char end = data.getEnd();
             int weight = data.getWeight();
+            if(start == end) continue;
 
             // read start and end of edge
             int startIndex = getPosition(start);
+            mVexes[startIndex].outDegreeIncrement();
             int entIndex = getPosition(end);
+            mVexes[entIndex].inDegreeIncrement();
 
             // init node1
             EdgeOfLink node1 = new EdgeOfLink();
@@ -168,6 +171,21 @@ public class GraphOfLink extends BaseGraph {
         return mVexes.length;
     }
 
+    @Override
+    public IVertex[] getReachable(IVertex vertex) {
+        int outDegree = vertex.getOutDegree();
+        IVertex[] vertices = new IVertex[outDegree];
+
+        int j = 0;
+        EdgeOfLink edge = (EdgeOfLink) vertex.getT();
+        while (edge != null && j < outDegree){
+            vertices[j] = getVertex(edge.getIvex());
+            edge = edge.getNextEdge();
+            j ++ ;
+        }
+        return  vertices;
+    }
+
     private int getPosition(char ch){
         VertexOfLink node = new VertexOfLink(ch);
         for (int i = 0; i < mVexes.length; i++) {
@@ -176,29 +194,5 @@ public class GraphOfLink extends BaseGraph {
             }
         }
         return -1;
-    }
-
-    public static class EData {
-        private char start;// the start vertex
-        private char end;// the end vertex
-        private int weight;// weight
-
-        public EData(char start, char end, int weight) {
-            this.start = start;
-            this.end = end;
-            this.weight = weight;
-        }
-
-        public char getStart() {
-            return start;
-        }
-
-        public char getEnd() {
-            return end;
-        }
-
-        public int getWeight() {
-            return weight;
-        }
     }
 }

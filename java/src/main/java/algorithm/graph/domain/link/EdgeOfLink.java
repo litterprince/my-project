@@ -1,16 +1,16 @@
 package algorithm.graph.domain.link;
 
 public class EdgeOfLink {
-    private int ivex;// point to the end VertexOfLink
+    private int to;// point to the end VertexOfLink
     private int weight;
     private EdgeOfLink nextEdge;// point next EdgeOfLink
 
     public void setIvex(int ivex) {
-        this.ivex = ivex;
+        this.to = ivex;
     }
 
     public int getIvex() {
-        return ivex;
+        return to;
     }
 
     public void setWeight(int weight) {

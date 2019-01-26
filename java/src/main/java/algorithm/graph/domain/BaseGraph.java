@@ -25,4 +25,33 @@ public class BaseGraph implements IGraph {
     public IVertex getVertex(char c) {
         return null;
     }
+
+    @Override
+    public IVertex[] getReachable(IVertex vertex) {
+        return null;
+    }
+
+    public static class GraphData {
+        private char start;// the start vertex
+        private char end;// the end vertex
+        private int weight;// weight
+
+        public GraphData(char start, char end, int weight) {
+            this.start = start;
+            this.end = end;
+            this.weight = weight;
+        }
+
+        public char getStart() {
+            return start;
+        }
+
+        public char getEnd() {
+            return end;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+    }
 }

@@ -4,24 +4,32 @@ package algorithm.graph.domain.array;
  * A->B的一条线路
  */
 public class EdgeOfArray {
-	private VertexOfArray v1;
-	private VertexOfArray v2;
+	private VertexOfArray from;
+	private VertexOfArray to;
 	private Integer length;
 
-	public VertexOfArray getV1() {
-		return v1;
+    public EdgeOfArray() { }
+
+    public EdgeOfArray(VertexOfArray from, VertexOfArray to, Integer length) {
+		this.from = from;
+		this.to = to;
+		this.length = length;
 	}
 
-	public void setV1(VertexOfArray v1) {
-		this.v1 = v1;
+	public VertexOfArray getFrom() {
+		return from;
 	}
 
-	public VertexOfArray getV2() {
-		return v2;
+	public void setFrom(VertexOfArray v1) {
+		this.from = v1;
 	}
 
-	public void setV2(VertexOfArray v2) {
-		this.v2 = v2;
+	public VertexOfArray geTo() {
+		return to;
+	}
+
+	public void setTo(VertexOfArray v2) {
+		this.to = v2;
 	}
 
 	public Integer getLength() {
@@ -32,37 +40,17 @@ public class EdgeOfArray {
 		this.length = length;
 	}
 
-	public EdgeOfArray createByString(String str) {
-		try {
-			str = str.trim();
-			this.v1 = new VertexOfArray(str.charAt(0));
-			this.v2 = new VertexOfArray(str.charAt(1));
-
-			char last = str.charAt(str.length() - 1);
-			if (last >= '0' && last <= '9') {
-				this.length = Integer.parseInt(str.substring(2, str.length()));
-			} else {
-				// 逗号结尾
-				this.length = Integer.parseInt(str.substring(2,
-						str.length() - 1));
-			}
-		} catch (Exception e) {
-			// do nothing
-		}
-		return this;
-	}
-
 	/**
 	 * 判断当前线路是否正确
 	 * @return boolean
 	 */
 	public boolean isRightLine() {
-        return !(v1 == null || v2 == null || length == null || v1.equals(v2));
+        return !(from == null || to == null || length == null || from.equals(to));
 	}
 
 	@Override
 	public String toString() {
-		return "EdgeOfArray [v1=" + v1 + ", v2=" + v2 + ", length=" + length
+		return "EdgeOfArray [from=" + from + ", to=" + to + ", length=" + length
 				+ "]";
 	}
 }

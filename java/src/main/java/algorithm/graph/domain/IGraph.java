@@ -6,4 +6,5 @@ public interface IGraph {
     int getWeight(int t1, int t2);
     IVertex getVertex(int index);
     IVertex getVertex(char c);
+    IVertex[] getReachable(IVertex vertex);
 }

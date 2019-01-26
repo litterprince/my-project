@@ -2,9 +2,11 @@ package algorithm.graph.domain.link;
 
 import algorithm.graph.domain.IVertex;
 
-public class VertexOfLink implements IVertex {
+public class VertexOfLink implements IVertex<EdgeOfLink> {
     private Character value;
     private EdgeOfLink firstEdge;// point first EdgeOfLink from this VertexOfLink
+    private int inDegree;
+    private int outDegree;
 
     public VertexOfLink(){}
 
@@ -19,6 +21,29 @@ public class VertexOfLink implements IVertex {
     @Override
     public Character getValue() {
         return value;
+    }
+
+    public void inDegreeIncrement(){
+        inDegree ++;
+    }
+
+    @Override
+    public int getInDegree() {
+        return inDegree;
+    }
+
+    public void outDegreeIncrement(){
+        outDegree ++;
+    }
+
+    @Override
+    public int getOutDegree() {
+        return outDegree;
+    }
+
+    @Override
+    public EdgeOfLink getT() {
+        return firstEdge;
     }
 
     public void setFirstEdge(EdgeOfLink firstEdge) {

@@ -21,36 +21,46 @@ public class GraphOfArray extends BaseGraph {
     }
 
     public GraphOfArray buildGraph(File file) {
-        EdgeOfArray edgeOfArray = new EdgeOfArray();
+        StringBuilder sb = new StringBuilder();
         try {
             String line = "";
             Scanner sca = new Scanner(file);
             while (sca.hasNext()) {
                 line = sca.next();
-                edgeOfArray.createByString(line);
-                add(edgeOfArray);
+                sb.append(line).append("\n");
             }
             sca.close();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return this;
+        return buildGraph(sb.toString());
     }
 
     public GraphOfArray buildGraph(String content){
-	    return buildGraph(content, ",");
+	    return buildGraph(content, "\n");
     }
 
     public GraphOfArray buildGraph(String str, String splitStr) {
-        EdgeOfArray edgeOfArray = new EdgeOfArray();
+        EdgeOfArray edgeOfArray;
         String[] trainLineStr = str.split(splitStr);
 
         for (String string : trainLineStr) {
-            edgeOfArray.createByString(string);
-            add(edgeOfArray);
+            edgeOfArray = createByString(string);
+            if(edgeOfArray != null)
+                add(edgeOfArray);
         }
         return this;
+    }
+
+    private EdgeOfArray createByString(String str) {
+        String[] c = str.split(",");
+        if(c.length < 3) return null;
+
+        VertexOfArray from = new VertexOfArray(c[0].charAt(0));
+        VertexOfArray to = new VertexOfArray(c[1].charAt(0));
+        Integer length = Integer.valueOf(c[2]);
+        return new EdgeOfArray(from, to, length);
     }
 
     private void expansion() {
@@ -74,9 +84,17 @@ public class GraphOfArray extends BaseGraph {
                 expansion();
             }
 
-			// add train line
-			int fromIndex = addVertex(edgeOfArray.getV1());
-			int toIndex = addVertex(edgeOfArray.getV2());
+			// add from vertex
+            VertexOfArray from = edgeOfArray.getFrom();
+            from.OutDegreeIncrement();
+            int fromIndex = addVertex(from);
+
+            // add in vertex
+            VertexOfArray to = edgeOfArray.geTo();
+            to.InDegreeIncrement();
+            int toIndex = addVertex(to);
+
+            // set length
 			map[fromIndex][toIndex] = edgeOfArray.getLength();
 			return true;
 		}
@@ -133,8 +151,19 @@ public class GraphOfArray extends BaseGraph {
         return map[t1][t2];
     }
 
-	private int addAndGetNum(){
-	    return ++vertexNum;
+    @Override
+    public IVertex[] getReachable(IVertex vertex) {
+        int outDegree = vertex.getOutDegree();
+        IVertex[] vertices = new IVertex[outDegree];
+        int index = getPosition(vertex);
+        int j = 0;
+        for (int i = 0; i < getVertexNum() && j < outDegree; i++) {
+            if(getWeight(index, i) > 0 || index != i) {
+                vertices[j] = getVertex(i);
+                j ++;
+            }
+        }
+        return  vertices;
     }
 
     private int getAndAddNum(){

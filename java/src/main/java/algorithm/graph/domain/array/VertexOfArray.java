@@ -1,12 +1,15 @@
 package algorithm.graph.domain.array;
 
+import algorithm.graph.domain.AbstractVertex;
 import algorithm.graph.domain.IVertex;
 
 /**
  * Town
  */
-public class VertexOfArray implements IVertex {
+public class VertexOfArray extends AbstractVertex {
 	private Character value;
+	private int inDegree;
+	private int outDegree;
 
 	public VertexOfArray(Character value) {
 	    if(value == null){
@@ -20,7 +23,25 @@ public class VertexOfArray implements IVertex {
 		return value;
 	}
 
-	public void setValue(Character value) {
+	public void InDegreeIncrement(){
+	     inDegree ++;
+    }
+
+    @Override
+    public int getInDegree() {
+        return inDegree;
+    }
+
+    public void OutDegreeIncrement(){
+        outDegree ++;
+    }
+
+    @Override
+    public int getOutDegree() {
+        return outDegree;
+    }
+
+    public void setValue(Character value) {
 		this.value = value;
 	}
 
