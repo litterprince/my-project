@@ -5,6 +5,8 @@ import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IVertex;
 
 public class PrimComputer extends AbstractComputer {
+    private final static int MAX_VALUE = Integer.MAX_VALUE;
+
     public PrimComputer(IGraph graph) {
         super(graph);
     }
@@ -14,8 +16,13 @@ public class PrimComputer extends AbstractComputer {
         prim(t);
     }
 
+    /**
+     * first, let a vertex be the first vertex of min spanning tree and put it in min-set
+     * second, form min-set to other vertex not in if,choose the shortest vertex and put it in min-set
+     * repeat second step till there's no unvisited vertex
+     * @param vertex vertex
+     */
     private void prim(IVertex vertex){
-        //TODO: this is a error method, need to fixed it
         int startIndex = graph.getPosition(vertex);
         int[] prev = new int[graph.getVertexNum()];
         int[] dist = new int[graph.getVertexNum()];
@@ -24,35 +31,36 @@ public class PrimComputer extends AbstractComputer {
         // init variables
         for (int i = 0; i < graph.getVertexNum(); i++) {
             prev[i] = startIndex;
-            dist[i] = graph.getWeight(startIndex, i);
-            isVisited[i] = false;
+            dist[i] = graph.getWeight(startIndex, i) == 0 ? MAX_VALUE : graph.getWeight(startIndex, i);
         }
 
         // init start vertex's variable
         isVisited[startIndex] = true;
 
-        for (int i = 0; i < graph.getVertexNum(); i++) {
-            int min = Integer.MAX_VALUE;
-            int minFrom = -1;
-            int minTo = -1;
-            for (int j = 0; j < graph.getVertexNum(); j++) { // visited list
-                if(!isVisited[j]) continue;
+        int index = startIndex;
+        for(int i=0;i<graph.getVertexNum();i++){
+            if(startIndex == i) continue;
 
-                for (int k = 0; k < graph.getVertexNum(); k++) { // not visited list
-                    if(!isVisited[k]){
-                        int weight = graph.getWeight(j, k);
-                        if(weight!=0 && weight < min){
-                            min = weight;
-                            minFrom = j;
-                            minTo = k;
-                        }
-                    }
+            // find the shortest route from unvisited list to visited list
+            int min = MAX_VALUE;
+            for (int j = 0; j < graph.getVertexNum(); j++) { // visited list
+                if(!isVisited[j] && dist[j] < min){
+                    min = dist[j];
+                    index = j;
                 }
             }
-            if(minFrom != -1 || minTo != -1) {
-                prev[minTo] = minFrom;
-                dist[minTo] = min;
-                isVisited[minTo] = true;
+
+            // set visited
+            isVisited[index] = true;
+
+            for (int j = 0; j < graph.getVertexNum(); j++) { // unvisited list
+                if(!isVisited[j]){
+                    int weight = graph.getWeight(index, j) == 0 ? MAX_VALUE : graph.getWeight(index, j);
+                    if(weight < dist[j]){
+                        prev[j] = index;
+                        dist[j] = weight;
+                    }
+                }
             }
         }
 

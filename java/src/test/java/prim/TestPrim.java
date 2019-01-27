@@ -19,8 +19,9 @@ public class TestPrim {
                 "E,F,2\n"+
                 "E,G,8\n"+
                 "F,G,9\n";
-        IGraph graph = new GraphOfArray(true).buildGraph(content);
+        IGraph graph = new GraphOfArray().buildGraph(content);
         System.out.println(graph.toString());
+        System.out.println(graph.getRelations());
         IComputer computer = new PrimComputer(graph);
         computer.compute(graph.getVertex('A'));
     }

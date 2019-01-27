@@ -7,4 +7,5 @@ public interface IGraph {
     IVertex getVertex(int index);
     IVertex getVertex(char c);
     IVertex[] getReachable(IVertex vertex);
+    String getRelations();
 }

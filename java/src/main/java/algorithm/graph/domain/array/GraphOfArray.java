@@ -157,6 +157,15 @@ public class GraphOfArray extends AbstractGraph {
         return  vertices;
     }
 
+    @Override
+    public String getRelations() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < getVertexNum(); i++) {
+            sb.append(i).append("->").append(vertexList[i].getValue()).append("\n");
+        }
+        return sb.toString();
+    }
+
     private int getAndAddNum(){
         return vertexNum++;
     }

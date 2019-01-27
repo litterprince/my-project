@@ -204,6 +204,15 @@ public class GraphOfLink extends AbstractGraph {
     }
 
     @Override
+    public String getRelations() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < getVertexNum(); i++) {
+            sb.append(i).append("->").append(mVexes[i].getValue()).append("\n");
+        }
+        return sb.toString();
+    }
+
+    @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         for(IVertex vertex : mVexes){

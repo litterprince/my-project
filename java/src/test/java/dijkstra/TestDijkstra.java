@@ -21,6 +21,7 @@ public class TestDijkstra {
                 "F,G,9\n";
         IGraph graph = new GraphOfLink().buildGraph(content);
         System.out.println(graph.toString());
+        System.out.println(graph.getRelations());
         IComputer computer = new DijkstraComputer(graph);
         computer.compute(graph.getVertex('D'));
     }
