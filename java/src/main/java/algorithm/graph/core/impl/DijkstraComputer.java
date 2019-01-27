@@ -9,7 +9,7 @@ import algorithm.graph.domain.result.ShortestResult;
 
 public class DijkstraComputer extends AbstractComputer<IResult> {
     private final static int MAX_VALUE = Integer.MAX_VALUE;
-    private int shortestCost = 0; // it is thread safe if install with AtomInteger
+    private int shortestCost; //TODO: it is thread safe if install with AtomInteger
     private int count;
     private boolean isExist;
 
@@ -112,6 +112,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
     }
 
     private void initParams(){
+        shortestCost = 0;
         count = 0;
         isExist = false;
     }

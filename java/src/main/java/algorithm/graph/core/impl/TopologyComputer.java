@@ -89,7 +89,7 @@ public class TopologyComputer extends AbstractComputer<IResult> {
 
         int i = 0;
         zeroQueue.remove(start);
-        IVertex vertex = graph.getVertex(start.getValue()); // don't use clone becase of shallow copy
+        IVertex vertex = graph.getVertex(start.getValue()); // don't use clone because of shallow copy
         while (zeroQueue.size() > 0){
             if(vertex == null) {
                 vertex = zeroQueue.poll();
