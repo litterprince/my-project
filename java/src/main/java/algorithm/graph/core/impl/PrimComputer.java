@@ -2,9 +2,11 @@ package algorithm.graph.core.impl;
 
 import algorithm.graph.core.AbstractComputer;
 import algorithm.graph.domain.IGraph;
+import algorithm.graph.domain.IResult;
 import algorithm.graph.domain.IVertex;
+import algorithm.graph.domain.result.Result;
 
-public class PrimComputer extends AbstractComputer {
+public class PrimComputer extends AbstractComputer<IResult> {
     private final static int MAX_VALUE = Integer.MAX_VALUE;
 
     public PrimComputer(IGraph graph) {
@@ -12,8 +14,9 @@ public class PrimComputer extends AbstractComputer {
     }
 
     @Override
-    public void compute(IVertex t) {
+    public IResult compute(IVertex t) {
         prim(t);
+        return new Result();
     }
 
     /**

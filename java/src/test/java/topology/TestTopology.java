@@ -4,6 +4,7 @@ import algorithm.graph.core.IComputer;
 import algorithm.graph.core.impl.TopologyComputer;
 import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.link.GraphOfLink;
+import algorithm.graph.domain.link.VertexOfLink;
 
 public class TestTopology {
     public static void main(String[] args){
@@ -15,6 +16,6 @@ public class TestTopology {
         IGraph graph = new GraphOfLink(true).buildGraph(content);
         System.out.println(graph.toString());
         IComputer computer = new TopologyComputer(graph);
-        computer.compute(null);
+        computer.compute(new VertexOfLink('A'));
     }
 }

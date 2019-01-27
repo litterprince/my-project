@@ -2,7 +2,7 @@ package algorithm.graph.core;
 
 import algorithm.graph.domain.IGraph;
 
-public abstract class SearchComputer extends AbstractComputer {
+public abstract class SearchComputer<T> extends AbstractComputer<T> {
     // if the vertex current index point to is visited, then set true
     private boolean[] isVisit;
 

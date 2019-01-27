@@ -3,6 +3,7 @@ package dijkstra;
 import algorithm.graph.core.IComputer;
 import algorithm.graph.core.impl.DijkstraComputer;
 import algorithm.graph.domain.IGraph;
+import algorithm.graph.domain.IResult;
 import algorithm.graph.domain.link.GraphOfLink;
 
 public class TestDijkstra {
@@ -23,6 +24,7 @@ public class TestDijkstra {
         System.out.println(graph.toString());
         System.out.println(graph.getRelations());
         IComputer computer = new DijkstraComputer(graph);
-        computer.compute(graph.getVertex('D'));
+        IResult result = (IResult) computer.compute(graph.getVertex('D'), graph.getVertex('F'));
+        System.out.println(result.toString());
     }
 }

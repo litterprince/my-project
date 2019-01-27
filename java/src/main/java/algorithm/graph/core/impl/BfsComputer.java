@@ -2,22 +2,25 @@ package algorithm.graph.compute.impl;
 
 import algorithm.graph.core.SearchComputer;
 import algorithm.graph.domain.IGraph;
+import algorithm.graph.domain.IResult;
 import algorithm.graph.domain.IVertex;
+import algorithm.graph.domain.result.Result;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class BfsComputer extends SearchComputer {
+public class BfsComputer extends SearchComputer<IResult> {
     public BfsComputer(IGraph graph) {
         super(graph);
     }
 
     @Override
-    public void compute(IVertex vertex){
+    public IResult compute(IVertex vertex){
         System.out.print("bfs: ");
         initVisit();
         bfs(vertex);
         System.out.println();
+        return new Result();
     }
 
     /**
