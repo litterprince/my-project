@@ -57,6 +57,13 @@ public class TopologyComputer extends AbstractComputer<IResult> {
         }
     }
 
+    /**
+     * topology sort
+     * 1 选择一个入度为0的顶点并输出之；
+     * 2 从网中删除此顶点及所有出边。
+     * 3 循环执行以上两步，循环结束后，若输出的顶点数小于网中的顶点数，则输出“有回路”信息，否则输出的顶点序列就是一种拓扑序列
+     * @param start start
+     */
     private void topologySort(IVertex start){
         // check
         if(start == null){

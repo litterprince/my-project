@@ -41,10 +41,9 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
 
     /**
      * dijkstra: compute the shortest distance between two vertex
-     *
      * @param startIndex the start vertex
-     *                   prev previous vertex array list, the value of index is the previous vertex of the vertex which current index point to
-     *                   dist distance array list, the value of index is the distance start from the previous vertex to the vertex which current index point to
+     * prev previous vertex array list, the value of index is the previous vertex of the vertex which current index point to
+     * dist distance array list, the value of index is the distance start from the previous vertex to the vertex which current index point to
      */
     private void dijkstra(int startIndex, int[] prev, int[] dist) {
         // set true if find shortest rout

@@ -20,6 +20,7 @@ public class PrimComputer extends AbstractComputer<IResult> {
     }
 
     /**
+     * prim
      * first, let a vertex be the first vertex of min spanning tree and put it in min-set
      * second, form min-set to other vertex not in if,choose the shortest vertex and put it in min-set
      * repeat second step till there's no unvisited vertex

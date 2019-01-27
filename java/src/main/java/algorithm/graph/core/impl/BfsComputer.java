@@ -25,8 +25,8 @@ public class BfsComputer extends SearchComputer<IResult> {
 
     /**
      * Broad First Search
-     * 从图的某一结点出发，首先依次访问该结点的所有邻接顶点 Vi1, Vi2, …, Vin
-     * 再按这些顶点被访问的先后次序依次访问与它们相邻接的所有未被访问的顶点，重复此过程，直至所有顶点均被访问为止
+     * 1 从图的某一结点出发，首先依次访问该结点的所有邻接顶点 Vi1, Vi2, …, Vin
+     * 2 再按这些顶点被访问的先后次序依次访问与它们相邻接的所有未被访问的顶点，重复此过程，直至所有顶点均被访问为止
      */
     private void bfs(IVertex start){
         if(graph.getPosition(start) == -1)
