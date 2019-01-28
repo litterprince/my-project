@@ -5,9 +5,7 @@ import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IResult;
 import algorithm.graph.domain.IVertex;
 import algorithm.graph.domain.result.Result;
-
-import java.util.PriorityQueue;
-import java.util.Queue;
+import algorithm.structure.Queue;
 
 public class BfsComputer extends SearchComputer<IResult> {
     public BfsComputer(IGraph graph) {
@@ -32,7 +30,7 @@ public class BfsComputer extends SearchComputer<IResult> {
         if(graph.getPosition(start) == -1)
             return;
 
-        Queue<IVertex> queue = new PriorityQueue<>();
+        Queue<IVertex> queue = new Queue<>();
         queue.add(start);
         setIsVisit(graph.getPosition(start));
         System.out.print(start.getValue() + " ");

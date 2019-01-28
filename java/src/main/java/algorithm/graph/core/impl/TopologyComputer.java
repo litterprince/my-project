@@ -5,8 +5,7 @@ import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.IResult;
 import algorithm.graph.domain.IVertex;
 import algorithm.graph.domain.result.Result;
-
-import java.util.*;
+import algorithm.structure.Queue;
 
 public class TopologyComputer extends AbstractComputer<IResult> {
     private int[] inDegree;
@@ -24,7 +23,7 @@ public class TopologyComputer extends AbstractComputer<IResult> {
     }
 
     private void topologySort(){
-        Queue<IVertex> zeroQueue = new LinkedList<>();
+        Queue<IVertex> zeroQueue = new Queue<>();
 
         // init zero-queue
         for (int i = 0; i < graph.getVertexNum(); i++) {
@@ -72,24 +71,28 @@ public class TopologyComputer extends AbstractComputer<IResult> {
         }
 
         // init zero-queue
-        Queue<IVertex> zeroQueue = new LinkedList<>();
+        Queue<IVertex> zeroQueue = new Queue<>();
+        boolean isFind = false;
         for (int i = 0; i < graph.getVertexNum(); i++) {
             IVertex vertex = graph.getVertex(i);
             inDegree[i] = vertex.getInDegree();
             if(inDegree[i] == 0){
+                if(start.equals(vertex)){
+                    isFind = true;
+                    continue;
+                }
                 zeroQueue.add(vertex);
             }
         }
 
         // check
-        if(!zeroQueue.contains(start)){
+        if(!isFind){
             System.out.println("it's a wrong start vertex because it's in-degree is not zero!");
             return;
         }
 
         int i = 0;
-        zeroQueue.remove(start);
-        IVertex vertex = graph.getVertex(start.getValue()); // don't use clone because of shallow copy
+        IVertex vertex = graph.getVertex(start.getValue()); // don't use '=' because of shallow copy
         while (zeroQueue.size() > 0){
             if(vertex == null) {
                 vertex = zeroQueue.poll();
