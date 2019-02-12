@@ -7,7 +7,7 @@ import algorithm.graph.domain.IVertex;
 import algorithm.graph.domain.result.Result;
 
 public class PrimComputer extends AbstractComputer<IResult> {
-    private final static int MAX_VALUE = Integer.MAX_VALUE;
+    private final static int NO_ROUT = Integer.MAX_VALUE;
 
     public PrimComputer(IGraph graph) {
         super(graph);
@@ -35,7 +35,7 @@ public class PrimComputer extends AbstractComputer<IResult> {
         // init variables
         for (int i = 0; i < graph.getVertexNum(); i++) {
             prev[i] = startIndex;
-            dist[i] = graph.getWeight(startIndex, i) == 0 ? MAX_VALUE : graph.getWeight(startIndex, i);
+            dist[i] = graph.getWeight(startIndex, i) == 0 ? NO_ROUT : graph.getWeight(startIndex, i);
         }
 
         // init start vertex's variable
@@ -46,7 +46,7 @@ public class PrimComputer extends AbstractComputer<IResult> {
             if(startIndex == i) continue;
 
             // find the shortest route from unvisited list to visited list
-            int min = MAX_VALUE;
+            int min = NO_ROUT;
             for (int j = 0; j < graph.getVertexNum(); j++) { // visited list
                 if(!isVisited[j] && dist[j] < min){
                     min = dist[j];
@@ -59,7 +59,7 @@ public class PrimComputer extends AbstractComputer<IResult> {
 
             for (int j = 0; j < graph.getVertexNum(); j++) { // unvisited list
                 if(!isVisited[j]){
-                    int weight = graph.getWeight(index, j) == 0 ? MAX_VALUE : graph.getWeight(index, j);
+                    int weight = graph.getWeight(index, j) == 0 ? NO_ROUT : graph.getWeight(index, j);
                     if(weight < dist[j]){
                         prev[j] = index;
                         dist[j] = weight;

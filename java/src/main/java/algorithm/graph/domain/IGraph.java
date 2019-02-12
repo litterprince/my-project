@@ -8,4 +8,5 @@ public interface IGraph {
     IVertex getVertex(char c);
     IVertex[] getReachable(IVertex vertex);
     String getRelations();
+    int[][] copyArray();
 }

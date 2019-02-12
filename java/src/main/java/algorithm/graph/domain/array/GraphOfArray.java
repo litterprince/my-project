@@ -161,9 +161,19 @@ public class GraphOfArray extends AbstractGraph {
     public String getRelations() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < getVertexNum(); i++) {
-            sb.append(i).append("->").append(vertexList[i].getValue()).append("\n");
+            sb.append("index ").append(i).append(" point to ").append(vertexList[i].getValue()).append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public int[][] copyArray(){
+        // expand map array
+        int[][] newMap = new int[vertexNum][vertexNum];
+        for (int i = 0; i < vertexNum; i++) {
+            System.arraycopy(map[i], 0, newMap[i], 0, vertexNum);
+        }
+        return newMap;
     }
 
     private int getAndAddNum(){

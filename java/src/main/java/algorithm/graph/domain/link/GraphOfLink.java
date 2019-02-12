@@ -207,7 +207,7 @@ public class GraphOfLink extends AbstractGraph {
     public String getRelations() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < getVertexNum(); i++) {
-            sb.append(i).append("->").append(mVexes[i].getValue()).append("\n");
+            sb.append("index ").append(i).append(" point to ").append(mVexes[i].getValue()).append("\n");
         }
         return sb.toString();
     }
@@ -216,9 +216,9 @@ public class GraphOfLink extends AbstractGraph {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         for(IVertex vertex : mVexes){
-            sb.append(vertex.getValue()).append(": ").append(vertex.getValue()).append("->");
+            sb.append(vertex.getValue()).append(" -> ");
             for(IVertex v : getReachable(vertex)){
-                sb.append(v.getValue()).append("->");
+                sb.append(v.getValue()).append(" & ");
             }
             sb.append("\n");
         }

@@ -7,14 +7,14 @@ public class ShortestResult extends AbstractResult {
     private int cost;
 
     public ShortestResult(String route, int cost) {
+        super(null);
         this.route = route;
         this.cost = cost;
     }
 
     @Override
-    public String toString(){
-        String msg = "the shortest route is: " + route +
+    public String getMsg(){
+        return "the shortest route is: " + route +
                 "\nit costs: "+cost;
-        return msg;
     }
 }

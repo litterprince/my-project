@@ -8,7 +8,7 @@ import algorithm.graph.domain.result.Result;
 import algorithm.graph.domain.result.ShortestResult;
 
 public class DijkstraComputer extends AbstractComputer<IResult> {
-    private final static int MAX_VALUE = Integer.MAX_VALUE;
+    private final static int NO_ROUT = Integer.MAX_VALUE;
     private int shortestCost; //TODO: it is thread safe if install with AtomInteger
     private int count;
     private boolean isExist;
@@ -52,7 +52,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
         // init prev and dist array list
         for (int i = 0; i < graph.getVertexNum(); i++) {
             prev[i] = startIndex;
-            dist[i] = graph.getWeight(startIndex, i) == 0 ? MAX_VALUE : graph.getWeight(startIndex, i);
+            dist[i] = graph.getWeight(startIndex, i) == 0 ? NO_ROUT : graph.getWeight(startIndex, i);
             isVisited[i] = false;
         }
 
@@ -65,7 +65,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
             if (startIndex == i) continue;
 
             // find the shortest rout form temp to j and record the index
-            int min = MAX_VALUE;
+            int min = NO_ROUT;
             for (int j = 0; j < graph.getVertexNum(); j++) {
                 if (!isVisited[j] && dist[j] < min) {
                     min = dist[j];

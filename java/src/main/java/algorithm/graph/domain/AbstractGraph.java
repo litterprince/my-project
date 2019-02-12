@@ -30,6 +30,11 @@ public abstract class AbstractGraph implements IGraph {
     @Override
     abstract public IVertex[] getReachable(IVertex vertex);
 
+    @Override
+    public int[][] copyArray() {
+        return null;
+    }
+
     public static class GraphData {
         private char start;// the start vertex
         private char end;// the end vertex

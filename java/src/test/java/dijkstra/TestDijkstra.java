@@ -25,6 +25,6 @@ public class TestDijkstra {
         System.out.println(graph.getRelations());
         IComputer computer = new DijkstraComputer(graph);
         IResult result = (IResult) computer.compute(graph.getVertex('D'), graph.getVertex('F'));
-        System.out.println(result.toString());
+        System.out.println(result.getMsg());
     }
 }
