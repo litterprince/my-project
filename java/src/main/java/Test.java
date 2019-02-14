@@ -20,7 +20,7 @@ public class Test {
     private static Random random = new Random();
     public static void main(String[] args) {
         System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MAX_VALUE + Integer.MAX_VALUE);
+        System.out.println(Integer.MAX_VALUE + 1 < Integer.MAX_VALUE);
     }
 
     private static String formatUserIp(String ip){

@@ -6,40 +6,42 @@ import algorithm.graph.domain.IVertex;
 import algorithm.graph.domain.result.Result;
 
 public class FloydComputer extends AbstractComputer {
-    private final static int NO_ROUT = Integer.MAX_VALUE;
+    private final static int NO_ROUTE = Integer.MAX_VALUE;
     private int[][] map;
 
     public FloydComputer(IGraph graph) {
         super(graph);
-        map = graph.copyArray();
+    }
+
+    /**
+     * zero means there are same vertex
+     * no_route means there's no route between two different vertexes
+     */
+    private void init(){
+        map = graph.copyArrayMap();
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[i].length; j++) {
+                if(i != j && map[i][j] == 0){
+                    map[i][j] = NO_ROUTE;
+                }
+            }
+        }
     }
 
     @Override
     public Object compute(IVertex start) {
-        floyd();
+        init();
+        floydWarshall();
         return new Result(result());
     }
 
-    private void floyd(){
-        for (int i = 0; i < graph.getVertexNum(); i++) {
-            for (int j = 0; j < graph.getVertexNum(); j++) {
-                for (int k = 0; k < graph.getVertexNum(); k++) {
-                    if(j == k){
-                        map[j][k] = NO_ROUT;
-                        continue;
-                    }
-
-                    int w1 = map[j][k] == 0 ? NO_ROUT : map[j][k]; // j -> k
-                    int w2 = map[j][i] == 0 ? NO_ROUT : map[j][i]; // j -> i
-                    int w3 = map[i][k] == 0 ? NO_ROUT : map[i][k]; // i -> k
-                    map[j][k] = w1;
-
-                    if(w2 != NO_ROUT && w3 != NO_ROUT && w2 + w3 < w1){
-                        map[j][k] = w2 + w3;
-                    }
-                }
-            }
-        }
+    private void floydWarshall(){
+        for (int i = 0; i < graph.getVertexNum(); i++)
+            for (int j = 0; j < graph.getVertexNum(); j++)
+                for (int k = 0; k < graph.getVertexNum(); k++)
+                    //map[j][k]:j -> k      map[j][i]:j -> i     map[i][k]: i -> k
+                    if(map[j][i] != NO_ROUTE && map[i][k] != NO_ROUTE && map[j][i] + map[i][k] < map[j][k])
+                        map[j][k] = map[j][i] + map[i][k];
     }
 
     private String result(){
@@ -53,7 +55,7 @@ public class FloydComputer extends AbstractComputer {
         for (int i = 0; i < graph.getVertexNum(); i++) {
             msg.append(graph.getVertex(i).getValue());
             for (int j = 0; j < graph.getVertexNum(); j++) {
-                msg.append("\t").append(map[i][j] == NO_ROUT ? 0 : (map[i][j]));
+                msg.append("\t").append(map[i][j] == NO_ROUTE ? 0 : (map[i][j]));
             }
             msg.append("\n");
         }

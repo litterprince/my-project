@@ -15,6 +15,6 @@ public class ShortestResult extends AbstractResult {
     @Override
     public String getMsg(){
         return "the shortest route is: " + route +
-                "\nit costs: "+cost;
+                " and it costs: "+cost;
     }
 }

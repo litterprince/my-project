@@ -1,10 +1,12 @@
 package algorithm.graph.domain.link;
 
+import algorithm.graph.common.GraphType;
 import algorithm.graph.domain.AbstractGraph;
 import algorithm.graph.domain.IVertex;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -213,12 +215,22 @@ public class GraphOfLink extends AbstractGraph {
     }
 
     @Override
+    public VertexOfLink[] getLinkedVertexList() {
+        return mVexes;
+    }
+
+    @Override
+    public GraphType graphType() {
+        return GraphType.Link;
+    }
+
+    @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         for(IVertex vertex : mVexes){
             sb.append(vertex.getValue()).append(" -> ");
             for(IVertex v : getReachable(vertex)){
-                sb.append(v.getValue()).append(" & ");
+                sb.append(v.getValue()).append("\t");
             }
             sb.append("\n");
         }

@@ -1,5 +1,6 @@
 package algorithm.graph.domain.array;
 
+import algorithm.graph.common.GraphType;
 import algorithm.graph.domain.AbstractGraph;
 import algorithm.graph.domain.IVertex;
 
@@ -167,13 +168,18 @@ public class GraphOfArray extends AbstractGraph {
     }
 
     @Override
-    public int[][] copyArray(){
+    public int[][] copyArrayMap(){
         // expand map array
         int[][] newMap = new int[vertexNum][vertexNum];
         for (int i = 0; i < vertexNum; i++) {
             System.arraycopy(map[i], 0, newMap[i], 0, vertexNum);
         }
         return newMap;
+    }
+
+    @Override
+    public GraphType graphType() {
+        return GraphType.Array;
     }
 
     private int getAndAddNum(){

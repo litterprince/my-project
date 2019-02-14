@@ -8,31 +8,46 @@ import algorithm.graph.domain.result.Result;
 import algorithm.graph.domain.result.ShortestResult;
 
 public class DijkstraComputer extends AbstractComputer<IResult> {
-    private final static int NO_ROUT = Integer.MAX_VALUE;
-    private int shortestCost; //TODO: it is thread safe if install with AtomInteger
+    private final static int NO_ROUTE = Integer.MAX_VALUE;
+    private int[] prev;
+    private int[] dist;
+
     private int count;
     private boolean isExist;
+    private int shortestCost;
 
     public DijkstraComputer(IGraph graph) {
         super(graph);
     }
 
+    private void init(){
+        shortestCost = 0;
+        count = 0;
+        isExist = false;
+        prev = new int[graph.getVertexNum()];
+        dist = new int[graph.getVertexNum()];
+    }
+
     @Override
     public IResult compute(IVertex start) {
-        int[] prev = new int[graph.getVertexNum()];
-        int[] dist = new int[graph.getVertexNum()];
-        dijkstra(graph.getPosition(start), prev, dist);
+        init();
+
+        dijkstra(graph.getPosition(start));
+        println(graph.getPosition(start));
+
         return new Result();
     }
 
     @Override
     public IResult compute(IVertex start, IVertex end) {
-        initParams();
-        int[] prev = new int[graph.getVertexNum()];
-        int[] dist = new int[graph.getVertexNum()];
-        dijkstra(graph.getPosition(start), prev, dist);
+        init();
+
+        dijkstra(graph.getPosition(start));
+        println(graph.getPosition(start));
+
         StringBuilder sb = new StringBuilder();
-        getShortestRoute(sb, graph.getPosition(start), graph.getPosition(end), prev, dist);
+        getShortestRoute(sb, graph.getPosition(start), graph.getPosition(end));
+
         if(isExist){
             sb.append(start.getValue());
         }
@@ -45,14 +60,14 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
      * prev previous vertex array list, the value of index is the previous vertex of the vertex which current index point to
      * dist distance array list, the value of index is the distance start from the previous vertex to the vertex which current index point to
      */
-    private void dijkstra(int startIndex, int[] prev, int[] dist) {
+    private void dijkstra(int startIndex) {
         // set true if find shortest rout
         boolean[] isVisited = new boolean[graph.getVertexNum()];
 
         // init prev and dist array list
         for (int i = 0; i < graph.getVertexNum(); i++) {
             prev[i] = startIndex;
-            dist[i] = graph.getWeight(startIndex, i) == 0 ? NO_ROUT : graph.getWeight(startIndex, i);
+            dist[i] = graph.getWeight(startIndex, i) == 0 ? NO_ROUTE : graph.getWeight(startIndex, i);
             isVisited[i] = false;
         }
 
@@ -65,7 +80,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
             if (startIndex == i) continue;
 
             // find the shortest rout form temp to j and record the index
-            int min = NO_ROUT;
+            int min = NO_ROUTE;
             for (int j = 0; j < graph.getVertexNum(); j++) {
                 if (!isVisited[j] && dist[j] < min) {
                     min = dist[j];
@@ -86,14 +101,19 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
             }
         }
 
+
+    }
+
+    private void println(int startIndex){
         // display the result of compute
         System.out.printf("dijkstra(%c): \n", graph.getVertex(startIndex).getValue());
         for (int i = 0; i < graph.getVertexNum(); i++)
             System.out.printf("  shortest(%c, %c)=%d\n", graph.getVertex(prev[i]).getValue(), graph.getVertex(i).getValue(), dist[i]);
 
+        System.out.println();
     }
 
-    private void getShortestRoute(StringBuilder route, int start, int end, int[] prev, int[] dist) {
+    private void getShortestRoute(StringBuilder route, int start, int end) {
         if (prev[end] == start) {
             isExist = true;
             return;
@@ -108,12 +128,6 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
         shortestCost += dist[end];
         count++;
         route.append(graph.getVertex(end));
-        getShortestRoute(route, start, prev[end], prev, dist);
-    }
-
-    private void initParams(){
-        shortestCost = 0;
-        count = 0;
-        isExist = false;
+        getShortestRoute(route, start, prev[end]);
     }
 }

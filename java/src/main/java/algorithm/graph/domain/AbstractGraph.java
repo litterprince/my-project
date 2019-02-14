@@ -1,5 +1,10 @@
 package algorithm.graph.domain;
 
+import algorithm.graph.common.GraphType;
+import algorithm.graph.domain.link.VertexOfLink;
+
+import java.util.List;
+
 public abstract class AbstractGraph implements IGraph {
     // false mean this graph is undirected graph and it is default value
     private boolean directed;
@@ -8,7 +13,8 @@ public abstract class AbstractGraph implements IGraph {
         this.directed = directed;
     }
 
-    protected boolean isDirected() {
+    @Override
+    public boolean isDirected() {
         return directed;
     }
 
@@ -31,9 +37,17 @@ public abstract class AbstractGraph implements IGraph {
     abstract public IVertex[] getReachable(IVertex vertex);
 
     @Override
-    public int[][] copyArray() {
+    public int[][] copyArrayMap() {
         return null;
     }
+
+    @Override
+    public VertexOfLink[] getLinkedVertexList() {
+        return null;
+    }
+
+    @Override
+    abstract public GraphType graphType();
 
     public static class GraphData {
         private char start;// the start vertex
