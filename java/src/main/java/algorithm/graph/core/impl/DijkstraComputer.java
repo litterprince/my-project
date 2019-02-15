@@ -13,7 +13,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
     private int[] dist;
 
     private int count;
-    private boolean isExist;
+    private boolean exist;
     private int shortestCost;
 
     public DijkstraComputer(IGraph graph) {
@@ -23,7 +23,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
     private void init(){
         shortestCost = 0;
         count = 0;
-        isExist = false;
+        exist = false;
         prev = new int[graph.getVertexNum()];
         dist = new int[graph.getVertexNum()];
     }
@@ -33,7 +33,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
         init();
 
         dijkstra(graph.getPosition(start));
-        println(graph.getPosition(start));
+        printResult(graph.getPosition(start));
 
         return new Result();
     }
@@ -43,12 +43,12 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
         init();
 
         dijkstra(graph.getPosition(start));
-        println(graph.getPosition(start));
+        printResult(graph.getPosition(start));
 
         StringBuilder sb = new StringBuilder();
         getShortestRoute(sb, graph.getPosition(start), graph.getPosition(end));
 
-        if(isExist){
+        if(exist){
             sb.append(start.getValue());
         }
         return new ShortestResult(sb.reverse().toString(), shortestCost);
@@ -104,7 +104,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
 
     }
 
-    private void println(int startIndex){
+    private void printResult(int startIndex){
         // display the result of compute
         System.out.printf("dijkstra(%c): \n", graph.getVertex(startIndex).getValue());
         for (int i = 0; i < graph.getVertexNum(); i++)
@@ -115,7 +115,7 @@ public class DijkstraComputer extends AbstractComputer<IResult> {
 
     private void getShortestRoute(StringBuilder route, int start, int end) {
         if (prev[end] == start) {
-            isExist = true;
+            exist = true;
             return;
         }
 

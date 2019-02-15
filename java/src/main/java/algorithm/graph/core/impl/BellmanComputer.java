@@ -14,12 +14,12 @@ public class BellmanComputer extends AbstractComputer {
     private int[] u;// from
     private int[] v;// to
     private int[] w;// weight
-    private int edgeNum = 0;
+    private int edgeNum;
     private int[] dist;// distance
     private int[] prev;// previous vertex
 
     private int count;
-    private boolean isExist;
+    private boolean exist;
     private int shortestCost;
 
     public BellmanComputer(IGraph graph) {
@@ -59,7 +59,7 @@ public class BellmanComputer extends AbstractComputer {
         init();
 
         bellmanFort(graph.getPosition(t));
-        println(graph.getPosition(t));
+        printResult(graph.getPosition(t));
 
         return new Result();
     }
@@ -69,12 +69,12 @@ public class BellmanComputer extends AbstractComputer {
         init();
 
         bellmanFort(graph.getPosition(start));
-        println(graph.getPosition(start));
+        printResult(graph.getPosition(start));
 
         StringBuilder shortest = new StringBuilder();
         getShortestRoute(shortest, graph.getPosition(start), graph.getPosition(end));
 
-        if(isExist){
+        if(exist){
             shortest.append(start.getValue());
         }
         return new ShortestResult(shortest.reverse().toString(), shortestCost);
@@ -95,10 +95,19 @@ public class BellmanComputer extends AbstractComputer {
                     dist[v[j]] = dist[u[j]] + w[j];
                 }
             }
+            // here can insert some code to check if dis changed, if not means there's no route to update then break;
+        }
+
+        // check if has negative weight loop
+        for (int j = 0; j < edgeNum; j++) {
+            if (dist[u[j]] != NO_ROUTE && dist[u[j]] + w[j] < dist[v[j]]) {
+                System.out.println("this's a negative weight loop!");
+                break;
+            }
         }
     }
 
-    private void println(int startIndex){
+    private void printResult(int startIndex){
         // display the result of compute
         System.out.printf("bellmanFort(%c): \n", graph.getVertex(startIndex).getValue());
         for (int i = 0; i < graph.getVertexNum(); i++)
@@ -109,7 +118,7 @@ public class BellmanComputer extends AbstractComputer {
 
     private void getShortestRoute(StringBuilder sb, int start, int end) {
         if (prev[end] == start) {
-            isExist = true;
+            exist = true;
             return;
         }
 

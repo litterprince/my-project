@@ -32,7 +32,7 @@ public class FloydComputer extends AbstractComputer {
     public Object compute(IVertex start) {
         init();
         floydWarshall();
-        return new Result(result());
+        return new Result(getResult());
     }
 
     private void floydWarshall(){
@@ -44,7 +44,7 @@ public class FloydComputer extends AbstractComputer {
                         map[j][k] = map[j][i] + map[i][k];
     }
 
-    private String result(){
+    private String getResult(){
         StringBuilder msg = new StringBuilder();
 
         for (int i = 0; i < graph.getVertexNum(); i++) {
