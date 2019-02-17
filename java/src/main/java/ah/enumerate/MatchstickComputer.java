@@ -14,6 +14,12 @@ public class MatchstickComputer {
     private final static int PLUS_COST = 2;
     private final static int EQUALS_COST = 2;
 
+    public static void main(String[] args){
+        int n = 18;
+        MatchstickComputer matchstickComputer = new MatchstickComputer();
+        matchstickComputer.compute(n);
+    }
+
     /**
      * A + B = C
      * list all expressions like above, every matchstick must be used

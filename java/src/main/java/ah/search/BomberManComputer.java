@@ -16,6 +16,25 @@ public class BomberManComputer {
     private int bestX = 0, bestY = 0;
     private int maxDestroy = Integer.MIN_VALUE;
 
+    public static void main(String[] args){
+        String content = "#############\n" +
+                "#GG.GGG#GGG.#\n" +
+                "###.#G#G#G#G#\n" +
+                "#.......#..G#\n" +
+                "#G#.###.#G#G#\n" +
+                "#GG.GGG.#.GG#\n" +
+                "#G#.#G#.#.#.#\n" +
+                "##G...G.....#\n" +
+                "#G#.#G###.#G#\n" +
+                "#...G#GGG.GG#\n" +
+                "#G#.#G#G#.#G#\n" +
+                "#GG.GGG#G.GG#\n" +
+                "#############";
+        BomberManComputer computer = new BomberManComputer(13, 13, content);
+        computer.printMap();
+        computer.compute(3,3);
+    }
+
     public BomberManComputer(int n, int m, String content) {
         this.n = n;
         this.m = m;

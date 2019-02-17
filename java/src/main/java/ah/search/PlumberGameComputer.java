@@ -16,6 +16,17 @@ public class PlumberGameComputer {
     private int m;
     private boolean exist;
 
+    public static void main(String[] args){
+        String content = "5353\n" +
+                "1530\n" +
+                "2351\n" +
+                "6115\n" +
+                "1554";
+        PlumberGameComputer computer = new PlumberGameComputer(5, 4, content);
+        computer.printMap();
+        computer.compute();
+    }
+
     public PlumberGameComputer(int n, int m, String content) {
         this.n = n;
         this.m = m;

@@ -4,6 +4,7 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import java.io.IOException;
+import java.lang.management.ManagementFactory;
 import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
@@ -19,8 +20,8 @@ import java.util.regex.Pattern;
 public class Test {
     private static Random random = new Random();
     public static void main(String[] args) {
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MAX_VALUE + 1 < Integer.MAX_VALUE);
+        System.out.println(1<<1);
+        System.out.println(Math.log(4)/Math.log(2));
     }
 
     private static String formatUserIp(String ip){

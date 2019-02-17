@@ -11,6 +11,12 @@ public class TotalOrderingComputer {
     private int size;
     private int totalNum;
 
+    public static void main(String[] args){
+        int[] array = new int[]{1,2,3,4};
+        TotalOrderingComputer ordering = new TotalOrderingComputer(array);
+        ordering.compute();
+    }
+
     public TotalOrderingComputer(int[] array) {
         this.array = array;
         this.size = array.length;
