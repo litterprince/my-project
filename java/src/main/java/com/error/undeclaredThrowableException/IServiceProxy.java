@@ -1,4 +1,4 @@
-package main.java.com.error.undeclaredThrowableException;
+package com.error.undeclaredThrowableException;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

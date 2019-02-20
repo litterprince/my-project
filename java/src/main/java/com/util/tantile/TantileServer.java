@@ -1,4 +1,4 @@
-package main.java.com.util.tantile;
+package com.util.tantile;
 
 import java.util.ArrayList;
 import java.util.Collections;

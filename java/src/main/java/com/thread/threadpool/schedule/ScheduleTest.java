@@ -1,4 +1,4 @@
-package main.java.com.thread.threadpool.schedule;
+package com.thread.threadpool.schedule;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package main.java.com.util.date;
+package com.util.date;
 
 import java.text.ParseException;
 import java.text.ParsePosition;

@@ -1,4 +1,4 @@
-package main.java.com.error;
+package com.error;
 
 public class test {
     public static void main(String[] args) {

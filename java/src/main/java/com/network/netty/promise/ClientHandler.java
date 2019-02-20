@@ -1,4 +1,4 @@
-package main.java.com.network.netty.promise;
+package com.network.netty.promise;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;

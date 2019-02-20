@@ -1,4 +1,4 @@
-package main.java.com.reflect;
+package com.reflect;
 
 public class Student {
     Student(String str){

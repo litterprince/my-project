@@ -1,4 +1,4 @@
-package main.java.com.util.md5;
+package com.util.md5;
 
 
 import java.security.MessageDigest;

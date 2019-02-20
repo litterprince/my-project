@@ -1,4 +1,4 @@
-package main.java.com.thread.lock.cas;
+package com.thread.lock.cas;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

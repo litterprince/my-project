@@ -1,4 +1,4 @@
-package main.java.com.thread.daemon;
+package com.thread.daemon;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

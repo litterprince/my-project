@@ -1,4 +1,4 @@
-package main.java.com.util.operation;
+package com.util.operation;
 
 /**
  * `byte`：1字节 `short`：2字节 `int`：4字节 `long`：8字节 `float`：4字节 `double`：8字节

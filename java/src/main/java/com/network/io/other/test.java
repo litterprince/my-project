@@ -1,4 +1,4 @@
-package main.java.com.network.io.other;
+package com.network.io.other;
 
 import java.io.*;
 import java.nio.ByteBuffer;

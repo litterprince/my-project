@@ -1,4 +1,4 @@
-package main.java.com.proxy.simple;
+package com.proxy.simple;
 
 public class Main {
     public static void main(String[] args) {

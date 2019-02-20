@@ -1,4 +1,4 @@
-package main.java.com.util.http;
+package com.util.http;
 
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.Response;

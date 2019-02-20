@@ -1,4 +1,4 @@
-package main.java.com.error.InterruptedException;
+package com.error.InterruptedException;
 
 import javafx.util.Duration;
 import sun.misc.BASE64Encoder;

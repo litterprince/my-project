@@ -1,4 +1,4 @@
-package main.java.com.thread.threadpool.simple;
+package com.thread.threadpool.simple;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

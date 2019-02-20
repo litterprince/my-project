@@ -1,4 +1,4 @@
-package main.java.com.util.http;
+package com.util.http;
 
 /**
  * Function: Please Descrip This Class.

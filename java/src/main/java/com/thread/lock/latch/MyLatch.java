@@ -1,4 +1,4 @@
-package main.java.com.thread.lock.latch;
+package com.thread.lock.latch;
 
 import java.util.concurrent.CountDownLatch;
 

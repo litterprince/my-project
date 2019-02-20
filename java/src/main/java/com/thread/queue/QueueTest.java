@@ -1,4 +1,4 @@
-package main.java.com.thread.queue;
+package com.thread.queue;
 
 import java.util.ArrayList;
 import java.util.List;

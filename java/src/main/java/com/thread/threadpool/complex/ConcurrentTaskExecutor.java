@@ -1,4 +1,4 @@
-package main.java.com.thread.threadpool.complex;
+package com.thread.threadpool.complex;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package main.java.com.network.nio;
+package com.network.nio;
 
 public class test {
 }

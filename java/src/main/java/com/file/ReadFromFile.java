@@ -1,4 +1,4 @@
-package main.java.com.file;
+package com.file;
 
 import java.io.*;
 

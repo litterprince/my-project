@@ -1,4 +1,4 @@
-package main.java.com.thread.executor;
+package com.thread.executor;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

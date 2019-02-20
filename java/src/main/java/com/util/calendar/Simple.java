@@ -1,4 +1,4 @@
-package main.java.com.util.calendar;
+package com.util.calendar;
 
 import org.apache.commons.lang3.StringUtils;
 

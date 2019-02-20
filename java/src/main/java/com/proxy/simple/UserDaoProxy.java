@@ -1,4 +1,4 @@
-package main.java.com.proxy.simple;
+package com.proxy.simple;
 
 /**
  * 代理对象,静态代理

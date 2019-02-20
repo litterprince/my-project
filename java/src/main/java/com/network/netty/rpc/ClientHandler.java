@@ -1,4 +1,4 @@
-package main.java.com.network.netty.rpc;
+package com.network.netty.rpc;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

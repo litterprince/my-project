@@ -1,4 +1,4 @@
-package main.java.com.network.netty.rpc;
+package com.network.netty.rpc;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;

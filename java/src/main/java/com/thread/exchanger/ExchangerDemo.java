@@ -1,4 +1,4 @@
-package main.java.com.thread.exchanger;
+package com.thread.exchanger;
 
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.ExecutorService;

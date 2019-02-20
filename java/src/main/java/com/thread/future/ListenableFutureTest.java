@@ -1,4 +1,4 @@
-package main.java.com.thread.future;
+package com.thread.future;
 
 import com.google.common.base.Function;
 import com.google.common.util.concurrent.*;

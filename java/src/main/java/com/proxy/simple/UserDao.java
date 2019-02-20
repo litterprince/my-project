@@ -1,4 +1,4 @@
-package main.java.com.proxy.simple;
+package com.proxy.simple;
 
 /**
  * 接口实现

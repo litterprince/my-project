@@ -1,4 +1,4 @@
-package main.java.com.network.netty.mynetty;
+package com.network.netty.mynetty;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

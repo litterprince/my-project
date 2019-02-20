@@ -1,4 +1,4 @@
-package main.java.com.network.socket.thread;
+package com.network.socket.thread;
 
 import java.io.IOException;
 import java.net.ServerSocket;

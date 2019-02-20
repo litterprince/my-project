@@ -1,4 +1,4 @@
-package main.java.com.thread.lock.lock;
+package com.thread.lock.lock;
 
 import java.util.HashMap;
 import java.util.Map;
