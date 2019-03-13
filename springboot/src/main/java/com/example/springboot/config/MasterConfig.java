@@ -22,8 +22,8 @@ public class MasterConfig {
     @Autowired
     private Environment env;
 
-    public static final String PACKAGE = "other.springboot.mapper";
-    public static final String ENTITY_PACKAGE = "other.springboot.po";
+    public static final String PACKAGE = "com.example.springboot.mapper";
+    public static final String ENTITY_PACKAGE = "com.example.springboot.po";
     private static final String MYBATIS_CONFIG = "mybatis/mybatis-config.xml";
     public static final String MAPPER_LOCATION = "mybatis/mapper/**/*.xml";
 
