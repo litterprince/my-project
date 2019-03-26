@@ -41,14 +41,15 @@ public class NettyWork {
                     try {
                         wakeup.set(false);
                         selector.select();
-                        while(true){
+                        while(!Thread.interrupted()){
                             final Runnable task = taskQueue.poll();
                             if(task == null)
                                 break;
                             task.run();
+                            Thread.sleep(100);
                         }
                         process(selector);
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -78,7 +79,7 @@ public class NettyWork {
                 count = channel.write(byteBuffer);
                 failure = false;
             }catch (Exception e){
-
+                e.printStackTrace();
             }
             if(count < 0 || failure){
                 key.cancel();

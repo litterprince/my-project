@@ -39,12 +39,13 @@ public class NettyBoss {
                     try {
                         wakenUp.set(false);
                         selector.select();
-                        while(true){
+                        while(!Thread.interrupted()){
                             final Runnable task = taskQueue.poll();
                             if(task == null){
                                 break;
                             }
                             task.run();
+                            Thread.sleep(100);
                         }
                         process(selector);
 
@@ -54,7 +55,7 @@ public class NettyBoss {
                             e.printStackTrace();
                         }
 
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -78,21 +79,21 @@ public class NettyBoss {
             ServerSocketChannel server = (ServerSocketChannel) key.channel();
             final SocketChannel channel = server.accept();
             channel.configureBlocking(false);
-            final NettyWork nextwoker = threadHandle.workers[Math.abs(threadHandle.workIndex.getAndIncrement() % threadHandle.workers.length)];
+            final NettyWork nextWorker = threadHandle.workers[Math.abs(threadHandle.workIndex.getAndIncrement() % threadHandle.workers.length)];
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        channel.register(nextwoker.selector, SelectionKey.OP_READ);
+                        channel.register(nextWorker.selector, SelectionKey.OP_READ);
                     } catch (ClosedChannelException e) {
                         e.printStackTrace();
                     }
                 }
             };
-            nextwoker.taskQueue.add(runnable);
-            if(nextwoker.selector != null){
-                if(nextwoker.wakeup.compareAndSet(false, true)){
-                    nextwoker.selector.wakeup();
+            nextWorker.taskQueue.add(runnable);
+            if(nextWorker.selector != null){
+                if(nextWorker.wakeup.compareAndSet(false, true)){
+                    nextWorker.selector.wakeup();
                 }
             }else {
                 taskQueue.remove(runnable);

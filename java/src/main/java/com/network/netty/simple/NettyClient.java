@@ -39,12 +39,12 @@ public class NettyClient {
     public class NettyClientHandler extends ChannelInboundHandlerAdapter {
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-            System.out.println("NettyClientHandler.channelRead");
-            ByteBuf result = (ByteBuf) msg;
-            byte[] result1 = new byte[result.readableBytes()];
-            result.readBytes(result1);
-            System.out.println("Server said:" + new String(result1));
-            result.release();
+            //System.out.println("NettyClientHandler.channelRead");
+            ByteBuf byteBuf = (ByteBuf) msg;
+            byte[] result = new byte[byteBuf.readableBytes()];
+            byteBuf.readBytes(result);
+            System.out.println("Server said:" + new String(result));
+            byteBuf.release();
         }
 
         @Override
@@ -67,7 +67,7 @@ public class NettyClient {
     }
 
     public static void main(String[] args) throws Exception {
-        NettyClient client=new NettyClient();
+        NettyClient client = new NettyClient();
         client.connect("127.0.0.1", 9999);
     }
 }

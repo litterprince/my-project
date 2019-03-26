@@ -1,6 +1,7 @@
 package com.network.netty.promise;
 
 import io.netty.bootstrap.Bootstrap;
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
@@ -8,7 +9,12 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 public class PromiseClient {
     private ClientHandler clientHandler = new ClientHandler();
-    private final int CONNECT_TIMEOUT = 6000;
+    private final static int CONNECT_TIMEOUT = 6000;
+
+    public static void main(String[] args) throws InterruptedException {
+        PromiseClient client = new PromiseClient("127.0.0.1", 9999);
+        System.out.println("" + client.getResponse());
+    }
 
     public PromiseClient(String host, int port) {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
@@ -46,9 +52,40 @@ public class PromiseClient {
         return clientHandler.getMessage();
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        PromiseClient client = new PromiseClient("127.0.0.1", 9999);
-        System.out.println("" + client.getResponse());
-    }
+    public class ClientHandler extends ChannelInboundHandlerAdapter {
+        private ChannelHandlerContext ctx;
+        private ChannelPromise promise;
+        private String message;
 
+        @Override
+        public void channelActive(ChannelHandlerContext ctx) throws Exception {
+            super.channelActive(ctx);
+            this.ctx = ctx;
+        }
+
+        public ChannelPromise sendMessage(byte[] b) {
+            if (ctx == null) throw new IllegalStateException();
+            //System.out.println("send message:"+ new String(b));
+            ByteBuf encoded = ctx.alloc().buffer(b.length);
+            encoded.writeBytes(b);
+            promise = ctx.writeAndFlush(encoded).channel().newPromise();
+            return promise;
+        }
+
+        @Override
+        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+            ByteBuf result = (ByteBuf) msg;
+            byte[] b = new byte[result.readableBytes()];
+            result.readBytes(b);
+            message = new String(b);
+            promise.setSuccess();
+            result.release();
+            //关闭链路
+            ctx.close();
+        }
+
+        public String getMessage() {
+            return message;
+        }
+    }
 }
