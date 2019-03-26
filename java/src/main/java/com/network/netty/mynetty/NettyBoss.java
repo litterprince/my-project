@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class NettyBoss {
     public ExecutorService executor;
     protected Selector selector;
-    protected AtomicBoolean wakenUp = new AtomicBoolean();
+    protected AtomicBoolean wakenUp = new AtomicBoolean();// 用于唤醒阻塞线程，使selector立即返回
     public Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
     protected ThreadHandle threadHandle;
 

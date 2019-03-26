@@ -1,4 +1,4 @@
-package com.network.io.bio;
+package com.network.io;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,12 +7,12 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Date;
 
-public class BIOClient {
+public class BioClient {
     private String ipAddress;
     private int port;
     private static int pos = 0;
 
-    public BIOClient(String ipAddress, int port) {
+    public BioClient(String ipAddress, int port) {
         this.ipAddress = ipAddress;
         this.port = port;
     }
@@ -66,7 +66,7 @@ public class BIOClient {
         for(int i=0; i<n; i++) {
             data.delete(0, data.length());
             data.append("I am the client ").append(++pos).append(".");
-            BIOClient client = new BIOClient("localhost", 1983);
+            BioClient client = new BioClient("localhost", 1983);
             client.send(data.toString().getBytes());
         }
         Date end = new Date();

@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class NettyWork {
     public ExecutorService executor;
     protected Selector selector;
-    protected AtomicBoolean wakeup = new AtomicBoolean();
+    protected AtomicBoolean wakeup = new AtomicBoolean();// 用于唤醒阻塞线程，使selector立即返回
     public Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
 
     public NettyWork(ExecutorService executor){

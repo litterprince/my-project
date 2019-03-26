@@ -1,4 +1,4 @@
-package com.network.io.bio;
+package com.network.io;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,13 +6,13 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class BIOSimpleServer extends Thread {
+public class BioSimpleServer extends Thread {
     /** 服务端口号 */
     private int port;
     /** 为客户端分配编号 */
     private static int sequence = 0;
 
-    public BIOSimpleServer(int port) {
+    public BioSimpleServer(int port) {
         this.port = port;
     }
 
@@ -54,7 +54,7 @@ public class BIOSimpleServer extends Thread {
     }
 
     public static void main(String[] args) {
-        BIOSimpleServer server = new BIOSimpleServer(1983);
+        BioSimpleServer server = new BioSimpleServer(1983);
         server.start();
     }
 }

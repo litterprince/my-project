@@ -1,4 +1,4 @@
-package com.network.io.bio;
+package com.network.io;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class BIOServer {
+public class BioServer {
     public static void main(String[] args) throws IOException {
         ExecutorService newCashedThreadPool = Executors.newCachedThreadPool();
         ServerSocket serverSocket = new ServerSocket(10101);

@@ -1,10 +1,10 @@
-package com.network.io.other;
+package com.network.io;
 
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-public class test {
+public class NioTest {
 
     public static void ioDemo() throws IOException {
         File file = new File("data.txt");
