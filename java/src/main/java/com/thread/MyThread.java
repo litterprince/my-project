@@ -1,4 +1,4 @@
-package com.thread.thread;
+package com.thread;
 
 public class MyThread {
 

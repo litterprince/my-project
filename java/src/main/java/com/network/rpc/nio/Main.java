@@ -6,7 +6,7 @@ import com.network.rpc.service.HelloServiceImpl;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         final int port = 8080;
         new Thread(new Runnable() {
             @Override
