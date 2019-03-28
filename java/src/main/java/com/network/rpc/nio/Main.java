@@ -1,20 +1,19 @@
-package com.network.rpc.bio;
+package com.network.rpc.nio;
 
 import com.network.rpc.service.HelloService;
 import com.network.rpc.service.HelloServiceImpl;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
 
 public class Main {
-    private final static int port = 8080;
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
+        final int port = 8080;
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
-                    Server server = new ServiceCenter(port);
-                    server.register(HelloService.class, HelloServiceImpl.class);
+                RPCServer server = RPCServer.getInstance(port);
+                server.addClass(HelloServiceImpl.class);
+                try {
                     server.start();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -22,7 +21,9 @@ public class Main {
             }
         }).start();
 
-        HelloService service = RpcClient.getRemoteProxyObj(HelloService.class, new InetSocketAddress("localhost", port));
+        RPCClient client = RPCClient.getInstance();
+        client.init("localhost", port);
+        HelloService service = (HelloService) client.getRemoteProxy(HelloService.class);
         System.out.println(service.sayHello("jeff"));
     }
 }

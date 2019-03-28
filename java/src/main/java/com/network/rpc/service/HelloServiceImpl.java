@@ -1,4 +1,4 @@
-package com.network.rpc.bio;
+package com.network.rpc.service;
 
 public class HelloServiceImpl implements HelloService{
 
