@@ -1,10 +1,8 @@
-package com.network.rpc.netty;
+package com.spring.netty;
 
-import com.network.rpc.netty.handler.ClientHandler;
-import com.network.rpc.netty.util.ConstantUtil;
-import com.network.rpc.netty.util.Request;
-import com.network.socket.simple.Client;
-import com.thread.lock.lock.ConditionDemo;
+import com.spring.netty.handler.ClientHandler;
+import com.spring.netty.util.ConstantUtil;
+import com.spring.netty.util.Request;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -15,13 +13,13 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 
-import java.util.PriorityQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class RPCClient {
+    //全局map 每个请求对应的锁 用于同步等待每个异步的RPC请求
     public static ConcurrentHashMap<String, Request> requestLockMap = new ConcurrentHashMap<>();
     private static RPCClient instance;
 
@@ -47,7 +45,7 @@ public class RPCClient {
                 });
         try {
             ChannelFuture f = b.connect(RPC.getClientConfig().getHost(), RPC.getClientConfig().getPort()).sync();
-            //TODO: 思考，f.channel().closeFuture().sync();会造成阻塞，不适合这里
+            //TODO: 思考，f.channel().closeFuture().sync();会阻塞在这所以不能使用，也不能使用finally，出了异常怎么关闭netty的线程呢
             f.addListener(new ChannelFutureListener() {
                 @Override
                 public void operationComplete(ChannelFuture channelFuture) throws Exception {
@@ -72,7 +70,7 @@ public class RPCClient {
 
     public static void send(Request request){
         try {
-            //TODO: 思考，if the connection is established
+            //TODO: 思考，这里阻塞怎么实现的
             if(ClientHandler.ctx == null) {
                 lock.lock();
                 System.out.println("wait connect success ...");
@@ -83,7 +81,7 @@ public class RPCClient {
             // send request
             String requestJson = null;
             try {
-                requestJson = requestEncode(request);
+                requestJson = RPC.requestEncode(request);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -101,20 +99,5 @@ public class RPCClient {
         } catch (Exception e){
             e.printStackTrace();
         }
-    }
-
-    //TODO: build request id
-    public static String buildRequestId(String name) {
-        return null;
-    }
-
-    //TODO: request encode
-    public static String requestEncode(Request request) {
-        return null;
-    }
-
-    //TODO: request decode
-    public static Request requestDecode(String requestJson) {
-        return null;
     }
 }

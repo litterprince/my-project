@@ -1,9 +1,7 @@
-package com.network.rpc.netty;
+package com.spring.netty;
 
-import com.network.rpc.netty.config.ServerConfig;
-import com.network.rpc.netty.handler.ServerHandler;
-import com.network.rpc.netty.util.ConstantUtil;
-import com.network.rpc.netty.util.Response;
+import com.spring.netty.handler.ServerHandler;
+import com.spring.netty.util.ConstantUtil;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -36,19 +34,16 @@ public class RPCServer {
                             socketChannel.pipeline().addLast(new ServerHandler());
                         }
                     });
-            //
-            ChannelFuture channelFuture = b.bind(RPC.getServerConfig().getPort()).sync();
+
+            ChannelFuture future = b.bind(RPC.getServerConfig().getPort()).sync();
+            System.out.println("server start on port:"+RPC.getServerConfig().getPort());
+            //同步等待服务端监听端口关闭
+            future.channel().closeFuture().sync();
         } catch (Exception e){
             e.printStackTrace();
+        } finally {
+            bossGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
         }
-    }
-    //TODO: response encode
-    public static String responseEncode(Response response) {
-        return null;
-    }
-
-    //TODO: response decode
-    public static Object responseDecode(String responseJson) {
-        return null;
     }
 }

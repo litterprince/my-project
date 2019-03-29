@@ -1,13 +1,14 @@
-package com.network.rpc.netty.handler;
+package com.spring.netty.handler;
 
-import com.network.rpc.netty.RPCClient;
-import com.network.rpc.netty.RPCServer;
-import com.network.rpc.netty.util.Request;
-import com.network.rpc.netty.util.Response;
+import com.spring.netty.RPC;
+import com.spring.netty.RPCClient;
+import com.spring.netty.util.Request;
+import com.spring.netty.util.Response;
+import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-public class ClientHandler extends ChannelInboundHandlerAdapter {
+public class ClientHandler extends ChannelHandlerAdapter {
     //TODO: 思考，会有线程安全问题吗
     public static ChannelHandlerContext ctx;
 
@@ -20,7 +21,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext channelHandlerContext, Object msg) throws Exception {
         String responseJson = (String) msg;
-        Response response = (Response) RPCServer.responseDecode(responseJson);
+        Response response = (Response) RPC.responseDecode(responseJson);
 
         assert response != null;
         synchronized (RPCClient.requestLockMap.get(response.getRequestId())){

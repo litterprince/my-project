@@ -1,4 +1,4 @@
-package com.network.rpc.netty.util;
+package com.spring.netty.util;
 
 public class Request {
     private String requestId;
