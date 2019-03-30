@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {""})
+@ContextConfiguration(locations = {"/spring/spring-context.xml", "/spring/spring-server.xml"})
 public class ServerStart {
     @Test
     public void start() {

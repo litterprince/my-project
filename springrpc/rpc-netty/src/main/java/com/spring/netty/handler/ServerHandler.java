@@ -5,6 +5,7 @@ import com.spring.netty.util.Request;
 import com.spring.netty.util.Response;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
@@ -54,5 +55,12 @@ public class ServerHandler extends ChannelHandlerAdapter {
         }
 
         return result;
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        super.exceptionCaught(ctx, cause);
+        Channel channel = ctx.channel();
+        if(channel.isActive()) ctx.close();
     }
 }

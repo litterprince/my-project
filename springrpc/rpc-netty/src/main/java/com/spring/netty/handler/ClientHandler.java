@@ -6,10 +6,9 @@ import com.spring.netty.util.Request;
 import com.spring.netty.util.Response;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class ClientHandler extends ChannelHandlerAdapter {
-    //TODO: 思考，会有线程安全问题吗
+    // TODO 思考，会有线程安全问题吗
     public static ChannelHandlerContext ctx;
 
     @Override
