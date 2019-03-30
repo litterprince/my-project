@@ -21,6 +21,6 @@ public class ClientStart {
 
             Thread.sleep(100);
         }
-        System.in.read();
+        //System.in.read();
     }
 }

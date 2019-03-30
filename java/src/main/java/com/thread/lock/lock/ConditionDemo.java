@@ -12,8 +12,10 @@ public class ConditionDemo {
         ConditionDemo condition = new ConditionDemo();
         Producer producer = condition.new Producer();
         Consumer consumer = condition.new Consumer();
+        Consumer consumer1 = condition.new Consumer();
 
         consumer.start();
+        consumer1.start();
         producer.start();
     }
 

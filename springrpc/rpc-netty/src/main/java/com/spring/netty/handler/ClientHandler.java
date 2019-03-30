@@ -15,6 +15,9 @@ public class ClientHandler extends ChannelHandlerAdapter {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
         this.ctx = ctx;
+        RPCClient.lock.lock();
+        RPCClient.condition.signalAll();
+        RPCClient.lock.unlock();
     }
 
     @Override

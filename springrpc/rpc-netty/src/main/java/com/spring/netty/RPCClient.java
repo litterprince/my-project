@@ -23,36 +23,37 @@ public class RPCClient {
     public static ConcurrentHashMap<String, Request> requestLockMap = new ConcurrentHashMap<>();
     private static RPCClient instance;
 
-    private static Lock lock = new ReentrantLock();
-    private static Condition condition = lock.newCondition();
+    public static Lock lock = new ReentrantLock();
+    public static Condition condition = lock.newCondition();
 
     private RPCClient() {
         // start client netty
         EventLoopGroup group = new NioEventLoopGroup();
         Bootstrap b = new Bootstrap();
-        b.group(group)
-                .channel(NioSocketChannel.class)
-                .option(ChannelOption.TCP_NODELAY,true)
-                .handler(new ChannelInitializer<SocketChannel>() {
-                    @Override
-                    protected void initChannel(SocketChannel socketChannel) throws Exception {
-                        //以换行符分包 防止念包半包 2048为最大长度 到达最大长度没出现换行符则抛出异常
-                        socketChannel.pipeline().addLast(new LineBasedFrameDecoder(ConstantUtil.MSG_MAX_LENGTH));
-                        //将接收到的对象转为字符串
-                        socketChannel.pipeline().addLast(new StringDecoder());
-                        socketChannel.pipeline().addLast(new ClientHandler());
-                    }
-                });
         try {
-            ChannelFuture f = b.connect(RPC.getClientConfig().getHost(), RPC.getClientConfig().getPort()).sync();
-            //TODO: 思考，f.channel().closeFuture().sync();会阻塞在这所以不能使用，也不能使用finally，出了异常怎么关闭netty的线程呢
+            b.group(group)
+                    .channel(NioSocketChannel.class)
+                    .option(ChannelOption.TCP_NODELAY, true)
+                    .handler(new ChannelInitializer<SocketChannel>() {
+                        @Override
+                        protected void initChannel(SocketChannel socketChannel) throws Exception {
+                            //以换行符分包 防止念包半包 2048为最大长度 到达最大长度没出现换行符则抛出异常
+                            socketChannel.pipeline().addLast(new LineBasedFrameDecoder(ConstantUtil.MSG_MAX_LENGTH));
+                            //将接收到的对象转为字符串
+                            socketChannel.pipeline().addLast(new StringDecoder());
+                            socketChannel.pipeline().addLast(new ClientHandler());
+                        }
+                    });
+
+            final ChannelFuture f = b.connect(RPC.getClientConfig().getHost(), RPC.getClientConfig().getPort()).sync();
+            //TODO: 思考，f.channel().closeFuture().sync();会阻塞在这所以不能使用
             f.addListener(new ChannelFutureListener() {
                 @Override
                 public void operationComplete(ChannelFuture channelFuture) throws Exception {
 
                 }
             });
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
