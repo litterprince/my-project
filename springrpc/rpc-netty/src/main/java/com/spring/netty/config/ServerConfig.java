@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContextAware;
 
 import java.util.Map;
 
-//TODO: 思考，为什么要使用context方式
+// TODO: 学习，掌握这种使用context存放变量的方法
 public class ServerConfig implements ApplicationContextAware {
     private int port;
 

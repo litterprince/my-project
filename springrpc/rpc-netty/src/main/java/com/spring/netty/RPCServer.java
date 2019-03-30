@@ -22,14 +22,14 @@ public class RPCServer {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    //输入连接指示（对连接的请求）的最大队列长度被设置为 backlog 参数。如果队列满时收到连接指示，则拒绝该连接
+                    // 输入连接指示（对连接的请求）的最大队列长度被设置为 backlog 参数。如果队列满时收到连接指示，则拒绝该连接
                     .option(ChannelOption.SO_BACKLOG,1024)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            //以换行符分包 防止念包半包 2048为最大长度 到达最大长度没出现换行符则抛出异常
+                            // TODO: 学习，以换行符分包 防止念包半包 2048为最大长度 到达最大长度没出现换行符则抛出异常
                             socketChannel.pipeline().addLast(new LineBasedFrameDecoder(ConstantUtil.MSG_MAX_LENGTH));
-                            //将接收到的对象转为字符串
+                            // 将接收到的对象转为字符串
                             socketChannel.pipeline().addLast(new StringDecoder());
                             socketChannel.pipeline().addLast(new ServerHandler());
                         }
@@ -37,7 +37,7 @@ public class RPCServer {
 
             ChannelFuture future = b.bind(RPC.getServerConfig().getPort()).sync();
             System.out.println("server start on port:"+RPC.getServerConfig().getPort());
-            //同步等待服务端监听端口关闭
+            // 同步等待服务端监听端口关闭
             future.channel().closeFuture().sync();
         } catch (Exception e){
             e.printStackTrace();

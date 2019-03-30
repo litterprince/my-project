@@ -19,12 +19,12 @@ public class RPC {
     public static ApplicationContext serverContext;
     public static ApplicationContext clientContext;
 
-    //TODO: 思考，这里的编解使用静态变量的效率
+    //是否有线程安全问题（结论：经过网上查找结论是线程安全）
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     public static Object call(Class cls) {
         Object proxyObj = Proxy.newProxyInstance(cls.getClassLoader(), new Class<?>[]{cls}, new InvocationHandler() {
-            //TODO: 思考，这个记录调用次数的字段生效吗
+            // TODO: 学习，使用原子包来记录次数同时保证了线程安全
             private AtomicInteger requestTimes = new AtomicInteger(0);
 
             @Override
@@ -42,12 +42,12 @@ public class RPC {
                 return request.getResult();//目标方法的返回结果
             }
 
-            //TODO: 思考如何保证同一客户端的requestId不会重复
+            // TODO: 学习，生成requestId的方式
             private String buildRequestId(String methodName) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(requestTimes.incrementAndGet());
-                sb.append(System.currentTimeMillis());
-                sb.append(methodName);
+                sb.append(requestTimes.incrementAndGet()).append("-");
+                sb.append(System.currentTimeMillis()).append("-");
+                sb.append(methodName).append("-");
                 Random random = new Random();
                 sb.append(random.nextInt(1000));
                 return sb.toString();
@@ -64,7 +64,6 @@ public class RPC {
         return clientContext.getBean(ClientConfig.class);
     }
 
-    //TODO: 思考，这里使用的分隔符
     public static String requestEncode(Request request) throws JsonProcessingException {
         return objectMapper.writeValueAsString(request)+System.getProperty("line.separator");
     }

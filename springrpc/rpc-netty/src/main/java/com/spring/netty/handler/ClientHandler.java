@@ -8,13 +8,14 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
 public class ClientHandler extends ChannelHandlerAdapter {
-    // TODO 思考，会有线程安全问题吗
+    // TODO 思考，会有线程安全问题吗（每个handler是新建的，而ctx只有一个，线程安全）
     public static ChannelHandlerContext ctx;
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
         this.ctx = ctx;
+        System.out.println(this.ctx .toString());
         RPCClient.lock.lock();
         RPCClient.condition.signalAll();
         RPCClient.lock.unlock();
@@ -27,7 +28,7 @@ public class ClientHandler extends ChannelHandlerAdapter {
 
         assert response != null;
         synchronized (RPCClient.requestLockMap.get(response.getRequestId())){
-            //唤醒在该对象锁上wait的线程
+            // TODO: 学习，实现客户端阻塞等待
             Request request = RPCClient.requestLockMap.get(response.getRequestId());
             request.setResult(response.getResult());
             request.notifyAll();

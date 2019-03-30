@@ -38,7 +38,7 @@ public class RPCClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            //以换行符分包 防止念包半包 2048为最大长度 到达最大长度没出现换行符则抛出异常
+                            // TODO: 学习，以换行符分包 防止念包半包 2048为最大长度 到达最大长度没出现换行符则抛出异常
                             socketChannel.pipeline().addLast(new LineBasedFrameDecoder(ConstantUtil.MSG_MAX_LENGTH));
                             //将接收到的对象转为字符串
                             socketChannel.pipeline().addLast(new StringDecoder());
@@ -47,14 +47,7 @@ public class RPCClient {
                     });
 
             final ChannelFuture f = b.connect(RPC.getClientConfig().getHost(), RPC.getClientConfig().getPort()).sync();
-            //TODO: 思考，f.channel().closeFuture().sync();会阻塞在这所以不能使用
-            f.addListener(new ChannelFutureListener() {
-                @Override
-                public void operationComplete(ChannelFuture channelFuture) throws Exception {
-
-                }
-            });
-
+            // TODO: 学习，这里不能使用f.channel().closeFuture().sync()方法，该方法会使线程阻塞在这，等待管道关闭
             Runtime.getRuntime().addShutdownHook(new Thread() {
                 public void run() {
                     try {
@@ -82,7 +75,7 @@ public class RPCClient {
 
     public static void send(Request request) {
         try {
-            //TODO: 思考，这里阻塞怎么实现的
+            // TODO: 学习，掌握这种阻塞方式
             if (ClientHandler.ctx == null) {
                 lock.lock();
                 System.out.println("wait connect success ...");
@@ -101,13 +94,16 @@ public class RPCClient {
             assert requestJson != null;
             ByteBuf byteBuffer = Unpooled.copiedBuffer(requestJson.getBytes());
             ClientHandler.ctx.writeAndFlush(byteBuffer);
-            System.out.println("调用" + request.getRequestId() + "已发送");
+            // TODO: 测试，线程安全
+            Object[] parameters = request.getParameters();
+            String msg = parameters.length > 1 ? parameters[0].toString() : "";
+            System.out.println("调用" + request.getRequestId() + "已发送:" + msg);
 
             synchronized (request) {
-                // 实现客户端阻塞等待
+                // TODO: 学习，实现客户端阻塞等待
                 request.wait();
             }
-            System.out.println("调用" + request.getRequestId() + "接收完毕");
+            System.out.println("调用" + request.getRequestId() + "接收完毕:"+request.getResult().toString());
 
         } catch (Exception e) {
             e.printStackTrace();
