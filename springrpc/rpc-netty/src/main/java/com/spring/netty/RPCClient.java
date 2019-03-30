@@ -25,10 +25,11 @@ public class RPCClient {
 
     public static Lock lock = new ReentrantLock();
     public static Condition condition = lock.newCondition();
+    private static EventLoopGroup group;
 
     private RPCClient() {
         // start client netty
-        EventLoopGroup group = new NioEventLoopGroup();
+        group = new NioEventLoopGroup();
         Bootstrap b = new Bootstrap();
         try {
             b.group(group)
@@ -53,15 +54,25 @@ public class RPCClient {
 
                 }
             });
+
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() {
+                    try {
+                        close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static RPCClient connect(){
-        if(instance == null){
-            synchronized (RPCClient.class){
-                if(instance == null){
+    public static RPCClient connect() {
+        if (instance == null) {
+            synchronized (RPCClient.class) {
+                if (instance == null) {
                     instance = new RPCClient();
                 }
             }
@@ -69,10 +80,10 @@ public class RPCClient {
         return instance;
     }
 
-    public static void send(Request request){
+    public static void send(Request request) {
         try {
             //TODO: 思考，这里阻塞怎么实现的
-            if(ClientHandler.ctx == null) {
+            if (ClientHandler.ctx == null) {
                 lock.lock();
                 System.out.println("wait connect success ...");
                 condition.await();
@@ -90,15 +101,22 @@ public class RPCClient {
             assert requestJson != null;
             ByteBuf byteBuffer = Unpooled.copiedBuffer(requestJson.getBytes());
             ClientHandler.ctx.writeAndFlush(byteBuffer);
-            System.out.println("调用"+request.getRequestId()+"已发送");
+            System.out.println("调用" + request.getRequestId() + "已发送");
 
             synchronized (request) {
+                // 实现客户端阻塞等待
                 request.wait();
             }
-            System.out.println("调用"+request.getRequestId()+"接收完毕");
+            System.out.println("调用" + request.getRequestId() + "接收完毕");
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void close() {
+        if (!group.isShutdown()) {
+            group.shutdownGracefully();
         }
     }
 }

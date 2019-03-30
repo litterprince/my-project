@@ -25,7 +25,6 @@ public class ServerConfig implements ApplicationContextAware {
         return serverImplMap;
     }
 
-    //TODO: 思考，怎么实现服务注册
     public void setServerImplMap(Map<String, String> serverImplMap) {
         this.serverImplMap = serverImplMap;
     }
