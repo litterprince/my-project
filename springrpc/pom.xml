@@ -10,6 +10,7 @@
   <version>1.0</version>
   <modules>
     <module>rpc-netty</module>
+    <module>rpc-zk</module>
   </modules>
 
   <name>rpc</name>
@@ -20,6 +21,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <spring.version>5.0.7.RELEASE</spring.version>
   </properties>
 
   <dependencies>
@@ -28,6 +30,12 @@
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 

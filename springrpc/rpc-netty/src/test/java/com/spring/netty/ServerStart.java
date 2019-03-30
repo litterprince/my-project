@@ -1,4 +1,4 @@
-package com.spring.server;
+package com.spring.netty;
 
 import com.spring.netty.RPCServer;
 import org.junit.Test;

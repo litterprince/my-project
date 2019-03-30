@@ -1,5 +1,8 @@
-package com.spring.service;
+package com.spring.rpc.service;
 
+import com.spring.rpc.declare.RpcService;
+
+@RpcService(HelloService.class)
 public class HelloServiceImpl implements HelloService{
 
     @Override
