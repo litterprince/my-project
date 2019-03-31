@@ -1,4 +1,4 @@
-package com.spring.rpc.declare;
+package com.spring.common.annotation;
 
 
 import org.springframework.stereotype.Component;

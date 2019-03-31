@@ -1,4 +1,4 @@
-package com.spring.rpc.service;
+package com.spring.common.service;
 
 public interface HelloService {
     String sayHello(String name);

@@ -1,5 +1,6 @@
 package com.spring.zk.coder;
 
+import com.spring.zk.util.SerializationUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
@@ -13,6 +14,11 @@ public class RpcEncoder extends MessageToByteEncoder {
 
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, Object o, ByteBuf byteBuf) throws Exception {
-        // TODO: encode
+        // TODO: 思考，这里的序列化方式
+        if(genericClass.isInstance(o)){
+            byte[] bytes = SerializationUtil.serialize(o);
+            byteBuf.writeInt(bytes.length);
+            byteBuf.writeBytes(bytes);
+        }
     }
 }

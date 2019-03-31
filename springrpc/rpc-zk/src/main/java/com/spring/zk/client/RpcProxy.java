@@ -1,13 +1,12 @@
 package com.spring.zk.client;
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
+import com.spring.zk.message.RpcRequest;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.UUID;
 
-@Component("rpcProxy")
 public class RpcProxy {
     private String serverAddress;
     private ServiceDiscovery serviceDiscovery;
@@ -20,6 +19,7 @@ public class RpcProxy {
         this.serviceDiscovery = serviceDiscovery;
     }
 
+    // TODO: create proxy method
     public <T> T create(Class<?> interfaceClass) {
         Object obj = Proxy.newProxyInstance(
                 interfaceClass.getClassLoader(),
@@ -28,6 +28,18 @@ public class RpcProxy {
 
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        RpcRequest rpcRequest = new RpcRequest();
+                        rpcRequest.setRequestId(UUID.randomUUID().toString());
+                        rpcRequest.setClassName(interfaceClass.getName());
+                        rpcRequest.setMethodName(method.getName());
+                        rpcRequest.setParameters(args);
+                        rpcRequest.setParameterTypes(method.getParameterTypes());
+
+                        if(serviceDiscovery != null ) {
+                            serverAddress = serviceDiscovery.discover();
+                        }
+
+
                         return null;
                     }
                 }

@@ -26,6 +26,8 @@ public class RpcClient extends ChannelHandlerAdapter {
 
     // TODO: 实现发送请求功能
     public RpcResponse send(RpcRequest request) throws Exception {
+        // start client netty
+
         return null;
     }
 

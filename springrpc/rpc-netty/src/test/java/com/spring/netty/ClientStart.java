@@ -1,6 +1,6 @@
 package com.spring.netty;
 
-import com.spring.rpc.service.HelloService;
+import com.spring.common.service.HelloService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
