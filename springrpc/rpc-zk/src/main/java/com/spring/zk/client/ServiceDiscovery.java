@@ -15,12 +15,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ServiceDiscovery {
     private CountDownLatch latch = new CountDownLatch(1);
 
-    // TODO: 思考，dataList的作用
+    // TODO: 思考，dataList用于发现服务的Ip，这样每个ip都需要提供相同服务
     private volatile List<String> dataList = new ArrayList<>();
 
     private String registryAddress;
 
-    // TODO: 实现服务发现功能
+    // TODO: 学习，实现服务发现功能
     public ServiceDiscovery(String registryAddress) {
         this.registryAddress = registryAddress;
 

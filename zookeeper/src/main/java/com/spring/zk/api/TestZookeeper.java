@@ -15,7 +15,6 @@ public class TestZookeeper implements Watcher {
         TestZookeeper client = new TestZookeeper();
         ZooKeeper zk =  client.connect();
         client.createNode(zk);
-
     }
 
     private ZooKeeper connect() throws InterruptedException, IOException {

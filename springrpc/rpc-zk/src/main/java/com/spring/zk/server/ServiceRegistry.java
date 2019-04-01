@@ -2,6 +2,7 @@ package com.spring.zk.server;
 
 import com.spring.zk.common.Constant;
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
@@ -46,7 +47,7 @@ public class ServiceRegistry {
     private void createNode(ZooKeeper zk, String data) {
         try{
             byte[] bytes = data.getBytes();
-            // TODO: 注意，首先需要使用 ZooKeeper 客户端命令行创建/registry永久节点
+            // TODO: 问题，首先需要使用 ZooKeeper 客户端命令行创建/registry永久节点
             String path = zk.create(Constant.ZK_DATA_PATH, bytes, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
             System.out.println("create zookeeper node("+path+" => "+data+")");
         } catch (InterruptedException | KeeperException e) {
