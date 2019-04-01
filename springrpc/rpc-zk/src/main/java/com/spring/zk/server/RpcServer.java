@@ -38,7 +38,7 @@ public class RpcServer implements ApplicationContextAware, InitializingBean {
         this.serviceRegistry = serviceRegistry;
     }
 
-    // TODO: 学习，实现服务注册
+    // TODO: 学习，在spring启动context的时候加载服务信息
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         // 获取所有带有 RpcService 注解的 Spring Bean
@@ -68,7 +68,7 @@ public class RpcServer implements ApplicationContextAware, InitializingBean {
                             socketChannel.pipeline().addLast(new RpcDecoder(RpcResponse.class));
                             socketChannel.pipeline().addLast(new ServerHandler(handlerMap));
                         }
-                    // TODO: 思考，客户端请求队列的大小
+                    // TODO: 学习，设置客户端请求队列的大小
                     }).option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
@@ -81,7 +81,7 @@ public class RpcServer implements ApplicationContextAware, InitializingBean {
             ChannelFuture future = b.bind(host, port).sync();
             System.out.println("rpc server start at port: " + port);
 
-            // TODO: 思考，netty启动后注册服务
+            // TODO: 学习，netty启动后注册服务
             if (serviceRegistry != null) {
                 serviceRegistry.register(serverAddress);
             }

@@ -30,7 +30,6 @@ public class RpcProxy {
         this.serviceDiscovery = serviceDiscovery;
     }
 
-    // TODO: 思考，代理对象的获取
     public <T> T create(Class<?> interfaceClass) {
         Object obj = Proxy.newProxyInstance(
                 interfaceClass.getClassLoader(),
@@ -54,7 +53,7 @@ public class RpcProxy {
                         String host = array[0];
                         int port = Integer.parseInt(array[1]);
 
-                        // TODO: 每次方法调用都要启动一次netty，性能不高
+                        // TODO: 问题，每次方法调用都要启动一次netty，性能不高
                         // start client netty
                         EventLoopGroup group = new NioEventLoopGroup();
                         ClientHandler handler = new ClientHandler();

@@ -14,7 +14,7 @@ public class RpcEncoder extends MessageToByteEncoder {
 
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, Object o, ByteBuf byteBuf) throws Exception {
-        // TODO: 思考，这里的序列化方式
+        // TODO: 学习，序列化部分
         if(genericClass.isInstance(o)){
             byte[] bytes = SerializationUtil.serialize(o);
             byteBuf.writeInt(bytes.length);

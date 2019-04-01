@@ -16,7 +16,7 @@ public class RpcDecoder extends ByteToMessageDecoder {
 
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {
-        // TODO: 思考，这里的反序列化和防止分包粘包的方法
+        // TODO: 学习，反序列化和防止分包粘包的方法
         if (byteBuf.readableBytes() < 4) {
             return;
         }

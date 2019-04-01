@@ -15,7 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ServiceDiscovery {
     private CountDownLatch latch = new CountDownLatch(1);
 
-    // TODO: 思考，dataList用于发现服务的Ip，这样每个ip都需要提供相同服务
+    // TODO: 问题，dataList用于存放服务的Ip，服务粒度以服务ip划分而不是服务方法，不够灵活
     private volatile List<String> dataList = new ArrayList<>();
 
     private String registryAddress;
