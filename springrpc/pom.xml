@@ -9,9 +9,9 @@
   <packaging>pom</packaging>
   <version>1.0</version>
   <modules>
-    <module>rpc-netty</module>
     <module>rpc-zk</module>
     <module>rpc-common</module>
+      <module>rpc-netty2</module>
   </modules>
 
   <name>rpc</name>
