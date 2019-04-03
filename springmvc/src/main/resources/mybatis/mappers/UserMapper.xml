@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.spring.dao.UserDao" >
+<mapper namespace="com.spring.simple.dao.UserDao" >
     <sql id="Base_Column_List" >
         id, user_name, password, create_time
     </sql>
 
-    <insert id="insertOne" parameterType="com.spring.po.UserBean">
+    <insert id="insertOne" parameterType="com.spring.simple.po.UserBean">
         INSERT INTO users(<include refid="Base_Column_List" />)
         VALUES (#{id}, #{userName}, #{password}, #{createTime})
     </insert>
     
-    <select id="findByParam" resultType="com.spring.po.UserBean" parameterType="com.spring.po.UserBean" >
+    <select id="findByParam" resultType="com.spring.simple.po.UserBean" parameterType="com.spring.simple.po.UserBean" >
         SELECT
         <include refid="Base_Column_List" />
         FROM users

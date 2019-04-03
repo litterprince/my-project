@@ -1,6 +1,6 @@
-package com.spring.dao;
+package com.spring.simple.dao;
 
-import com.spring.po.UserBean;
+import com.spring.simple.po.UserBean;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
