@@ -8,24 +8,24 @@ import java.nio.channels.ServerSocketChannel;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ThreadHandle {
+public class Group {
     private AtomicInteger bossIndex = new AtomicInteger();
-    private static NettyBoss[] bosses;
+    private NettyBoss[] bosses;
     AtomicInteger workIndex = new AtomicInteger();
-    static NettyWork[] workers;
+    NettyWork[] workers;
 
-    ThreadHandle(ExecutorService bossExecutor, ExecutorService workerExecutor){
-        this.bosses = new NettyBoss[1];
-        for(int i=0;i<bosses.length;i++){
+    Group(ExecutorService bossExecutor, ExecutorService workerExecutor) {
+        bosses = new NettyBoss[1];
+        for (int i = 0; i < bosses.length; i++) {
             bosses[i] = new NettyBoss(bossExecutor, this);
         }
-        this.workers = new NettyWork[Runtime.getRuntime().availableProcessors() * 2];
-        for(int i=0;i<workers.length;i++){
+        workers = new NettyWork[Runtime.getRuntime().availableProcessors() * 2];
+        for (int i = 0; i < workers.length; i++) {
             workers[i] = new NettyWork(workerExecutor);
         }
     }
 
-    void bind(InetSocketAddress inetSocketAddress){
+    void bind(InetSocketAddress inetSocketAddress) {
         try {
             final ServerSocketChannel server = ServerSocketChannel.open();
             server.configureBlocking(false);
@@ -43,11 +43,11 @@ public class ThreadHandle {
                 }
             };
             nextBoss.taskQueue.add(runnable);
-            if(nextBoss.selector != null){
-                if(nextBoss.wakenUp.compareAndSet(false, true)){
+            if (nextBoss.selector != null) {
+                if (nextBoss.wakenUp.compareAndSet(false, true)) {
                     nextBoss.selector.wakeup();
                 }
-            }else{
+            } else {
                 nextBoss.taskQueue.remove(runnable);
             }
         } catch (IOException e) {

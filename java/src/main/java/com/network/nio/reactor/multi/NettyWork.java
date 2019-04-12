@@ -19,7 +19,7 @@ public class NettyWork {
     AtomicBoolean wakeup = new AtomicBoolean();// 用于唤醒阻塞线程，使selector立即返回
     Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
 
-    NettyWork(ExecutorService executor){
+    NettyWork(ExecutorService executor) {
         this.executor = executor;
         try {
             this.selector = Selector.open();
@@ -37,13 +37,14 @@ public class NettyWork {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                while(!Thread.interrupted()){
+                while (!Thread.interrupted()) {
                     try {
                         wakeup.set(false);
                         selector.select();
-                        while(!Thread.interrupted()){
+                        // 等待boss唤醒，task执行绑定channel的read任务
+                        while (!Thread.interrupted()) {
                             final Runnable task = taskQueue.poll();
-                            if(task == null)
+                            if (task == null)
                                 break;
                             task.run();
                             Thread.sleep(100);
@@ -67,7 +68,7 @@ public class NettyWork {
         if (selectionKeys.isEmpty()) {
             return;
         }
-        for(Iterator<SelectionKey> iterator = selectionKeys.iterator();iterator.hasNext();){
+        for (Iterator<SelectionKey> iterator = selectionKeys.iterator(); iterator.hasNext(); ) {
             SelectionKey key = iterator.next();
             iterator.remove();
             ServerSocketChannel server = (ServerSocketChannel) key.channel();
@@ -78,14 +79,14 @@ public class NettyWork {
             try {
                 count = channel.write(byteBuffer);
                 failure = false;
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-            if(count < 0 || failure){
+            if (count < 0 || failure) {
                 key.cancel();
                 System.out.println("客户端断开连接");
-            }else{
-                System.out.println("收到数据："+ new String(byteBuffer.array()));
+            } else {
+                System.out.println("收到数据：" + new String(byteBuffer.array()));
                 ByteBuffer outBuffer = ByteBuffer.wrap("收到\n".getBytes());
                 channel.read(outBuffer);
             }

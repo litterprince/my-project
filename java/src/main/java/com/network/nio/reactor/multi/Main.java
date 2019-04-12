@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
         ExecutorService boss = Executors.newCachedThreadPool();
         ExecutorService worker = Executors.newCachedThreadPool();
-        ThreadHandle handle = new ThreadHandle(boss, worker);
-        handle.bind(new InetSocketAddress(9000));
+        Group group = new Group(boss, worker);
+        group.bind(new InetSocketAddress(9000));
         System.out.println("start...");
     }
 }
