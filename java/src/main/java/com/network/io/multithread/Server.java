@@ -1,4 +1,4 @@
-package com.network.socket.thread;
+package com.network.io.multithread;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -21,9 +21,7 @@ public class Server {
                 Thread.sleep(1000);
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }

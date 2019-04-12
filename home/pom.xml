@@ -72,7 +72,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>RELEASE</version>
+            <version>1.0.19</version>
         </dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -82,7 +82,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>RELEASE</version>
+            <version>3.7</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
         <dependency>
