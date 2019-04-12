@@ -1,4 +1,4 @@
-package com.network.netty.mynetty;
+package com.network.nio.reactor.multi;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -14,12 +14,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class NettyWork {
-    public ExecutorService executor;
+    private ExecutorService executor;
     protected Selector selector;
-    protected AtomicBoolean wakeup = new AtomicBoolean();// 用于唤醒阻塞线程，使selector立即返回
-    public Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
+    AtomicBoolean wakeup = new AtomicBoolean();// 用于唤醒阻塞线程，使selector立即返回
+    Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
 
-    public NettyWork(ExecutorService executor){
+    NettyWork(ExecutorService executor){
         this.executor = executor;
         try {
             this.selector = Selector.open();
