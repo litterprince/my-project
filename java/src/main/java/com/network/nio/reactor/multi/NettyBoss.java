@@ -1,4 +1,4 @@
-package com.network.netty.mynetty;
+package com.network.nio.reactor.multi;
 
 import java.io.IOException;
 import java.nio.channels.*;
@@ -10,13 +10,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class NettyBoss {
-    public ExecutorService executor;
+    private ExecutorService executor;
     protected Selector selector;
-    protected AtomicBoolean wakenUp = new AtomicBoolean();// 用于唤醒阻塞线程，使selector立即返回
-    public Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
-    protected ThreadHandle threadHandle;
+    AtomicBoolean wakenUp = new AtomicBoolean();// 用于唤醒阻塞线程，使selector立即返回
+    Queue<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
+    private ThreadHandle threadHandle;
 
-    public NettyBoss(ExecutorService executor, ThreadHandle threadHandle){
+    NettyBoss(ExecutorService executor, ThreadHandle threadHandle){
         this.threadHandle = threadHandle;
         this.executor = executor;
         try {

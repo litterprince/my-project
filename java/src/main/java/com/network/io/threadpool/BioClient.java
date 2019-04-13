@@ -1,4 +1,4 @@
-package com.network.io;
+package com.network.io.threadpool;
 
 import java.io.IOException;
 import java.io.InputStream;

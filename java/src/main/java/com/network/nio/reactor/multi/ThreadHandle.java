@@ -1,4 +1,4 @@
-package com.network.netty.mynetty;
+package com.network.nio.reactor.multi;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -9,12 +9,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadHandle {
-    public AtomicInteger bossIndex = new AtomicInteger();
-    public static NettyBoss[] bosses;
-    public AtomicInteger workIndex = new AtomicInteger();
-    public static NettyWork[] workers;
+    private AtomicInteger bossIndex = new AtomicInteger();
+    private static NettyBoss[] bosses;
+    AtomicInteger workIndex = new AtomicInteger();
+    static NettyWork[] workers;
 
-    public ThreadHandle(ExecutorService bossExecutor, ExecutorService workerExecutor){
+    ThreadHandle(ExecutorService bossExecutor, ExecutorService workerExecutor){
         this.bosses = new NettyBoss[1];
         for(int i=0;i<bosses.length;i++){
             bosses[i] = new NettyBoss(bossExecutor, this);
@@ -25,7 +25,7 @@ public class ThreadHandle {
         }
     }
 
-    public void bind(InetSocketAddress inetSocketAddress){
+    void bind(InetSocketAddress inetSocketAddress){
         try {
             final ServerSocketChannel server = ServerSocketChannel.open();
             server.configureBlocking(false);
