@@ -18,7 +18,7 @@
 
     <!-- 配置JedisConnectionFactory -->
     <bean id="jedisConnectionFactory"
-          class="org.springframework.index.redis.connection.jedis.JedisConnectionFactory">
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
         <property name="hostName" value="${redis.host}" />
         <property name="port" value="${redis.port}" />
         <!-- <property name="password" value="${redis.pass}" /> -->
@@ -27,12 +27,12 @@
     </bean>
 
     <!-- 配置RedisTemplate -->
-    <bean id="redisTemplate" class="org.springframework.index.redis.core.RedisTemplate">
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
         <property name="connectionFactory" ref="jedisConnectionFactory" />
     </bean>
 
     <!-- 配置RedisCacheManager -->
-    <bean id="redisCacheManager" class="org.springframework.index.redis.cache.RedisCacheManager">
+    <bean id="redisCacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">
         <constructor-arg name="redisOperations" ref="redisTemplate" />
         <property name="defaultExpiration" value="${redis.expiration}" />
     </bean>
