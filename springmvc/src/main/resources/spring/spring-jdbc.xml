@@ -36,11 +36,6 @@
         <property name="filters" value="stat" />
     </bean>
 
-    <!-- 对dataSource 数据源进行事务管理 -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
     <!-- mybatis文件配置，扫描所有mapper.xml文件,配置mybatisSqlSessionFactoryBean -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -48,15 +43,25 @@
         <property name="mapperLocations" value="classpath:mybatis/mappers/**/*.xml"/>
     </bean>
 
-    <!-- 配置SqlSessionTemplate -->
+    <!-- 配置SqlSessionTemplate（mybatis方式一） -->
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 
-    <!-- 配置mybatis mapper接口，扫描所有dao -->
+    <!-- 配置mybatis mapper接口，扫描所有dao（mybatis方式二） -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.spring"/>
         <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
+    </bean>
+
+    <!--
+        mybatis方式一、使用template对象方式
+        mybatis方式二、使用注解方式
+        mybatis方式三、继承SqlSessionDaoSupport提供sqlSession（代码实现方式） -->
+
+    <!-- 对dataSource 数据源进行事务管理 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <!-- 事务管理 通知 -->

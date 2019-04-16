@@ -1,4 +1,4 @@
-package com.spring.po;
+package com.spring.simple.po;
 
 import java.io.Serializable;
 import java.util.Date;
