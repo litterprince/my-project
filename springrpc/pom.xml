@@ -11,7 +11,6 @@
   <modules>
     <module>rpc-zk</module>
     <module>rpc-common</module>
-      <module>rpc-netty2</module>
   </modules>
 
   <name>rpc</name>

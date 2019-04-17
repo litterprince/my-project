@@ -1,5 +1,5 @@
-import com.spring.po.SysUserBean;
-import com.spring.service.UserService;
+import com.spring.simple.po.SysUserBean;
+import com.spring.simple.service.UserService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
