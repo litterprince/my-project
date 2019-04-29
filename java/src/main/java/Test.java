@@ -1,13 +1,13 @@
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.base.Function;
+import com.google.common.collect.Maps;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
-import java.util.Date;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,8 +20,7 @@ import java.util.regex.Pattern;
 public class Test {
     private static Random random = new Random();
     public static void main(String[] args) {
-        System.out.println(1<<1);
-        System.out.println(Math.log(4)/Math.log(2));
+
     }
 
     private static String formatUserIp(String ip){
@@ -173,5 +172,69 @@ public class Test {
 
     public static void testNums(int[] nums){
        nums[2] = 10;
+    }
+
+    public static void testSpeed(){
+        Test t = new Test();
+        Set<Person> persons = new LinkedHashSet<>();
+        for (int i = 0; i < 1000000; i++) {
+            persons.add(t.new Person(i, "jeff"+i));
+        }
+        Set<Person> persons2 = new LinkedHashSet<>();
+        for (int i = 20; i < 1000000; i++) {
+            persons2.add(t.new Person(i, ""));
+        }
+
+        // test1
+        long start = System.currentTimeMillis();
+        final Map<Integer, Person> personMap = Maps.uniqueIndex(persons, new Function<Person, Integer>() {
+            @Override
+            public Integer apply(Person product) {
+                return product.getId();
+            }
+        });
+        for (Person person2 : persons2){
+            if(personMap.containsKey(person2.getId())){
+                person2.setName(personMap.get(person2.getId()).getName());
+            }
+        }
+        System.out.println("cost = "+ (System.currentTimeMillis() - start));
+
+        // test2
+        start = System.currentTimeMillis();
+        for(Person person : persons){
+            for (Person person2 : persons2){
+                if(person2.getId() == person.getId()){
+                    person2.setName(person.getName());
+                }
+            }
+        }
+        System.out.println("cost = "+ (System.currentTimeMillis() - start));
+    }
+
+    class Person {
+        private int id;
+        private String name;
+
+        public Person(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 }
