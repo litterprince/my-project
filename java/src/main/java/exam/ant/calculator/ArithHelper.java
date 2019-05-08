@@ -1,4 +1,4 @@
-package main.java.exam.calculator;
+package exam.ant.calculator;
 
 public class ArithHelper {
     // 默认除法运算精度

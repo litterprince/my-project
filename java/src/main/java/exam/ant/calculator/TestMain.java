@@ -1,4 +1,4 @@
-package main.java.exam.calculator;
+package exam.ant.calculator;
 
 import java.util.Scanner;
 
