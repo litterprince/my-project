@@ -16,6 +16,7 @@ public class Handler implements Runnable {
 
     Handler(Selector sel, SocketChannel c) throws IOException {
         socket = c;
+
         sk = socket.register(sel, 0);
         sk.attach(this);
         sk.interestOps(SelectionKey.OP_READ);
