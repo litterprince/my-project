@@ -1,4 +1,4 @@
-package com.network.io.reactor;
+package com.network.bio.reactor;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -7,7 +7,7 @@ public class Acceptor implements Runnable {
     private int port; // server socket port
     private Selector selector;
 
-    // 代表 serversocket，通过LinkedBlockingQueue来模拟外部输入请求队列
+    // 代表 serverSocket，通过LinkedBlockingQueue来模拟外部输入请求队列
     private BlockingQueue<InputSource> sourceQueue = new LinkedBlockingQueue<>();
 
     Acceptor(Selector selector, int port) {
@@ -26,11 +26,11 @@ public class Acceptor implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        while (!Thread.interrupted()) {
 
             InputSource source = null;
             try {
-                // 相当于 serversocket.accept()，接收输入请求，该例从请求队列中获取输入请求
+                // 相当于 serverSocket.accept()，接收输入请求，该例从请求队列中获取输入请求
                 source = sourceQueue.take();
             } catch (InterruptedException e) {
                 // ignore it;

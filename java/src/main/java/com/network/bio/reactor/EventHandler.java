@@ -1,7 +1,8 @@
-package com.network.io.reactor;
+package com.network.bio.reactor;
 
 public abstract class EventHandler {
     private InputSource source;
+
     public abstract void handle(Event event);
 
     public InputSource getSource() {

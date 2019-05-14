@@ -14,6 +14,11 @@ public class NIOClient {
     private final static int BUF_SIZE = 10240;
     private static ByteBuffer byteBuffer = ByteBuffer.allocate(BUF_SIZE);
 
+    public static void main(String[] args) throws IOException {
+        NIOClient myNioClient = new NIOClient();
+        myNioClient.initClient();
+    }
+
     private void  initClient() throws IOException {
         this.selector = Selector.open();
         SocketChannel clientChannel = SocketChannel.open();
@@ -59,10 +64,5 @@ public class NIOClient {
         System.out.println("从服务端发送过来的消息是："+msg);
         //clientChannel.close();
         //key.selector().close();
-    }
-
-    public static void main(String[] args) throws IOException {
-        NIOClient myNioClient = new NIOClient();
-        myNioClient.initClient();
     }
 }

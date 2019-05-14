@@ -1,4 +1,4 @@
-package com.network.io.multithread;
+package com.network.bio.multithread;
 
 import java.io.*;
 import java.net.Socket;

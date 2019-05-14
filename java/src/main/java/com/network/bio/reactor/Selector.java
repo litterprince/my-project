@@ -1,10 +1,13 @@
-package com.network.io.reactor;
+package com.network.bio.reactor;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * 模拟Nio Selector
+ */
 public class Selector {
     //定义一个链表阻塞queue实现缓冲队列，用于保证线程安全
     private BlockingQueue<Event> eventQueue = new LinkedBlockingQueue<>();
@@ -15,6 +18,7 @@ public class Selector {
         return select(0);
     }
 
+    // 模拟select方法监听就绪事件
     private List<Event> select(long timeout) {
         if (timeout > 0) {
             if (eventQueue.isEmpty()) {
@@ -35,7 +39,8 @@ public class Selector {
         return events;
     }
 
-    void addEvent(Event e) {
+    // 添加监听事件
+    public void addEvent(Event e) {
         //将event事件加入队列
         boolean success = eventQueue.offer(e);
         if (success) {

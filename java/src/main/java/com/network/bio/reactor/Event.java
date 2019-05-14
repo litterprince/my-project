@@ -1,22 +1,22 @@
-package com.network.io.reactor;
+package com.network.bio.reactor;
 
 public class Event {
     private InputSource source;
     private EventType type;
 
-    InputSource getSource() {
+    public InputSource getSource() {
         return source;
     }
 
-    void setSource(InputSource source) {
+    public void setSource(InputSource source) {
         this.source = source;
     }
 
-    EventType getType() {
+    public EventType getType() {
         return type;
     }
 
-    void setType(EventType type) {
+    public void setType(EventType type) {
         this.type = type;
     }
 }

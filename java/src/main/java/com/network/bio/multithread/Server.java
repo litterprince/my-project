@@ -1,4 +1,4 @@
-package com.network.io.multithread;
+package com.network.bio.multithread;
 
 import java.io.IOException;
 import java.net.ServerSocket;

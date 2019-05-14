@@ -1,4 +1,4 @@
-package com.network.io.simplethread;
+package com.network.bio.simplethread;
 
 import java.io.*;
 import java.net.ServerSocket;

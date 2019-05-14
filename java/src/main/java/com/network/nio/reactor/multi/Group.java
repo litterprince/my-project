@@ -32,6 +32,7 @@ public class Group {
             server.socket().bind(inetSocketAddress);
 
             final NettyBoss nextBoss = bosses[Math.abs(bossIndex.getAndIncrement() % bosses.length)];
+            // boss's runnable
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {

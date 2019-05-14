@@ -80,6 +80,7 @@ public class NettyBoss {
             final SocketChannel channel = server.accept();
             channel.configureBlocking(false);
             final NettyWork nextWorker = group.workers[Math.abs(group.workIndex.getAndIncrement() % group.workers.length)];
+            // work's runnable
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {

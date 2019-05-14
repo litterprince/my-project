@@ -1,18 +1,21 @@
-package com.network.io.multithread;
+package com.network.bio.simplethread;
 
 import java.io.*;
 import java.net.Socket;
 
 public class Client {
+    /**
+     * Socket客户端
+     */
     public static void main(String[] args) {
         try {
             //创建Socket对象
-            Socket socket = new Socket("localhost", 8888);
+            Socket socket = new Socket("localhost", 9999);
 
             //根据输入输出流和服务端连接
             OutputStream outputStream = socket.getOutputStream();//获取一个输出流，向服务端发送信息
             PrintWriter printWriter = new PrintWriter(outputStream);//将输出流包装成打印流
-            printWriter.print("服务端你好，我是客户1");
+            printWriter.print("服务端你好，我是Balla_兔子");
             printWriter.flush();
             socket.shutdownOutput();//关闭输出流
 
@@ -35,5 +38,6 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

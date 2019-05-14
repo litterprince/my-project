@@ -1,9 +1,14 @@
-package com.network.io.reactor;
+package com.network.bio.reactor.handleImpl;
+
+import com.network.bio.reactor.Event;
+import com.network.bio.reactor.EventHandler;
+import com.network.bio.reactor.EventType;
+import com.network.bio.reactor.Selector;
 
 public class AcceptEventHandler extends EventHandler {
     private Selector selector;
 
-    AcceptEventHandler(Selector selector) {
+    public AcceptEventHandler(Selector selector) {
         this.selector = selector;
     }
 
