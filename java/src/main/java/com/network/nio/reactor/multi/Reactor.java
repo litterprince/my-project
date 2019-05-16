@@ -4,8 +4,13 @@ import java.net.InetSocketAddress;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Main {
+public class Reactor {
     public static void main(String[] args) {
+        new Reactor();
+        System.out.println("start...");
+    }
+
+    public Reactor() {
         ExecutorService boss = Executors.newCachedThreadPool();
         ExecutorService worker = Executors.newCachedThreadPool();
         Group group = new Group(boss, worker);

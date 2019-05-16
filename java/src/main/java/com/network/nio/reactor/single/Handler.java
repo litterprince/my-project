@@ -20,7 +20,7 @@ public class Handler implements Runnable {
         sk = socket.register(sel, 0);
         sk.attach(this);
         sk.interestOps(SelectionKey.OP_READ);
-        sel.wakeup();// 关键，想要selector能监视到此channel事件，需要重新执行selector.select函数
+        sel.wakeup();// 关键，唤醒selector.select的阻塞来监听此read事件
     }
 
     private boolean inputIsComplete() {

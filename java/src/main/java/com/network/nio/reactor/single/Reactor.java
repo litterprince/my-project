@@ -13,11 +13,16 @@ public class Reactor implements Runnable {
     private final Selector selector;
     private final ServerSocketChannel serverSocket;
 
-    Reactor(int port) throws IOException {
+    public static void main(String[] args) throws IOException {
+        new Thread(new Reactor(8080)).start();
+    }
+
+    private Reactor(int port) throws IOException {
         selector = Selector.open();
         serverSocket = ServerSocketChannel.open();
         serverSocket.socket().bind(new InetSocketAddress(port));
         serverSocket.configureBlocking(false);
+        // SelectionKey，Channel对象和Selector对象之间的注册关系
         SelectionKey sk = serverSocket.register(selector, SelectionKey.OP_ACCEPT);
         sk.attach(new Acceptor());
     }
@@ -34,7 +39,9 @@ public class Reactor implements Runnable {
                 }
                 selected.clear();
             }
-        } catch (IOException ex) { /* ... */ }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void dispatch(SelectionKey k) {
@@ -50,7 +57,9 @@ public class Reactor implements Runnable {
             try {
                 SocketChannel c = serverSocket.accept();
                 if (c != null) new Handler(selector, c);
-            } catch (IOException ex) { /* ... */ }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
