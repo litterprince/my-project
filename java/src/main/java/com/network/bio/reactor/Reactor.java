@@ -7,7 +7,12 @@ public class Reactor {
     private Dispatcher dispatcher = new Dispatcher(selector);
     private Acceptor acceptor;
 
-    Reactor(int port) {
+    public static void main(String[] args){
+        Reactor reactor = new Reactor(8080);
+        reactor.start();
+    }
+
+    private Reactor(int port) {
         acceptor = new Acceptor(selector, port);
     }
 
