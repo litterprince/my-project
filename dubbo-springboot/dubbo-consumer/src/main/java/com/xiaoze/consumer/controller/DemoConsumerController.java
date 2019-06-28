@@ -41,9 +41,11 @@ public class DemoConsumerController {
 
     @RequestMapping("/")
     public String getUserByName() {
-        CheckCondition checkCondition = new CheckCondition();
+        /*CheckCondition checkCondition = new CheckCondition();
         checkCondition.setOrderProductIdList(Lists.newArrayList(1,2));
-        OrderValidateBean orderValidateBean = checkBusinessService.validateForAgent(checkCondition);
+        OrderValidateBean orderValidateBean = checkBusinessService.validateForAgent(checkCondition);*/
+        LdapUser wangzhe01 = iLdapService.getUserByName("wangzhe01");
+        System.out.println(wangzhe01.getName());
         return "done";
     }
 
