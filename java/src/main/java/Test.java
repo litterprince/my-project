@@ -1,10 +1,9 @@
 import com.google.common.base.Function;
+import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,11 +68,15 @@ public class Test {
     public static void test(){
         Test t = new Test();
         Person person = t.new Person();
-        int i = 1;
-        if(i == 1){
-            person.setName(null);
-        }
-        System.out.println(person.getName());
+        person.setName("jeff");
+        Person person1 = t.new Person();
+        person1.setName("jeff1");
+        Multimap<String, Person> orderProductMultimap = ArrayListMultimap.create();
+        orderProductMultimap.put(person.getName(), person);
+        orderProductMultimap.put(person.getName(), person1);
+        Collection<Person> ordersProductMultiList = orderProductMultimap.get("jeff");
+        ArrayList<Person> orderProductList = new ArrayList<>(ordersProductMultiList);
+        System.out.println(orderProductList.get(1).getName());
     }
 
     class Person {
