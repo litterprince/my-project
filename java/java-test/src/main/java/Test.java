@@ -3,6 +3,7 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,21 +18,21 @@ public class Test {
     private static Random random = new Random();
 
     public static void main(String[] args) {
-        test();
+
     }
 
-    public static void testRegEx(String str, String regEx){
+    public static void testRegEx(String str, String regEx) {
         Pattern pat = Pattern.compile(regEx, Pattern.DOTALL);
         Matcher matcher = pat.matcher(str);
         boolean flg1 = matcher.matches();
         System.out.println(flg1);
     }
 
-    public static void testSpeed(){
+    public static void testSpeed() {
         Test t = new Test();
         Set<Person> persons = new LinkedHashSet<>();
         for (int i = 0; i < 1000000; i++) {
-            persons.add(t.new Person(i, "jeff"+i));
+            persons.add(t.new Person(i, "jeff" + i));
         }
         Set<Person> persons2 = new LinkedHashSet<>();
         for (int i = 20; i < 1000000; i++) {
@@ -46,26 +47,26 @@ public class Test {
                 return product.getId();
             }
         });
-        for (Person person2 : persons2){
-            if(personMap.containsKey(person2.getId())){
+        for (Person person2 : persons2) {
+            if (personMap.containsKey(person2.getId())) {
                 person2.setName(personMap.get(person2.getId()).getName());
             }
         }
-        System.out.println("cost = "+ (System.currentTimeMillis() - start));
+        System.out.println("cost = " + (System.currentTimeMillis() - start));
 
         // test2
         start = System.currentTimeMillis();
-        for(Person person : persons){
-            for (Person person2 : persons2){
-                if(person2.getId() == person.getId()){
+        for (Person person : persons) {
+            for (Person person2 : persons2) {
+                if (person2.getId() == person.getId()) {
                     person2.setName(person.getName());
                 }
             }
         }
-        System.out.println("cost = "+ (System.currentTimeMillis() - start));
+        System.out.println("cost = " + (System.currentTimeMillis() - start));
     }
 
-    public static void test(){
+    public static void testMultimap() {
         Test t = new Test();
         Person person = t.new Person();
         person.setName("jeff");
@@ -79,6 +80,19 @@ public class Test {
         System.out.println(orderProductList.get(1).getName());
     }
 
+    public static void testBigDecimal() {
+        BigDecimal a = new BigDecimal(2.22);
+        BigDecimal b = new BigDecimal("2.22");
+        System.out.println("a 校验前：" + a);
+        if (!a.setScale(2, BigDecimal.ROUND_DOWN).equals(a)) {
+            System.out.println("a 校验错误");
+        }
+        System.out.println("a 校验后：" + a);
+        if (!b.setScale(2, BigDecimal.ROUND_DOWN).equals(b)) {
+            System.out.println("b 校验错误");
+        }
+    }
+
     class Person {
         private int id;
         private String name;
@@ -86,12 +100,12 @@ public class Test {
         Person() {
         }
 
-        public Person(int id, String name) {
+        Person(int id, String name) {
             this.id = id;
             this.name = name;
         }
 
-        public int getId() {
+        int getId() {
             return id;
         }
 
