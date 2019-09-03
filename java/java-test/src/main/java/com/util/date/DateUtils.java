@@ -36,8 +36,7 @@ public class DateUtils {
     public static String getStringDate() {
         Date currentTime = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String dateString = formatter.format(currentTime);
-        return dateString;
+        return formatter.format(currentTime);
     }
 
     /**
@@ -73,8 +72,7 @@ public class DateUtils {
     public static Date strToDateLong(String strDate) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         ParsePosition pos = new ParsePosition(0);
-        Date strtodate = formatter.parse(strDate, pos);
-        return strtodate;
+        return formatter.parse(strDate, pos);
     }
 
     /**
@@ -93,7 +91,6 @@ public class DateUtils {
      * 将短时间格式时间转换为字符串 yyyy-MM-dd
      *
      * @param dateDate
-     * @param k
      * @return
      */
     public static String dateToStr(Date dateDate) {
@@ -111,8 +108,7 @@ public class DateUtils {
     public static Date strToDate(String strDate) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         ParsePosition pos = new ParsePosition(0);
-        Date strtodate = formatter.parse(strDate, pos);
-        return strtodate;
+        return formatter.parse(strDate, pos);
     }
 
     public static Long dateToLong(String strDate){

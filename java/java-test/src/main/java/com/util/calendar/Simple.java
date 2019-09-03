@@ -2,6 +2,7 @@ package com.util.calendar;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -10,11 +11,13 @@ public class Simple {
     private static Calendar calendar = Calendar.getInstance();
 
     public static void main(String[] args) {
-        Date date = new Date();
-
-        long time = getBeforeDate(date, 0).getTime();
-        System.out.println(date.getTime());
-        System.out.println(time);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        ParsePosition pos = new ParsePosition(0);
+        long timeYes = formatter.parse("2019-09-01 23:55:59", pos).getTime();
+        long timeNow = getBeforeDate(new Date(), 0).getTime();
+        if(timeNow - timeYes < 300000){
+            System.out.println("yes");
+        }
     }
 
     public static String getESIndex(String index, Integer cycle) {
