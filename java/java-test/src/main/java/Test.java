@@ -8,6 +8,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.math.BigDecimal.ROUND_UP;
+
 /**
  * Function: Please Descrip This Class.
  * <p>
@@ -18,7 +20,7 @@ public class Test {
     private static Random random = new Random();
 
     public static void main(String[] args) {
-
+        test();
     }
 
     public static void testRegEx(String str, String regEx) {
@@ -90,6 +92,29 @@ public class Test {
         System.out.println("a 校验后：" + a);
         if (!b.setScale(2, BigDecimal.ROUND_DOWN).equals(b)) {
             System.out.println("b 校验错误");
+        }
+    }
+
+    public static void test(){
+        List<Integer> excelDataList = new ArrayList<>();
+        excelDataList.add(1);//0
+        excelDataList.add(2);//1
+        excelDataList.add(3);//2
+        excelDataList.add(4);//3
+        excelDataList.add(5);//4
+        int fromIndex = 0;
+        // 总页数
+        int PAGE_SIZE = 2;
+        int totalSize = excelDataList.size();
+        int pageSize = (new BigDecimal(totalSize).divide(new BigDecimal(PAGE_SIZE), ROUND_UP)).intValue();
+        for (int pageNo = 0; pageNo < pageSize; pageNo++) {
+            int toIndex = fromIndex + PAGE_SIZE;
+            if (toIndex > totalSize) {
+                toIndex = totalSize;
+            }
+
+            System.out.println(Arrays.toString(excelDataList.subList(fromIndex, toIndex).toArray()));
+            fromIndex += PAGE_SIZE;
         }
     }
 

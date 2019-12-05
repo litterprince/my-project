@@ -5,7 +5,7 @@ import algorithm.graph.domain.IGraph;
 import algorithm.graph.domain.array.GraphOfArray;
 
 public class TestSearch {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String content = "A,B,5\n" +
                 "B,C,4\n" +
                 "C,D,8\n" +
@@ -18,10 +18,10 @@ public class TestSearch {
         IGraph graph = new GraphOfArray(true).buildGraph(content);
         System.out.println(graph.toString());
 
-        IComputer computer = new algorithm.graph.compute.impl.DfsComputer(graph);
+        IComputer computer = new algorithm.graph.core.impl.DfsComputer(graph);
         computer.compute(graph.getVertex('E'));
 
-        IComputer bfsCompute = new algorithm.graph.compute.impl.BfsComputer(graph);
+        IComputer bfsCompute = new algorithm.graph.core.impl.BfsComputer(graph);
         bfsCompute.compute(graph.getVertex('E'));
     }
 }
