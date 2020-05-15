@@ -4,9 +4,14 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.math.BigDecimal.ROUND_UP;
 
@@ -21,6 +26,20 @@ public class Test {
 
     public static void main(String[] args) {
         test();
+    }
+
+    public static void testDate() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        LocalDateTime start = LocalDateTime.of(2020, 1, 1, 0, 0, 0);
+        LocalDateTime end = LocalDateTime.of(2020, 12, 31, 23, 59, 59);
+        List<LocalDateTime> dates = Stream.iterate(start, date -> date.plusDays(1))
+                .limit(ChronoUnit.DAYS.between(start, end))
+                .collect(Collectors.toList());
+        System.out.println("param");
+        for (int i = 0; i < dates.size()-1; i++) {
+            System.out.println(dateTimeFormatter.format(dates.get(i))+","+dateTimeFormatter.format(dates.get(i+1)));
+        }
     }
 
     public static void testRegEx(String str, String regEx) {
