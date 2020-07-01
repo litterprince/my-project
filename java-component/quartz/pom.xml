@@ -17,7 +17,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.version>5.0.7.RELEASE</spring.version>
-    <quartz.version>2.2.1</quartz.version>
+    <quartz.version>2.3.2</quartz.version>
   </properties>
 
   <dependencies>
