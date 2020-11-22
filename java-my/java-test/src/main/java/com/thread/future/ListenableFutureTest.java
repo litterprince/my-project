@@ -1,30 +1,29 @@
 package com.thread.future;
 
+import java.util.concurrent.*;
+
 import com.google.common.base.Function;
 import com.google.common.util.concurrent.*;
 
-import java.util.concurrent.*;
-
 public class ListenableFutureTest {
+
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         System.out.println(testTransform().get());
 
         testCallback();
     }
 
-    public static void testCallback(){
-        ListeningExecutorService executorService = MoreExecutors.listeningDecorator(Executors.newCachedThreadPool());
-        ListenableFuture<String> listenableFuture = executorService.submit(new Callable<String>() {
-            @Override
-            public String call() {
-                return "hello";
-            }
-        });
+    private static void testCallback() {
+        ExecutorService pool = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS,
+                new SynchronousQueue<>(), new ThreadFactoryBuilder().setNameFormat("my-thread-pool-%d").build());
+        ListeningExecutorService executorService = MoreExecutors.listeningDecorator(pool);
+        ListenableFuture<String> listenableFuture = executorService.submit(() -> "hello");
         // 注册回调
         Futures.addCallback(listenableFuture, new FutureCallback<String>() {
+
             @Override
             public void onSuccess(String result) {
-                System.out.println("result: "+ result);
+                System.out.println("result: " + result);
             }
 
             @Override
@@ -33,21 +32,12 @@ public class ListenableFutureTest {
         });
     }
 
-    public static ListenableFuture<String> testTransform(){
-        ListeningExecutorService executorService = MoreExecutors.listeningDecorator(Executors.newCachedThreadPool());
-        ListenableFuture<String> listenableFuture = executorService.submit(new Callable<String>() {
-            @Override
-            public String call() {
-                return "hello";
-            }
-        });
+    private static ListenableFuture<String> testTransform() {
+        ExecutorService pool = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS,
+                new SynchronousQueue<>(), new ThreadFactoryBuilder().setNameFormat("my-thread-pool-%d").build());
+        ListeningExecutorService executorService = MoreExecutors.listeningDecorator(pool);
+        ListenableFuture<String> listenableFuture = executorService.submit(() -> "hello");
 
-        ListenableFuture<String> future = Futures.transform(listenableFuture, new Function<String, String>(){
-            @Override
-            public String apply(String input) {
-                return input + " jeff";
-            }
-        });
-        return future;
+        return Futures.transform(listenableFuture, (Function<String, String>) input -> input + " jeff");
     }
 }

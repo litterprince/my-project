@@ -1,16 +1,20 @@
 package com.thread.exchanger;
 
-import java.util.concurrent.Exchanger;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
+
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 public class ExchangerDemo {
+
     public static void main(String[] args) {
-        ExecutorService executor = Executors.newCachedThreadPool();
+        ExecutorService executor = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS,
+                new SynchronousQueue<>(), new ThreadFactoryBuilder().setNameFormat("my-thread-pool-%d").build());
 
         final Exchanger exchanger = new Exchanger();
         executor.execute(new Runnable() {
+
             String data = "克拉克森，小拉里南斯";
+
             @Override
             public void run() {
                 nbaTrade(data, exchanger);
@@ -18,7 +22,9 @@ public class ExchangerDemo {
         });
 
         executor.execute(new Runnable() {
+
             String data = "格里芬";
+
             @Override
             public void run() {
                 nbaTrade(data, exchanger);
@@ -35,7 +41,8 @@ public class ExchangerDemo {
 
             String data2 = (String) exchanger.exchange(data1);
             System.out.println(Thread.currentThread().getName() + "交易得到" + data2);
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

@@ -3,7 +3,9 @@ package com.thread.threadpool.complex;
 import java.util.concurrent.CountDownLatch;
 
 public class InterruptRunnable implements Runnable {
+
     private CountDownLatch beginLatch;
+
     private ConcurrentTaskExecutor concurrentTaskExecutor;
 
     public InterruptRunnable(ConcurrentTaskExecutor currConcurrentTaskExecutor, CountDownLatch beginLatch) {
@@ -18,7 +20,8 @@ public class InterruptRunnable implements Runnable {
             long millis = (long) (Math.random() * 1 * 1000);
             System.out.println(String.format("System need sleep %s millis", millis));
             Thread.sleep(millis);
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
             e.printStackTrace();
         }
         concurrentTaskExecutor.setCanceled(true);
