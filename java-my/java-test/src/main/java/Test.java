@@ -4,7 +4,9 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -28,6 +30,23 @@ public class Test {
         test();
     }
 
+    public static void testTime() {
+        DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDate localDate = LocalDate.now().minusDays(1);
+        // 间隔（只试过2的倍数）
+        int interval = 4;
+        Stream.iterate(0, item -> item + interval).limit(24 / interval).map(
+                startHour -> {
+                    LocalTime startLocalTime = LocalTime.of(startHour, 0, 0);
+                    LocalTime endLocalTime = LocalTime.of(startHour + interval - 1, 59, 59);
+                    LocalDateTime startTime = LocalDateTime.of(localDate, startLocalTime);
+                    LocalDateTime endTime = LocalDateTime.of(localDate, endLocalTime);
+                    System.out.println(startTime.format(fmt1) + "-" + endTime.format(fmt1));
+                    return null;
+                }
+        ).collect(Collectors.toList());
+    }
+
     public static void testDate() {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
@@ -37,8 +56,8 @@ public class Test {
                 .limit(ChronoUnit.DAYS.between(start, end))
                 .collect(Collectors.toList());
         System.out.println("param");
-        for (int i = 0; i < dates.size()-1; i++) {
-            System.out.println(dateTimeFormatter.format(dates.get(i))+","+dateTimeFormatter.format(dates.get(i+1)));
+        for (int i = 0; i < dates.size() - 1; i++) {
+            System.out.println(dateTimeFormatter.format(dates.get(i)) + "," + dateTimeFormatter.format(dates.get(i + 1)));
         }
     }
 
@@ -114,7 +133,7 @@ public class Test {
         }
     }
 
-    public static void test(){
+    public static void test() {
         List<Integer> excelDataList = new ArrayList<>();
         excelDataList.add(1);//0
         excelDataList.add(2);//1
